@@ -69,7 +69,3 @@ Site auto-deploys to GitHub Pages on every push to `main` via GitHub Actions.
 | ekyc-document-liveness-playbook | Deep-dive into document liveness *(coming soon)* |
 
 ---
-
-## License
-
-This work is licensed under [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/) — share and adapt with attribution, non-commercial use, and same license.
