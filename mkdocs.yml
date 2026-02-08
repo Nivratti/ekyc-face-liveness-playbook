@@ -1,0 +1,168 @@
+site_name: "eKYC Face Liveness Playbook"
+site_description: "Comprehensive technical & deployment guide for face liveness verification in banking and financial institutions"
+site_author: "eKYC Solutions"
+
+theme:
+  name: material
+  palette:
+    - scheme: default
+      primary: indigo
+      accent: deep purple
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+    - scheme: slate
+      primary: indigo
+      accent: deep purple
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+  font:
+    text: Inter
+    code: JetBrains Mono
+  features:
+    - navigation.tabs
+    - navigation.tabs.sticky
+    - navigation.sections
+    - navigation.expand
+    - navigation.path
+    - navigation.top
+    - toc.follow
+    - search.suggest
+    - search.highlight
+    - content.tabs.link
+    - content.code.copy
+  icon:
+    repo: fontawesome/brands/github
+
+markdown_extensions:
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.critic
+  - pymdownx.caret
+  - pymdownx.keys
+  - pymdownx.mark
+  - pymdownx.tilde
+  - attr_list
+  - md_in_html
+  - tables
+  - footnotes
+  - def_list
+  - toc:
+      permalink: true
+      toc_depth: 3
+
+plugins:
+  - search
+  - tags
+
+extra:
+  social:
+    - icon: fontawesome/brands/linkedin
+      link: "#"
+
+nav:
+  - Home: index.md
+
+  - "Part I — Foundations":
+    - "1.1 What Is Face Liveness?": 01-introduction/what-is-face-liveness.md
+    - "1.2 Why It Matters for Banking": 01-introduction/why-it-matters.md
+    - "1.3 The eKYC Pipeline": 01-introduction/ekyc-pipeline.md
+    - "1.4 Core Terminology & Glossary": 01-introduction/glossary.md
+
+  - "Part II — Liveness Methods":
+    - "2.1 Active Liveness Detection": 02-fundamentals/active-liveness.md
+    - "2.2 Passive Liveness Detection": 02-fundamentals/passive-liveness.md
+    - "2.3 Hybrid & Adaptive Liveness": 02-fundamentals/hybrid-liveness.md
+    - "2.4 Hardware-Assisted Liveness": 02-fundamentals/hardware-assisted.md
+    - "2.5 Comparison Matrix": 02-fundamentals/comparison-matrix.md
+
+  - "Part III — Attack Landscape":
+    - "3.1 Attack Taxonomy Overview": 03-attack-landscape/taxonomy-overview.md
+    - "3.2 Physical Presentation Attacks": 03-attack-landscape/physical-attacks.md
+    - "3.3 Digital & Injection Attacks": 03-attack-landscape/digital-attacks.md
+    - "3.4 AI & Generative Attacks": 03-attack-landscape/ai-generative-attacks.md
+    - "3.5 Deepfakes — The Evolving Threat": 03-attack-landscape/deepfakes.md
+    - "3.6 Social Engineering & Process Attacks": 03-attack-landscape/social-engineering.md
+    - "3.7 Adversarial ML Attacks": 03-attack-landscape/adversarial-ml.md
+
+  - "Part IV — Technical Architecture":
+    - "4.1 System Architecture Overview": 04-technical-architecture/system-overview.md
+    - "4.2 Client-Side Components": 04-technical-architecture/client-side.md
+    - "4.3 Server-Side Pipeline": 04-technical-architecture/server-side.md
+    - "4.4 Model Architectures & Training": 04-technical-architecture/model-training.md
+    - "4.5 Score Fusion & Decision Engine": 04-technical-architecture/score-fusion.md
+    - "4.6 Integration Patterns (SDK/API/Hybrid)": 04-technical-architecture/integration-patterns.md
+
+  - "Part V — Standards & Compliance":
+    - "5.1 ISO/IEC 30107 Series": 05-standards-compliance/iso-30107.md
+    - "5.2 iBeta Certification (Level 1 & 2)": 05-standards-compliance/ibeta.md
+    - "5.3 NIST FRVT PAD & FATE": 05-standards-compliance/nist.md
+    - "5.4 FIDO Biometric Certification": 05-standards-compliance/fido.md
+    - "5.5 Regional Regulations": 05-standards-compliance/regional-regulations.md
+    - "5.6 Bias, Fairness & Demographic Testing": 05-standards-compliance/bias-fairness.md
+
+  - "Part VI — Deployment & Operations":
+    - "6.1 Input Quality Requirements": 06-deployment-operations/input-quality.md
+    - "6.2 Device & Platform Considerations": 06-deployment-operations/device-platform.md
+    - "6.3 Infrastructure & Scaling": 06-deployment-operations/infrastructure.md
+    - "6.4 UX Patterns & Drop-off Optimization": 06-deployment-operations/ux-patterns.md
+    - "6.5 Error Handling & Fallback Flows": 06-deployment-operations/error-handling.md
+    - "6.6 Monitoring & Observability": 06-deployment-operations/monitoring.md
+    - "6.7 Model Updates & Versioning": 06-deployment-operations/model-updates.md
+    - "6.8 Network & Bandwidth": 06-deployment-operations/network-bandwidth.md
+
+  - "Part VII — Banking Use Cases":
+    - "7.1 Account Opening (Onboarding)": 07-banking-use-cases/account-opening.md
+    - "7.2 Transaction Authentication": 07-banking-use-cases/transaction-auth.md
+    - "7.3 Video KYC (V-CIP)": 07-banking-use-cases/video-kyc.md
+    - "7.4 Loan Disbursement & Credit": 07-banking-use-cases/loan-disbursement.md
+    - "7.5 Account Recovery & Re-KYC": 07-banking-use-cases/account-recovery.md
+    - "7.6 Agent-Assisted & Kiosk KYC": 07-banking-use-cases/agent-kiosk.md
+    - "7.7 Cross-Border & Correspondent Banking": 07-banking-use-cases/cross-border.md
+
+  - "Part VIII — Quality & Testing":
+    - "8.1 Performance Metrics Deep Dive": 08-quality-testing/performance-metrics.md
+    - "8.2 Testing Methodology": 08-quality-testing/testing-methodology.md
+    - "8.3 Red Team & Penetration Testing": 08-quality-testing/red-team.md
+    - "8.4 Environmental & Edge Case Testing": 08-quality-testing/edge-cases.md
+    - "8.5 Demographic & Geographic Performance": 08-quality-testing/demographic-performance.md
+    - "8.6 Datasets & Training Data Strategy": 08-quality-testing/datasets.md
+
+  - "Part IX — Security & Privacy":
+    - "9.1 Security Hardening": 09-security-privacy/security-hardening.md
+    - "9.2 Anti-Fraud Intelligence": 09-security-privacy/anti-fraud.md
+    - "9.3 Privacy & Data Protection": 09-security-privacy/privacy.md
+    - "9.4 Incident Response Playbook": 09-security-privacy/incident-response.md
+    - "9.5 Legal & Contractual Framework": 09-security-privacy/legal-framework.md
+
+  - "Part X — Business Strategy":
+    - "10.1 Build vs Buy Analysis": 10-business-strategy/build-vs-buy.md
+    - "10.2 Vendor Evaluation Framework": 10-business-strategy/vendor-evaluation.md
+    - "10.3 Cost Analysis & ROI": 10-business-strategy/cost-roi.md
+    - "10.4 Implementation Roadmap": 10-business-strategy/implementation-roadmap.md
+    - "10.5 Case Studies": 10-business-strategy/case-studies.md
+    - "10.6 Future Trends": 10-business-strategy/future-trends.md
+
+  - "Appendices":
+    - "A. Sample RFP Template": appendices/rfp-template.md
+    - "B. iBeta PAI Species Reference": appendices/ibeta-pai-species.md
+    - "C. Regulatory Reference Links": appendices/regulatory-links.md
+    - "D. Research Papers & Reading": appendices/research-papers.md
+    - "E. Production Go-Live Checklist": appendices/go-live-checklist.md
