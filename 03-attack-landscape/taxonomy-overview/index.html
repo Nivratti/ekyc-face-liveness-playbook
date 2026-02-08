@@ -1,0 +1,4293 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Comprehensive technical & deployment guide for face liveness verification in banking and financial institutions">
+      
+      
+        <meta name="author" content="eKYC Solutions">
+      
+      
+      
+        <link rel="prev" href="../../02-fundamentals/comparison-matrix/">
+      
+      
+        <link rel="next" href="../physical-attacks/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.1">
+    
+    
+      
+        <title>3.1 Attack Taxonomy Overview - eKYC Face Liveness Playbook</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter:300,300i,400,400i,700,700i%7CJetBrains+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Inter";--md-code-font:"JetBrains Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="deep-purple">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#31-attack-taxonomy-overview" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="eKYC Face Liveness Playbook" class="md-header__button md-logo" aria-label="eKYC Face Liveness Playbook" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            eKYC Face Liveness Playbook
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              3.1 Attack Taxonomy Overview
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="deep-purple"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="deep-purple"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../01-introduction/what-is-face-liveness/" class="md-tabs__link">
+          
+  
+  
+  Part I — Foundations
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../02-fundamentals/active-liveness/" class="md-tabs__link">
+          
+  
+  
+  Part II — Liveness Methods
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="./" class="md-tabs__link">
+          
+  
+  
+  Part III — Attack Landscape
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../04-technical-architecture/system-overview/" class="md-tabs__link">
+          
+  
+  
+  Part IV — Technical Architecture
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../05-standards-compliance/iso-30107/" class="md-tabs__link">
+          
+  
+  
+  Part V — Standards & Compliance
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../06-deployment-operations/input-quality/" class="md-tabs__link">
+          
+  
+  
+  Part VI — Deployment & Operations
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../07-banking-use-cases/account-opening/" class="md-tabs__link">
+          
+  
+  
+  Part VII — Banking Use Cases
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../08-quality-testing/performance-metrics/" class="md-tabs__link">
+          
+  
+  
+  Part VIII — Quality & Testing
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../09-security-privacy/security-hardening/" class="md-tabs__link">
+          
+  
+  
+  Part IX — Security & Privacy
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../10-business-strategy/build-vs-buy/" class="md-tabs__link">
+          
+  
+  
+  Part X — Business Strategy
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../appendices/rfp-template/" class="md-tabs__link">
+          
+  
+  
+  Appendices
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="eKYC Face Liveness Playbook" class="md-nav__button md-logo" aria-label="eKYC Face Liveness Playbook" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    eKYC Face Liveness Playbook
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Part I — Foundations
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Part I — Foundations
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../01-introduction/what-is-face-liveness/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1.1 What Is Face Liveness?
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../01-introduction/why-it-matters/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1.2 Why It Matters for Banking
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../01-introduction/ekyc-pipeline/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1.3 The eKYC Pipeline
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../01-introduction/glossary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1.4 Core Terminology & Glossary
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Part II — Liveness Methods
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Part II — Liveness Methods
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../02-fundamentals/active-liveness/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2.1 Active Liveness Detection
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../02-fundamentals/passive-liveness/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2.2 Passive Liveness Detection
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../02-fundamentals/hybrid-liveness/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2.3 Hybrid & Adaptive Liveness
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../02-fundamentals/hardware-assisted/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2.4 Hardware-Assisted Liveness
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../02-fundamentals/comparison-matrix/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2.5 Comparison Matrix
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Part III — Attack Landscape
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Part III — Attack Landscape
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3.1 Attack Taxonomy Overview
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3.1 Attack Taxonomy Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#the-complete-attack-landscape" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Complete Attack Landscape
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#master-taxonomy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Master Taxonomy
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sophistication-levels" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Sophistication Levels
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#attack-category-summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Attack Category Summary
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Attack Category Summary">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#a-physical-presentation-attacks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        A. Physical Presentation Attacks
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#b-digital-injection-attacks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        B. Digital &amp; Injection Attacks
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#c-ai-generative-attacks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        C. AI &amp; Generative Attacks
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#d-social-engineering-process-attacks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        D. Social Engineering &amp; Process Attacks
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#e-adversarial-machine-learning-attacks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        E. Adversarial Machine Learning Attacks
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#attack-to-defense-mapping" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Attack-to-Defense Mapping
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#attack-prevalence-by-banking-context" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Attack Prevalence by Banking Context
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../physical-attacks/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3.2 Physical Presentation Attacks
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../digital-attacks/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3.3 Digital & Injection Attacks
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ai-generative-attacks/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3.4 AI & Generative Attacks
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../deepfakes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3.5 Deepfakes — The Evolving Threat
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../social-engineering/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3.6 Social Engineering & Process Attacks
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../adversarial-ml/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3.7 Adversarial ML Attacks
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Part IV — Technical Architecture
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Part IV — Technical Architecture
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../04-technical-architecture/system-overview/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    4.1 System Architecture Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../04-technical-architecture/client-side/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    4.2 Client-Side Components
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../04-technical-architecture/server-side/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    4.3 Server-Side Pipeline
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../04-technical-architecture/model-training/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    4.4 Model Architectures & Training
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../04-technical-architecture/score-fusion/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    4.5 Score Fusion & Decision Engine
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../04-technical-architecture/integration-patterns/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    4.6 Integration Patterns (SDK/API/Hybrid)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Part V — Standards & Compliance
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Part V — Standards & Compliance
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../05-standards-compliance/iso-30107/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    5.1 ISO/IEC 30107 Series
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../05-standards-compliance/ibeta/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    5.2 iBeta Certification (Level 1 & 2)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../05-standards-compliance/nist/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    5.3 NIST FRVT PAD & FATE
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../05-standards-compliance/fido/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    5.4 FIDO Biometric Certification
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../05-standards-compliance/regional-regulations/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    5.5 Regional Regulations
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../05-standards-compliance/bias-fairness/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    5.6 Bias, Fairness & Demographic Testing
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Part VI — Deployment & Operations
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Part VI — Deployment & Operations
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../06-deployment-operations/input-quality/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    6.1 Input Quality Requirements
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../06-deployment-operations/device-platform/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    6.2 Device & Platform Considerations
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../06-deployment-operations/infrastructure/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    6.3 Infrastructure & Scaling
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../06-deployment-operations/ux-patterns/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    6.4 UX Patterns & Drop-off Optimization
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../06-deployment-operations/error-handling/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    6.5 Error Handling & Fallback Flows
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../06-deployment-operations/monitoring/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    6.6 Monitoring & Observability
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../06-deployment-operations/model-updates/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    6.7 Model Updates & Versioning
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../06-deployment-operations/network-bandwidth/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    6.8 Network & Bandwidth
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Part VII — Banking Use Cases
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Part VII — Banking Use Cases
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../07-banking-use-cases/account-opening/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    7.1 Account Opening (Onboarding)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../07-banking-use-cases/transaction-auth/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    7.2 Transaction Authentication
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../07-banking-use-cases/video-kyc/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    7.3 Video KYC (V-CIP)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../07-banking-use-cases/loan-disbursement/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    7.4 Loan Disbursement & Credit
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../07-banking-use-cases/account-recovery/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    7.5 Account Recovery & Re-KYC
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../07-banking-use-cases/agent-kiosk/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    7.6 Agent-Assisted & Kiosk KYC
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../07-banking-use-cases/cross-border/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    7.7 Cross-Border & Correspondent Banking
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_9" >
+        
+          
+          <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Part VIII — Quality & Testing
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Part VIII — Quality & Testing
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../08-quality-testing/performance-metrics/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    8.1 Performance Metrics Deep Dive
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../08-quality-testing/testing-methodology/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    8.2 Testing Methodology
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../08-quality-testing/red-team/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    8.3 Red Team & Penetration Testing
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../08-quality-testing/edge-cases/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    8.4 Environmental & Edge Case Testing
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../08-quality-testing/demographic-performance/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    8.5 Demographic & Geographic Performance
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../08-quality-testing/datasets/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    8.6 Datasets & Training Data Strategy
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_10" >
+        
+          
+          <label class="md-nav__link" for="__nav_10" id="__nav_10_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Part IX — Security & Privacy
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_10_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_10">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Part IX — Security & Privacy
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../09-security-privacy/security-hardening/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    9.1 Security Hardening
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../09-security-privacy/anti-fraud/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    9.2 Anti-Fraud Intelligence
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../09-security-privacy/privacy/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    9.3 Privacy & Data Protection
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../09-security-privacy/incident-response/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    9.4 Incident Response Playbook
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../09-security-privacy/legal-framework/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    9.5 Legal & Contractual Framework
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_11" >
+        
+          
+          <label class="md-nav__link" for="__nav_11" id="__nav_11_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Part X — Business Strategy
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_11_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_11">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Part X — Business Strategy
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../10-business-strategy/build-vs-buy/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    10.1 Build vs Buy Analysis
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../10-business-strategy/vendor-evaluation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    10.2 Vendor Evaluation Framework
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../10-business-strategy/cost-roi/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    10.3 Cost Analysis & ROI
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../10-business-strategy/implementation-roadmap/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    10.4 Implementation Roadmap
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../10-business-strategy/case-studies/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    10.5 Case Studies
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../10-business-strategy/future-trends/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    10.6 Future Trends
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_12" >
+        
+          
+          <label class="md-nav__link" for="__nav_12" id="__nav_12_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Appendices
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_12_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_12">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Appendices
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../appendices/rfp-template/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    A. Sample RFP Template
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../appendices/ibeta-pai-species/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    B. iBeta PAI Species Reference
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../appendices/regulatory-links/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    C. Regulatory Reference Links
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../appendices/research-papers/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    D. Research Papers & Reading
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../appendices/go-live-checklist/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    E. Production Go-Live Checklist
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#the-complete-attack-landscape" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Complete Attack Landscape
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#master-taxonomy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Master Taxonomy
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sophistication-levels" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Sophistication Levels
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#attack-category-summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Attack Category Summary
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Attack Category Summary">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#a-physical-presentation-attacks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        A. Physical Presentation Attacks
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#b-digital-injection-attacks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        B. Digital &amp; Injection Attacks
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#c-ai-generative-attacks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        C. AI &amp; Generative Attacks
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#d-social-engineering-process-attacks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        D. Social Engineering &amp; Process Attacks
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#e-adversarial-machine-learning-attacks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        E. Adversarial Machine Learning Attacks
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#attack-to-defense-mapping" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Attack-to-Defense Mapping
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#attack-prevalence-by-banking-context" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Attack Prevalence by Banking Context
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+                
+
+
+
+  
+
+
+  <nav class="md-path" aria-label="Navigation" >
+    <ol class="md-path__list">
+      
+        
+  
+  
+    <li class="md-path__item">
+      <a href="../.." class="md-path__link">
+        
+  <span class="md-ellipsis">
+    Home
+  </span>
+
+      </a>
+    </li>
+  
+
+      
+      
+        
+  
+  
+    
+    
+      <li class="md-path__item">
+        <a href="./" class="md-path__link">
+          
+  <span class="md-ellipsis">
+    Part III — Attack Landscape
+  </span>
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ol>
+  </nav>
+
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="31-attack-taxonomy-overview">3.1 Attack Taxonomy Overview<a class="headerlink" href="#31-attack-taxonomy-overview" title="Permanent link">&para;</a></h1>
+<hr />
+<h2 id="the-complete-attack-landscape">The Complete Attack Landscape<a class="headerlink" href="#the-complete-attack-landscape" title="Permanent link">&para;</a></h2>
+<p>Understanding every possible attack vector is <strong>the foundation of building a secure liveness system</strong>. This section provides the most comprehensive classification of face liveness attacks, organized by category, sophistication level, and delivery method.</p>
+<hr />
+<h2 id="master-taxonomy">Master Taxonomy<a class="headerlink" href="#master-taxonomy" title="Permanent link">&para;</a></h2>
+<pre class="mermaid"><code>graph TD
+    ROOT["Face Liveness&lt;br&gt;Attack Vectors"] --&gt; A["🖼️ Physical&lt;br&gt;Presentation Attacks"]
+    ROOT --&gt; B["💻 Digital &amp;&lt;br&gt;Injection Attacks"]
+    ROOT --&gt; C["🤖 AI &amp; Generative&lt;br&gt;Attacks"]
+    ROOT --&gt; D["🧠 Social Engineering&lt;br&gt;&amp; Process Attacks"]
+    ROOT --&gt; E["⚔️ Adversarial&lt;br&gt;ML Attacks"]
+
+    A --&gt; A1["2D Attacks"]
+    A --&gt; A2["3D Attacks"]
+    A --&gt; A3["Partial/Hybrid&lt;br&gt;Physical"]
+
+    B --&gt; B1["Virtual Camera&lt;br&gt;Injection"]
+    B --&gt; B2["API/Network&lt;br&gt;Attacks"]
+    B --&gt; B3["SDK/App&lt;br&gt;Tampering"]
+
+    C --&gt; C1["Deepfakes"]
+    C --&gt; C2["Synthetic&lt;br&gt;Identity"]
+    C --&gt; C3["Face Morphing"]
+    C --&gt; C4["AI Enhancement"]
+
+    D --&gt; D1["Coercion &amp;&lt;br&gt;Collusion"]
+    D --&gt; D2["Process&lt;br&gt;Manipulation"]
+    D --&gt; D3["Identity&lt;br&gt;Exploitation"]
+
+    E --&gt; E1["White-box&lt;br&gt;Attacks"]
+    E --&gt; E2["Black-box&lt;br&gt;Attacks"]
+    E --&gt; E3["Model&lt;br&gt;Extraction"]</code></pre>
+<hr />
+<h2 id="sophistication-levels">Sophistication Levels<a class="headerlink" href="#sophistication-levels" title="Permanent link">&para;</a></h2>
+<p>All attacks are classified into <strong>5 levels</strong> of sophistication. Each level assumes access to the tools and expertise of the previous levels.</p>
+<table>
+<thead>
+<tr>
+<th>Level</th>
+<th>Name</th>
+<th>Attacker Profile</th>
+<th>Tools Required</th>
+<th>Cost</th>
+<th>Prevalence</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>L1</strong></td>
+<td>Script Kiddie</td>
+<td>No technical expertise; opportunistic</td>
+<td>Printer, smartphone</td>
+<td>$0-50</td>
+<td>Very High (70% of attempts)</td>
+</tr>
+<tr>
+<td><strong>L2</strong></td>
+<td>Informed Amateur</td>
+<td>Basic technical knowledge; follows online tutorials</td>
+<td>HD screen, basic software, paper masks</td>
+<td>$50-500</td>
+<td>High (20% of attempts)</td>
+</tr>
+<tr>
+<td><strong>L3</strong></td>
+<td>Skilled Attacker</td>
+<td>Strong technical skills; experience with ML/CV tools</td>
+<td>GPU, deepfake software, 3D printer</td>
+<td>$500-5,000</td>
+<td>Moderate (8% of attempts)</td>
+</tr>
+<tr>
+<td><strong>L4</strong></td>
+<td>Professional / Organized Crime</td>
+<td>Dedicated team with specialized skills and resources</td>
+<td>Custom hardware, ML expertise, inside knowledge</td>
+<td>$5,000-50,000</td>
+<td>Low (1.5% of attempts)</td>
+</tr>
+<tr>
+<td><strong>L5</strong></td>
+<td>State Actor / APT</td>
+<td>Unlimited resources, access to cutting-edge research</td>
+<td>Custom silicon masks, neural rendering, zero-day exploits</td>
+<td>$50,000+</td>
+<td>Very Low (0.5% of attempts)</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition danger">
+<p class="admonition-title">Don't Ignore Low-Sophistication Attacks</p>
+<p>While L4-L5 attacks get media attention, <strong>L1-L2 attacks account for 90% of real-world attempts</strong>. A system that defends against deepfakes but fails against printed photos is fundamentally broken.</p>
+</div>
+<hr />
+<h2 id="attack-category-summary">Attack Category Summary<a class="headerlink" href="#attack-category-summary" title="Permanent link">&para;</a></h2>
+<h3 id="a-physical-presentation-attacks">A. Physical Presentation Attacks<a class="headerlink" href="#a-physical-presentation-attacks" title="Permanent link">&para;</a></h3>
+<p>Attacks involving a <strong>physical artifact</strong> presented to the camera.</p>
+<h4 id="a1-2d-flat-attacks">A1. 2D Flat Attacks<a class="headerlink" href="#a1-2d-flat-attacks" title="Permanent link">&para;</a></h4>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Attack</th>
+<th>Description</th>
+<th>Sophistication</th>
+<th>Materials</th>
+<th>Detection Difficulty</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>A1.1</td>
+<td><strong>Printed Photo (Standard)</strong></td>
+<td>A4/Letter printed photo held in front of camera</td>
+<td>L1</td>
+<td>Home printer, paper ($2)</td>
+<td>🟢 Low</td>
+</tr>
+<tr>
+<td>A1.2</td>
+<td><strong>Printed Photo (Professional)</strong></td>
+<td>High-quality photo lab print on glossy/matte stock</td>
+<td>L1</td>
+<td>Photo lab print ($5-15)</td>
+<td>🟢 Low-Medium</td>
+</tr>
+<tr>
+<td>A1.3</td>
+<td><strong>Large Format Print</strong></td>
+<td>Poster-size print for more realistic size and detail</td>
+<td>L2</td>
+<td>Large format printer ($20-50)</td>
+<td>🟡 Medium</td>
+</tr>
+<tr>
+<td>A1.4</td>
+<td><strong>Screen Replay (Phone)</strong></td>
+<td>Photo displayed on smartphone screen</td>
+<td>L1</td>
+<td>Smartphone ($0)</td>
+<td>🟢 Low-Medium</td>
+</tr>
+<tr>
+<td>A1.5</td>
+<td><strong>Screen Replay (Tablet)</strong></td>
+<td>Photo/video on tablet (higher resolution, larger)</td>
+<td>L1</td>
+<td>Tablet ($200-500)</td>
+<td>🟡 Medium</td>
+</tr>
+<tr>
+<td>A1.6</td>
+<td><strong>Screen Replay (Monitor)</strong></td>
+<td>Photo/video on HD/4K monitor</td>
+<td>L2</td>
+<td>HD monitor ($200-800)</td>
+<td>🟡 Medium</td>
+</tr>
+<tr>
+<td>A1.7</td>
+<td><strong>Video Replay (Pre-recorded)</strong></td>
+<td>Pre-recorded video showing natural motion, blinking</td>
+<td>L2</td>
+<td>Camera + screen ($200-500)</td>
+<td>🟡 Medium-High</td>
+</tr>
+<tr>
+<td>A1.8</td>
+<td><strong>Video Replay (Looping)</strong></td>
+<td>Short loop designed to repeat blinks and micro-movements</td>
+<td>L2</td>
+<td>Video editing software ($0)</td>
+<td>🟡 Medium</td>
+</tr>
+<tr>
+<td>A1.9</td>
+<td><strong>Warped/Bent Photo</strong></td>
+<td>Photo curved around a cylinder to simulate 3D curvature</td>
+<td>L2</td>
+<td>High-quality print + backing ($20)</td>
+<td>🟡 Medium</td>
+</tr>
+<tr>
+<td>A1.10</td>
+<td><strong>Photo on Transparent OLED</strong></td>
+<td>Face displayed on a transparent screen overlaid on real scene</td>
+<td>L3</td>
+<td>Transparent display ($500+)</td>
+<td>🔴 High</td>
+</tr>
+</tbody>
+</table>
+<h4 id="a2-3d-attacks">A2. 3D Attacks<a class="headerlink" href="#a2-3d-attacks" title="Permanent link">&para;</a></h4>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Attack</th>
+<th>Description</th>
+<th>Sophistication</th>
+<th>Materials</th>
+<th>Detection Difficulty</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>A2.1</td>
+<td><strong>Paper Mask (Basic)</strong></td>
+<td>Printed face cut out and worn as a flat mask</td>
+<td>L1</td>
+<td>Printer, scissors ($5)</td>
+<td>🟢 Low</td>
+</tr>
+<tr>
+<td>A2.2</td>
+<td><strong>Paper Mask (Eye/Mouth Cutouts)</strong></td>
+<td>Print with holes for eyes and mouth — attacker blinks/speaks through</td>
+<td>L1</td>
+<td>Printer, scissors ($5)</td>
+<td>🟡 Medium</td>
+</tr>
+<tr>
+<td>A2.3</td>
+<td><strong>Mannequin/Dummy Head</strong></td>
+<td>Department store mannequin with photo or makeup applied</td>
+<td>L2</td>
+<td>Mannequin head ($50-200)</td>
+<td>🟡 Medium</td>
+</tr>
+<tr>
+<td>A2.4</td>
+<td><strong>Wax Figure Head</strong></td>
+<td>Custom wax sculpture of target's face</td>
+<td>L4</td>
+<td>Wax sculpting ($2000+)</td>
+<td>🔴 High</td>
+</tr>
+<tr>
+<td>A2.5</td>
+<td><strong>3D-Printed Rigid Mask</strong></td>
+<td>Hard plastic mask 3D-printed from a 3D face scan</td>
+<td>L3</td>
+<td>3D scanner + printer ($500-2000)</td>
+<td>🔴 High</td>
+</tr>
+<tr>
+<td>A2.6</td>
+<td><strong>Resin/Plaster Cast Mask</strong></td>
+<td>Rigid mask cast from a mold</td>
+<td>L3</td>
+<td>Casting materials ($200-500)</td>
+<td>🔴 High</td>
+</tr>
+<tr>
+<td>A2.7</td>
+<td><strong>Latex Mask (Commercial)</strong></td>
+<td>Off-the-shelf latex mask (realistic Halloween-type)</td>
+<td>L2</td>
+<td>Commercial mask ($50-200)</td>
+<td>🟡 Medium-High</td>
+</tr>
+<tr>
+<td>A2.8</td>
+<td><strong>Silicone Mask (Custom)</strong></td>
+<td>Custom-made full-face silicone mask with realistic skin texture, hand-painted</td>
+<td>L4</td>
+<td>Custom fabrication ($3000-15000)</td>
+<td>🔴🔴 Very High</td>
+</tr>
+<tr>
+<td>A2.9</td>
+<td><strong>Silicone Mask (Animatronic)</strong></td>
+<td>Custom silicone mask with embedded servos for eye/mouth movement</td>
+<td>L5</td>
+<td>Advanced fabrication ($10000+)</td>
+<td>🔴🔴🔴 Extreme</td>
+</tr>
+<tr>
+<td>A2.10</td>
+<td><strong>Projection on 3D Form</strong></td>
+<td>Face projected onto a white 3D head form or mannequin</td>
+<td>L3</td>
+<td>Projector + head form ($300-1000)</td>
+<td>🔴 High</td>
+</tr>
+</tbody>
+</table>
+<h4 id="a3-partial-hybrid-physical-attacks">A3. Partial &amp; Hybrid Physical Attacks<a class="headerlink" href="#a3-partial-hybrid-physical-attacks" title="Permanent link">&para;</a></h4>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Attack</th>
+<th>Description</th>
+<th>Sophistication</th>
+<th>Detection Difficulty</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>A3.1</td>
+<td><strong>Fake Eyes on Photo</strong></td>
+<td>Glass/doll eyes placed on a printed photo to simulate eye reflection and blink</td>
+<td>L2</td>
+<td>🟡 Medium</td>
+</tr>
+<tr>
+<td>A3.2</td>
+<td><strong>Partial Face Overlay</strong></td>
+<td>Screen/print covering upper face while lower face is real (or vice versa)</td>
+<td>L2</td>
+<td>🔴 High</td>
+</tr>
+<tr>
+<td>A3.3</td>
+<td><strong>Contact Lens Attacks</strong></td>
+<td>Patterned/colored lenses to alter iris appearance for iris-involved checks</td>
+<td>L2</td>
+<td>🟡 Medium</td>
+</tr>
+<tr>
+<td>A3.4</td>
+<td><strong>Makeup/Prosthetic Transformation</strong></td>
+<td>SFX makeup to transform the attacker's face to resemble the target</td>
+<td>L3</td>
+<td>🔴 High</td>
+</tr>
+<tr>
+<td>A3.5</td>
+<td><strong>Prosthetic Augmentation</strong></td>
+<td>Prosthetic nose, chin, cheekbones to alter bone structure appearance</td>
+<td>L4</td>
+<td>🔴🔴 Very High</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3 id="b-digital-injection-attacks">B. Digital &amp; Injection Attacks<a class="headerlink" href="#b-digital-injection-attacks" title="Permanent link">&para;</a></h3>
+<p>Attacks that <strong>bypass the physical camera</strong> entirely by injecting digital content into the capture pipeline.</p>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Attack</th>
+<th>Description</th>
+<th>Sophistication</th>
+<th>Detection Difficulty</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>B1.1</td>
+<td><strong>Virtual Camera (OBS/ManyCam)</strong></td>
+<td>Virtual camera driver feeds pre-recorded or generated video as camera input</td>
+<td>L2</td>
+<td>🟡 Medium</td>
+</tr>
+<tr>
+<td>B1.2</td>
+<td><strong>Camera API Hooking (Android)</strong></td>
+<td>Frida/Xposed framework intercepts camera API calls and injects modified frames</td>
+<td>L3</td>
+<td>🔴 High</td>
+</tr>
+<tr>
+<td>B1.3</td>
+<td><strong>Camera API Hooking (iOS)</strong></td>
+<td>Substrate/Frida intercepts iOS camera pipeline (requires jailbreak)</td>
+<td>L3</td>
+<td>🔴 High</td>
+</tr>
+<tr>
+<td>B1.4</td>
+<td><strong>Emulator-Based Attack</strong></td>
+<td>Running mobile app in Android emulator with virtual camera feed</td>
+<td>L2</td>
+<td>🟡 Medium</td>
+</tr>
+<tr>
+<td>B1.5</td>
+<td><strong>Frame Buffer Manipulation</strong></td>
+<td>OS-level interception of frame buffer to inject modified frames</td>
+<td>L4</td>
+<td>🔴🔴 Very High</td>
+</tr>
+<tr>
+<td>B2.1</td>
+<td><strong>API Replay Attack</strong></td>
+<td>Capturing and replaying a valid liveness API request to the server</td>
+<td>L2</td>
+<td>🟡 Medium</td>
+</tr>
+<tr>
+<td>B2.2</td>
+<td><strong>Man-in-the-Middle (MitM)</strong></td>
+<td>Intercepting video stream between client and server, modifying frames in transit</td>
+<td>L3</td>
+<td>🔴 High</td>
+</tr>
+<tr>
+<td>B2.3</td>
+<td><strong>API Parameter Tampering</strong></td>
+<td>Modifying liveness scores or decision parameters in API requests</td>
+<td>L2</td>
+<td>🟡 Medium</td>
+</tr>
+<tr>
+<td>B3.1</td>
+<td><strong>Repackaged APK/IPA</strong></td>
+<td>Decompiled app with liveness checks disabled, recompiled and signed</td>
+<td>L3</td>
+<td>🔴 High</td>
+</tr>
+<tr>
+<td>B3.2</td>
+<td><strong>Runtime Hooking</strong></td>
+<td>Hooking liveness SDK functions at runtime to return fake "pass" results</td>
+<td>L3</td>
+<td>🔴 High</td>
+</tr>
+<tr>
+<td>B3.3</td>
+<td><strong>Browser WebRTC Manipulation</strong></td>
+<td>Modifying WebRTC media stream in browser for web-based liveness</td>
+<td>L3</td>
+<td>🔴 High</td>
+</tr>
+<tr>
+<td>B3.4</td>
+<td><strong>Screen Sharing Injection</strong></td>
+<td>Using screen sharing or remote desktop to inject content into camera feed</td>
+<td>L2</td>
+<td>🟡 Medium</td>
+</tr>
+<tr>
+<td>B3.5</td>
+<td><strong>Relay/Proxy Attack</strong></td>
+<td>Real person's camera feed relayed to another device at a different location</td>
+<td>L2</td>
+<td>🔴 High</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3 id="c-ai-generative-attacks">C. AI &amp; Generative Attacks<a class="headerlink" href="#c-ai-generative-attacks" title="Permanent link">&para;</a></h3>
+<p>Attacks using <strong>artificial intelligence</strong> to generate or manipulate facial content.</p>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Attack</th>
+<th>Description</th>
+<th>Sophistication</th>
+<th>Detection Difficulty</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>C1.1</td>
+<td><strong>Face Swap (Offline)</strong></td>
+<td>Face replacement in pre-recorded video using DeepFaceLab, FaceSwap, Roop</td>
+<td>L3</td>
+<td>🔴 High</td>
+</tr>
+<tr>
+<td>C1.2</td>
+<td><strong>Face Swap (Real-time)</strong></td>
+<td>Live face swap during camera capture using InsightFace, DeepFaceLive</td>
+<td>L3</td>
+<td>🔴🔴 Very High</td>
+</tr>
+<tr>
+<td>C1.3</td>
+<td><strong>Face Reenactment</strong></td>
+<td>Expression transfer from attacker to target face (First Order Motion, LivePortrait)</td>
+<td>L3</td>
+<td>🔴🔴 Very High</td>
+</tr>
+<tr>
+<td>C1.4</td>
+<td><strong>Lip Sync Deepfake</strong></td>
+<td>Mouth animation synchronized to arbitrary audio (Wav2Lip, SadTalker, VideoReTalking)</td>
+<td>L3</td>
+<td>🔴🔴 Very High</td>
+</tr>
+<tr>
+<td>C1.5</td>
+<td><strong>Full Face Animation</strong></td>
+<td>Single photo animated to full video (MegaPortraits, Thin-Plate Spline Motion)</td>
+<td>L3</td>
+<td>🔴 High</td>
+</tr>
+<tr>
+<td>C1.6</td>
+<td><strong>Audio-Visual Deepfake</strong></td>
+<td>Synchronized face + voice generation for speech-based liveness bypass</td>
+<td>L4</td>
+<td>🔴🔴 Very High</td>
+</tr>
+<tr>
+<td>C2.1</td>
+<td><strong>GAN-Generated Face</strong></td>
+<td>Completely synthetic face (StyleGAN2/3) — non-existent person</td>
+<td>L3</td>
+<td>🟡 Medium</td>
+</tr>
+<tr>
+<td>C2.2</td>
+<td><strong>Diffusion-Generated Face</strong></td>
+<td>Face generated via Stable Diffusion / SDXL fine-tuned on faces</td>
+<td>L3</td>
+<td>🟡 Medium-High</td>
+</tr>
+<tr>
+<td>C2.3</td>
+<td><strong>Synthetic Identity Package</strong></td>
+<td>GAN face + fabricated document + manufactured personal history</td>
+<td>L4</td>
+<td>🔴🔴 Very High</td>
+</tr>
+<tr>
+<td>C3.1</td>
+<td><strong>Face Morphing</strong></td>
+<td>Blending two faces so the result matches both identities (for document fraud)</td>
+<td>L3</td>
+<td>🔴 High</td>
+</tr>
+<tr>
+<td>C3.2</td>
+<td><strong>Age Manipulation</strong></td>
+<td>De-aging or aging a face to match an older/newer document photo</td>
+<td>L3</td>
+<td>🟡 Medium</td>
+</tr>
+<tr>
+<td>C4.1</td>
+<td><strong>Super-Resolution Enhancement</strong></td>
+<td>Upscaling low-quality spoof images to appear more genuine</td>
+<td>L3</td>
+<td>🟡 Medium</td>
+</tr>
+<tr>
+<td>C4.2</td>
+<td><strong>Style Transfer</strong></td>
+<td>Transferring "live skin" texture characteristics onto spoof images</td>
+<td>L4</td>
+<td>🔴 High</td>
+</tr>
+<tr>
+<td>C4.3</td>
+<td><strong>Neural Radiance Field (NeRF)</strong></td>
+<td>Full 3D neural rendering of a face, viewable from any angle</td>
+<td>L5</td>
+<td>🔴🔴🔴 Extreme</td>
+</tr>
+<tr>
+<td>C4.4</td>
+<td><strong>3D Gaussian Splatting</strong></td>
+<td>Real-time 3D face rendering from multi-view captures</td>
+<td>L5</td>
+<td>🔴🔴🔴 Extreme</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3 id="d-social-engineering-process-attacks">D. Social Engineering &amp; Process Attacks<a class="headerlink" href="#d-social-engineering-process-attacks" title="Permanent link">&para;</a></h3>
+<p>Attacks that exploit <strong>human factors and process weaknesses</strong> rather than technology.</p>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Attack</th>
+<th>Description</th>
+<th>Sophistication</th>
+<th>Detection Difficulty</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>D1.1</td>
+<td><strong>Coercion</strong></td>
+<td>Forcing a legitimate person to complete liveness verification under duress</td>
+<td>L2</td>
+<td>🔴🔴 Very High (tech can't detect)</td>
+</tr>
+<tr>
+<td>D1.2</td>
+<td><strong>Insider Collusion</strong></td>
+<td>Bank employee manipulates the review process or overrides liveness results</td>
+<td>L3</td>
+<td>🔴🔴 Very High</td>
+</tr>
+<tr>
+<td>D1.3</td>
+<td><strong>Bribery/Social Engineering of Reviewer</strong></td>
+<td>Convincing a manual reviewer to approve a failed liveness check</td>
+<td>L3</td>
+<td>🔴 High</td>
+</tr>
+<tr>
+<td>D2.1</td>
+<td><strong>Session Hijacking</strong></td>
+<td>Taking over a legitimate user's session after they pass liveness</td>
+<td>L3</td>
+<td>🔴 High</td>
+</tr>
+<tr>
+<td>D2.2</td>
+<td><strong>Process Timing Exploit</strong></td>
+<td>Exploiting the gap between liveness pass and face matching to substitute data</td>
+<td>L3</td>
+<td>🔴 High</td>
+</tr>
+<tr>
+<td>D2.3</td>
+<td><strong>Fallback Exploitation</strong></td>
+<td>Deliberately failing liveness to trigger a weaker fallback verification method</td>
+<td>L2</td>
+<td>🟡 Medium</td>
+</tr>
+<tr>
+<td>D3.1</td>
+<td><strong>Identical Twin</strong></td>
+<td>Twin sibling passing liveness and face matching on behalf of the other</td>
+<td>L1</td>
+<td>🔴🔴 Very High</td>
+</tr>
+<tr>
+<td>D3.2</td>
+<td><strong>Lookalike/Doppelganger</strong></td>
+<td>Person with similar appearance attempting to pass as the target</td>
+<td>L1</td>
+<td>🔴 High</td>
+</tr>
+<tr>
+<td>D3.3</td>
+<td><strong>Account Mule (Willing Participant)</strong></td>
+<td>Legitimate person knowingly opens account for criminal use</td>
+<td>L1</td>
+<td>🔴🔴 Very High (passes all checks)</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3 id="e-adversarial-machine-learning-attacks">E. Adversarial Machine Learning Attacks<a class="headerlink" href="#e-adversarial-machine-learning-attacks" title="Permanent link">&para;</a></h3>
+<p>Attacks specifically targeting the <strong>ML models</strong> powering the liveness system.</p>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Attack</th>
+<th>Description</th>
+<th>Sophistication</th>
+<th>Detection Difficulty</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>E1.1</td>
+<td><strong>White-box Adversarial Perturbation</strong></td>
+<td>Attacker has full model access; crafts optimal pixel perturbations to flip prediction</td>
+<td>L5</td>
+<td>🔴🔴🔴 Extreme</td>
+</tr>
+<tr>
+<td>E1.2</td>
+<td><strong>Adversarial Patch</strong></td>
+<td>Visible patch placed on/near the face that causes model misclassification</td>
+<td>L4</td>
+<td>🔴🔴 Very High</td>
+</tr>
+<tr>
+<td>E1.3</td>
+<td><strong>Adversarial Glasses/Accessories</strong></td>
+<td>Specially designed glasses, makeup, or accessories with adversarial patterns</td>
+<td>L4</td>
+<td>🔴🔴 Very High</td>
+</tr>
+<tr>
+<td>E2.1</td>
+<td><strong>Black-box Query Attack</strong></td>
+<td>Iteratively queries the API with modified inputs to find adversarial examples</td>
+<td>L3</td>
+<td>🔴 High</td>
+</tr>
+<tr>
+<td>E2.2</td>
+<td><strong>Transfer Attack</strong></td>
+<td>Adversarial examples crafted on a surrogate model transfer to target model</td>
+<td>L3</td>
+<td>🔴 High</td>
+</tr>
+<tr>
+<td>E2.3</td>
+<td><strong>Score-based Attack</strong></td>
+<td>Uses returned liveness scores to optimize attack images via gradient estimation</td>
+<td>L3</td>
+<td>🔴 High</td>
+</tr>
+<tr>
+<td>E3.1</td>
+<td><strong>Model Extraction</strong></td>
+<td>Reverse-engineers the liveness model through API queries to create a local copy</td>
+<td>L4</td>
+<td>🔴🔴 Very High</td>
+</tr>
+<tr>
+<td>E3.2</td>
+<td><strong>Model Extraction + Adversarial</strong></td>
+<td>Extracts model, then crafts targeted adversarial attacks against the extracted model</td>
+<td>L4</td>
+<td>🔴🔴🔴 Extreme</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="attack-to-defense-mapping">Attack-to-Defense Mapping<a class="headerlink" href="#attack-to-defense-mapping" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Attack Category</th>
+<th>Primary Defenses</th>
+<th>Secondary Defenses</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>2D Flat Attacks (A1)</strong></td>
+<td>Texture analysis, frequency analysis, depth estimation</td>
+<td>Moiré detection, reflection analysis</td>
+</tr>
+<tr>
+<td><strong>3D Masks (A2)</strong></td>
+<td>Skin texture analysis, material classification, rPPG</td>
+<td>Active challenges, NIR imaging (if available)</td>
+</tr>
+<tr>
+<td><strong>Injection Attacks (B1-B3)</strong></td>
+<td>Device attestation, virtual camera detection, SDK integrity</td>
+<td>Certificate pinning, session binding, root/jailbreak detection</td>
+</tr>
+<tr>
+<td><strong>Deepfakes (C1)</strong></td>
+<td>Temporal consistency analysis, forensic frequency analysis, rPPG</td>
+<td>Multi-frame analysis, physiological signal detection</td>
+</tr>
+<tr>
+<td><strong>Synthetic Identity (C2-C3)</strong></td>
+<td>GAN fingerprint detection, face quality analysis</td>
+<td>Cross-database duplicate checks, document-face consistency</td>
+</tr>
+<tr>
+<td><strong>Social Engineering (D)</strong></td>
+<td>Multi-factor verification, behavioral analytics</td>
+<td>Process controls, audit trails, insider monitoring</td>
+</tr>
+<tr>
+<td><strong>Adversarial ML (E)</strong></td>
+<td>Adversarial training, input preprocessing, ensemble models</td>
+<td>Rate limiting, score distribution monitoring, model diversity</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="attack-prevalence-by-banking-context">Attack Prevalence by Banking Context<a class="headerlink" href="#attack-prevalence-by-banking-context" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Context</th>
+<th>Most Common Attacks</th>
+<th>Most Dangerous Attacks</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Digital Onboarding</strong></td>
+<td>Screen replay (A1.4-A1.6), printed photo (A1.1-A1.2)</td>
+<td>Synthetic identity (C2.3), deepfake (C1.2)</td>
+</tr>
+<tr>
+<td><strong>Transaction Auth</strong></td>
+<td>Session hijacking (D2.1), API replay (B2.1)</td>
+<td>Real-time deepfake (C1.2), coercion (D1.1)</td>
+</tr>
+<tr>
+<td><strong>Video KYC</strong></td>
+<td>Video replay (A1.7), face reenactment (C1.3)</td>
+<td>Audio-visual deepfake (C1.6), relay (B3.5)</td>
+</tr>
+<tr>
+<td><strong>Loan Disbursement</strong></td>
+<td>Synthetic identity (C2.3), lookalike (D3.2)</td>
+<td>Organized fraud ring with multiple vectors</td>
+</tr>
+<tr>
+<td><strong>Account Recovery</strong></td>
+<td>Screen replay (A1.4), virtual camera (B1.1)</td>
+<td>Deepfake of account holder (C1.2)</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<div class="admonition danger">
+<p class="admonition-title">The Arms Race Reality</p>
+<p>The attack landscape evolves continuously. Any static defense will eventually be bypassed. <strong>Continuous model updates, red team exercises, and threat intelligence sharing are mandatory</strong> — not optional — for banking deployments.</p>
+</div>
+<hr />
+<p><em>Detailed exploration of each category continues in the following pages:</em></p>
+<ul>
+<li><em><a href="../physical-attacks/">Physical Presentation Attacks →</a></em></li>
+<li><em><a href="../digital-attacks/">Digital &amp; Injection Attacks →</a></em></li>
+<li><em><a href="../ai-generative-attacks/">AI &amp; Generative Attacks →</a></em></li>
+<li><em><a href="../deepfakes/">Deepfakes — The Evolving Threat →</a></em></li>
+<li><em><a href="../social-engineering/">Social Engineering &amp; Process Attacks →</a></em></li>
+<li><em><a href="../adversarial-ml/">Adversarial ML Attacks →</a></em></li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        
+<div class="md-social">
+  
+    
+    
+    
+    
+    <a href="#" target="_blank" rel="noopener" title="" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3M135.4 416H69V202.2h66.5V416zM102.2 96a38.5 38.5 0 1 1 0 77 38.5 38.5 0 1 1 0-77m282.1 320h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9z"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "navigation.expand", "navigation.path", "navigation.top", "toc.follow", "search.suggest", "search.highlight", "content.tabs.link", "content.code.copy"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>
