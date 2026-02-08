@@ -50,11 +50,11 @@ Synchronizes mouth movements to arbitrary audio — used to bypass speech-based 
 
 ```mermaid
 graph TD
-    A["GAN / Diffusion Model\ngenerates face that\ndoesn't exist"] --> B["Paired with\nfabricated identity\ndocuments"]
-    B --> C["Complete synthetic\nidentity package"]
-    C --> D["Passes liveness\n(face is 'real'\nin liveness sense)"]
-    C --> E["Passes face matching\n(document and face\nwere created together)"]
-    D --> F["Account opened under\ncompletely fake identity"]
+    A["GAN / Diffusion Model<br>generates face that<br>doesn't exist"] --> B["Paired with<br>fabricated identity<br>documents"]
+    B --> C["Complete synthetic<br>identity package"]
+    C --> D["Passes liveness<br>(face is 'real'<br>in liveness sense)"]
+    C --> E["Passes face matching<br>(document and face<br>were created together)"]
+    D --> F["Account opened under<br>completely fake identity"]
     E --> F
 ```
 

@@ -6,12 +6,12 @@
 
 ```mermaid
 graph TD
-    A["🚨 Bypass\nDetected"] --> B["1. CONTAIN\n(Disable affected\nattack vector)"]
-    B --> C["2. ASSESS\n(How many accounts\naffected?)"]
-    C --> D["3. NOTIFY\n(Regulator, CISO,\nBoard)"]
-    D --> E["4. REMEDIATE\n(Patch model,\nupdate thresholds)"]
-    E --> F["5. RE-VERIFY\n(Review affected\naccounts)"]
-    F --> G["6. REPORT\n(Root cause,\nlessons learned)"]
+    A["🚨 Bypass<br>Detected"] --> B["1. CONTAIN<br>(Disable affected<br>attack vector)"]
+    B --> C["2. ASSESS<br>(How many accounts<br>affected?)"]
+    C --> D["3. NOTIFY<br>(Regulator, CISO,<br>Board)"]
+    D --> E["4. REMEDIATE<br>(Patch model,<br>update thresholds)"]
+    E --> F["5. RE-VERIFY<br>(Review affected<br>accounts)"]
+    F --> G["6. REPORT<br>(Root cause,<br>lessons learned)"]
 ```
 
 ## Response Timeline

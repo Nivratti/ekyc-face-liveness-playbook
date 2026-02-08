@@ -17,11 +17,11 @@ The accuracy of any face liveness system is **fundamentally constrained by the q
 
 ```mermaid
 graph TD
-    A["Captured Frame\nResolution"] --> B["Face Detection\n& Cropping"]
-    B --> C["Face Region\n(Inter-Ocular Distance)"]
+    A["Captured Frame<br>Resolution"] --> B["Face Detection<br>& Cropping"]
+    B --> C["Face Region<br>(Inter-Ocular Distance)"]
     C --> D{"IOD ≥ 90px?"}
-    D -->|"Yes"| E["✅ Sufficient\nfor liveness"]
-    D -->|"No"| F["❌ Too small\nAsk user to\nmove closer"]
+    D -->|"Yes"| E["✅ Sufficient<br>for liveness"]
+    D -->|"No"| F["❌ Too small<br>Ask user to<br>move closer"]
     
     style E fill:#27ae60,color:#fff
     style F fill:#e74c3c,color:#fff
@@ -79,9 +79,9 @@ graph TD
 ```mermaid
 graph LR
     subgraph "Acceptable Pose Range"
-        A["YAW\n(left/right)\n±20°"]
-        B["PITCH\n(up/down)\n±15°"]
-        C["ROLL\n(tilt)\n±15°"]
+        A["YAW<br>(left/right)<br>±20°"]
+        B["PITCH<br>(up/down)<br>±15°"]
+        C["ROLL<br>(tilt)<br>±15°"]
     end
 ```
 
@@ -168,26 +168,26 @@ graph LR
 
 ```mermaid
 graph TD
-    A["Raw Camera\nFrame"] --> B["Face Detection\n(BlazeFace / SCRFD)"]
-    B --> C{"Face\nDetected?"}
-    C -->|"No"| D["Guide: 'Position\nyour face in frame'"]
-    C -->|"Yes"| E["Landmark\nDetection"]
+    A["Raw Camera<br>Frame"] --> B["Face Detection<br>(BlazeFace / SCRFD)"]
+    B --> C{"Face<br>Detected?"}
+    C -->|"No"| D["Guide: 'Position<br>your face in frame'"]
+    C -->|"Yes"| E["Landmark<br>Detection"]
     
-    E --> F["Check 1:\nFace Size\n(IOD ≥ 90px?)"]
-    F -->|"Fail"| G["Guide: 'Move\ncloser/farther'"]
-    F -->|"Pass"| H["Check 2:\nSharpness\n(Laplacian > 100?)"]
+    E --> F["Check 1:<br>Face Size<br>(IOD ≥ 90px?)"]
+    F -->|"Fail"| G["Guide: 'Move<br>closer/farther'"]
+    F -->|"Pass"| H["Check 2:<br>Sharpness<br>(Laplacian > 100?)"]
     
-    H -->|"Fail"| I["Guide: 'Hold\ndevice steady'"]
-    H -->|"Pass"| J["Check 3:\nBrightness\n(60 < mean < 200?)"]
+    H -->|"Fail"| I["Guide: 'Hold<br>device steady'"]
+    H -->|"Pass"| J["Check 3:<br>Brightness<br>(60 < mean < 200?)"]
     
-    J -->|"Fail"| K["Guide: 'Move to\nbetter lighting'"]
-    J -->|"Pass"| L["Check 4:\nPose Angles\n(Within limits?)"]
+    J -->|"Fail"| K["Guide: 'Move to<br>better lighting'"]
+    J -->|"Pass"| L["Check 4:<br>Pose Angles<br>(Within limits?)"]
     
-    L -->|"Fail"| M["Guide: 'Look\nstraight at camera'"]
-    L -->|"Pass"| N["Check 5:\nOcclusion\n(No sunglasses/hands?)"]
+    L -->|"Fail"| M["Guide: 'Look<br>straight at camera'"]
+    L -->|"Pass"| N["Check 5:<br>Occlusion<br>(No sunglasses/hands?)"]
     
-    N -->|"Fail"| O["Guide: 'Remove\nobstruction'"]
-    N -->|"Pass"| P["✅ Quality Pass\n→ Liveness Analysis"]
+    N -->|"Fail"| O["Guide: 'Remove<br>obstruction'"]
+    N -->|"Pass"| P["✅ Quality Pass<br>→ Liveness Analysis"]
     
     style P fill:#27ae60,color:#fff
 ```

@@ -16,13 +16,13 @@ A projector emits a known pattern of **infrared dots** (30,000+ dots for Face ID
 
 ```mermaid
 graph LR
-    A["IR Dot\nProjector"] --> B["30,000+ IR dots\nprojected onto face"]
-    B --> C["IR Camera\ncaptures deformed\npattern"]
-    C --> D["Triangulation\nalgorithm"]
-    D --> E["Dense 3D\nDepth Map"]
-    E --> F{"3D face\ngeometry\nconsistent?"}
+    A["IR Dot<br>Projector"] --> B["30,000+ IR dots<br>projected onto face"]
+    B --> C["IR Camera<br>captures deformed<br>pattern"]
+    C --> D["Triangulation<br>algorithm"]
+    D --> E["Dense 3D<br>Depth Map"]
+    E --> F{"3D face<br>geometry<br>consistent?"}
     F -->|"Yes"| G["✅ Live"]
-    F -->|"No"| H["❌ Flat surface\ndetected"]
+    F -->|"No"| H["❌ Flat surface<br>detected"]
     
     style G fill:#27ae60,color:#fff
     style H fill:#e74c3c,color:#fff

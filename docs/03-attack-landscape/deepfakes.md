@@ -6,10 +6,10 @@
 
 ```mermaid
 graph LR
-    A["2017: Basic\nface swaps\n(minutes to create,\neasy to detect)"] --> B["2019: DeepFaceLab\n(hours, moderate\ndetection)"]
-    B --> C["2021: Real-time\nface swap\n(instant, harder\nto detect)"]
-    C --> D["2023: LivePortrait\nOne-shot animation\n(seconds from single\nphoto, very hard)"]
-    D --> E["2025+: Neural\navatars, 3D Gaussians\n(real-time, near\nindistinguishable)"]
+    A["2017: Basic<br>face swaps<br>(minutes to create,<br>easy to detect)"] --> B["2019: DeepFaceLab<br>(hours, moderate<br>detection)"]
+    B --> C["2021: Real-time<br>face swap<br>(instant, harder<br>to detect)"]
+    C --> D["2023: LivePortrait<br>One-shot animation<br>(seconds from single<br>photo, very hard)"]
+    D --> E["2025+: Neural<br>avatars, 3D Gaussians<br>(real-time, near<br>indistinguishable)"]
 ```
 
 ---
@@ -43,20 +43,20 @@ graph LR
 
 ```mermaid
 graph TD
-    A["Input Video\n(N frames)"] --> B["Frame-level\nDeepfake Detector\n(per-frame score)"]
-    A --> C["Temporal\nConsistency\nAnalyzer"]
-    A --> D["rPPG Extractor\n(physiological\nsignal)"]
-    A --> E["Forensic\nFrequency\nAnalyzer"]
+    A["Input Video<br>(N frames)"] --> B["Frame-level<br>Deepfake Detector<br>(per-frame score)"]
+    A --> C["Temporal<br>Consistency<br>Analyzer"]
+    A --> D["rPPG Extractor<br>(physiological<br>signal)"]
+    A --> E["Forensic<br>Frequency<br>Analyzer"]
     
-    B --> F["Ensemble\nFusion"]
+    B --> F["Ensemble<br>Fusion"]
     C --> F
     D --> F
     E --> F
     
-    F --> G{"Deepfake\nProbability"}
-    G -->|"> 0.7"| H["❌ Deepfake\nDetected"]
-    G -->|"0.3 - 0.7"| I["⚠️ Uncertain\nEscalate"]
-    G -->|"< 0.3"| J["✅ Likely\nGenuine"]
+    F --> G{"Deepfake<br>Probability"}
+    G -->|"> 0.7"| H["❌ Deepfake<br>Detected"]
+    G -->|"0.3 - 0.7"| I["⚠️ Uncertain<br>Escalate"]
+    G -->|"< 0.3"| J["✅ Likely<br>Genuine"]
 ```
 
 ---

@@ -6,7 +6,7 @@
 
 ```mermaid
 graph LR
-    A["Capture"] --> B["Process"] --> C["Store\n(if required)"] --> D["Retain\n(per regulation)"] --> E["Delete\n(mandatory)"]
+    A["Capture"] --> B["Process"] --> C["Store<br>(if required)"] --> D["Retain<br>(per regulation)"] --> E["Delete<br>(mandatory)"]
 ```
 
 ## Regulatory Requirements

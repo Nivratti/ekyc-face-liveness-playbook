@@ -20,7 +20,7 @@ Without liveness verification, a facial recognition system has no way to disting
 ```mermaid
 graph LR
     A["📸 Camera Sensor"] --> B{"What does it see?"}
-    B --> C["✅ Real Person\n(Bona Fide)"]
+    B --> C["✅ Real Person<br>(Bona Fide)"]
     B --> D["❌ Printed Photo"]
     B --> E["❌ Screen Replay"]
     B --> F["❌ 3D Mask"]
@@ -57,11 +57,11 @@ Face liveness systems analyze multiple signal dimensions to distinguish real fro
 ```mermaid
 graph TD
     subgraph "Signal Dimensions Analyzed"
-        A["🔬 TEXTURE\nSkin micro-patterns\nPore structure\nSpecular highlights"] 
-        B["📐 GEOMETRY\n3D facial structure\nDepth consistency\nParallax effects"]
-        C["⏱️ TEMPORAL\nNatural motion\nMicro-expressions\nBlink patterns"]
-        D["🌈 SPECTRAL\nColor response\nNIR reflectance\nFrequency domain"]
-        E["🧠 BEHAVIORAL\nChallenge response\nGaze tracking\nPhysiological signals"]
+        A["🔬 TEXTURE<br>Skin micro-patterns<br>Pore structure<br>Specular highlights"] 
+        B["📐 GEOMETRY<br>3D facial structure<br>Depth consistency<br>Parallax effects"]
+        C["⏱️ TEMPORAL<br>Natural motion<br>Micro-expressions<br>Blink patterns"]
+        D["🌈 SPECTRAL<br>Color response<br>NIR reflectance<br>Frequency domain"]
+        E["🧠 BEHAVIORAL<br>Challenge response<br>Gaze tracking<br>Physiological signals"]
     end
     
     A --> F["Score Fusion"]

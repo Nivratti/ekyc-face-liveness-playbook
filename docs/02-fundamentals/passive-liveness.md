@@ -11,12 +11,12 @@ Passive liveness detection analyzes a **single image or short video clip** witho
 
 ```mermaid
 graph LR
-    A["📸 User takes\nselfie / looks\nat camera"] --> B["Face Detection\n& Quality Check"]
-    B --> C["Feature\nExtraction"]
-    C --> D["Multi-Signal\nAnalysis"]
-    D --> E["Liveness\nScore"]
+    A["📸 User takes<br>selfie / looks<br>at camera"] --> B["Face Detection<br>& Quality Check"]
+    B --> C["Feature<br>Extraction"]
+    C --> D["Multi-Signal<br>Analysis"]
+    D --> E["Liveness<br>Score"]
     E --> F{"Decision"}
-    F -->|"Live"| G["✅ Continue\nto face matching"]
+    F -->|"Live"| G["✅ Continue<br>to face matching"]
     F -->|"Spoof"| H["❌ Reject"]
     
     style G fill:#27ae60,color:#fff
@@ -45,16 +45,16 @@ The most fundamental passive liveness signal. Deep learning models analyze **mic
 
 ```mermaid
 graph TD
-    A["Input Face Image\n224×224 or 256×256"] --> B["Backbone CNN\n(MobileNetV3 / EfficientNet)"]
-    B --> C["Multi-Scale\nFeature Maps"]
-    C --> D["Low-level features:\nEdge patterns, noise\n(Layers 1-3)"]
-    C --> E["Mid-level features:\nTexture patterns, pores\n(Layers 4-8)"]
-    C --> F["High-level features:\nSemantic understanding\n(Layers 9+)"]
-    D --> G["Feature\nAggregation"]
+    A["Input Face Image<br>224×224 or 256×256"] --> B["Backbone CNN<br>(MobileNetV3 / EfficientNet)"]
+    B --> C["Multi-Scale<br>Feature Maps"]
+    C --> D["Low-level features:<br>Edge patterns, noise<br>(Layers 1-3)"]
+    C --> E["Mid-level features:<br>Texture patterns, pores<br>(Layers 4-8)"]
+    C --> F["High-level features:<br>Semantic understanding<br>(Layers 9+)"]
+    D --> G["Feature<br>Aggregation"]
     E --> G
     F --> G
     G --> H["Classification Head"]
-    H --> I["Liveness Score\n0.0 → 1.0"]
+    H --> I["Liveness Score<br>0.0 → 1.0"]
 ```
 
 ---
@@ -89,14 +89,14 @@ The model is trained with **auxiliary depth supervision** — alongside the live
 
 ```mermaid
 graph LR
-    A["Face Image"] --> B["2D FFT\n(Fourier Transform)"]
+    A["Face Image"] --> B["2D FFT<br>(Fourier Transform)"]
     B --> C["Power Spectrum"]
-    C --> D["Frequency\nSignature Analysis"]
+    C --> D["Frequency<br>Signature Analysis"]
     
-    D --> E["High-frequency peaks\nat regular intervals?\n→ Print halftone"]
-    D --> F["RGB sub-pixel\nfrequency peaks?\n→ Screen display"]
-    D --> G["Natural 1/f\nnoise falloff?\n→ Live face"]
-    D --> H["GAN upsampling\nartifacts?\n→ Deepfake"]
+    D --> E["High-frequency peaks<br>at regular intervals?<br>→ Print halftone"]
+    D --> F["RGB sub-pixel<br>frequency peaks?<br>→ Screen display"]
+    D --> G["Natural 1/f<br>noise falloff?<br>→ Live face"]
+    D --> H["GAN upsampling<br>artifacts?<br>→ Deepfake"]
 ```
 
 **Frequency signatures by attack type:**
@@ -148,14 +148,14 @@ Even from a "single image" passive approach, **short video clips** (2-5 seconds)
 
 ```mermaid
 graph TD
-    A["Short video clip\n(2-5 seconds, 15-30 FPS)"] --> B["Face region\nof interest (ROI)\nextraction"]
-    B --> C["Per-frame mean\ncolor values\n(R, G, B channels)"]
-    C --> D["Temporal signal\nextraction"]
-    D --> E["Bandpass filter\n(0.7 - 4.0 Hz)\n= 42-240 BPM"]
-    E --> F["FFT / Peak\ndetection"]
-    F --> G{"Periodic signal\ndetected at\nheart rate frequency?"}
-    G -->|"Yes: Clear periodic signal"| H["✅ Live\n(heart beating)"]
-    G -->|"No: Flat/noisy signal"| I["❌ Spoof\n(no blood flow)"]
+    A["Short video clip<br>(2-5 seconds, 15-30 FPS)"] --> B["Face region<br>of interest (ROI)<br>extraction"]
+    B --> C["Per-frame mean<br>color values<br>(R, G, B channels)"]
+    C --> D["Temporal signal<br>extraction"]
+    D --> E["Bandpass filter<br>(0.7 - 4.0 Hz)<br>= 42-240 BPM"]
+    E --> F["FFT / Peak<br>detection"]
+    F --> G{"Periodic signal<br>detected at<br>heart rate frequency?"}
+    G -->|"Yes: Clear periodic signal"| H["✅ Live<br>(heart beating)"]
+    G -->|"No: Flat/noisy signal"| I["❌ Spoof<br>(no blood flow)"]
     
     style H fill:#27ae60,color:#fff
     style I fill:#e74c3c,color:#fff
@@ -176,20 +176,20 @@ graph TD
 
 ```mermaid
 graph TD
-    A["Input: Face Image\n256×256×3"] --> B["Shared Backbone\n(EfficientNet-B0 /\nMobileNetV3-Large)"]
-    B --> C["Feature Maps\nMulti-scale"]
+    A["Input: Face Image<br>256×256×3"] --> B["Shared Backbone<br>(EfficientNet-B0 /<br>MobileNetV3-Large)"]
+    B --> C["Feature Maps<br>Multi-scale"]
     
-    C --> D["Head 1:\nBinary Liveness\n(Live / Spoof)"]
-    C --> E["Head 2:\nDepth Map\nEstimation"]
-    C --> F["Head 3:\nAttack Type\nClassification"]
-    C --> G["Head 4:\nDomain Classifier\n(for DG training)"]
+    C --> D["Head 1:<br>Binary Liveness<br>(Live / Spoof)"]
+    C --> E["Head 2:<br>Depth Map<br>Estimation"]
+    C --> F["Head 3:<br>Attack Type<br>Classification"]
+    C --> G["Head 4:<br>Domain Classifier<br>(for DG training)"]
     
-    D --> H["Liveness\nScore"]
-    E --> I["Depth Map\n32×32"]
-    F --> J["Attack Type\nProbabilities"]
-    G --> K["Domain\nPrediction"]
+    D --> H["Liveness<br>Score"]
+    E --> I["Depth Map<br>32×32"]
+    F --> J["Attack Type<br>Probabilities"]
+    G --> K["Domain<br>Prediction"]
     
-    H --> L["Score Fusion\n& Decision"]
+    H --> L["Score Fusion<br>& Decision"]
     I --> L
     J --> L
 ```

@@ -6,12 +6,12 @@
 
 ```mermaid
 graph TD
-    A["Layer 1: Device Integrity\n(Root/JB detection, attestation)"] --> B["Layer 2: SDK Integrity\n(Obfuscation, anti-tampering)"]
-    B --> C["Layer 3: Transport Security\n(TLS pinning, encryption)"]
-    C --> D["Layer 4: Session Security\n(Nonces, anti-replay)"]
-    D --> E["Layer 5: Model Security\n(Obfuscation, adversarial defense)"]
-    E --> F["Layer 6: API Security\n(Rate limiting, authentication)"]
-    F --> G["Layer 7: Monitoring\n(Anomaly detection, alerting)"]
+    A["Layer 1: Device Integrity<br>(Root/JB detection, attestation)"] --> B["Layer 2: SDK Integrity<br>(Obfuscation, anti-tampering)"]
+    B --> C["Layer 3: Transport Security<br>(TLS pinning, encryption)"]
+    C --> D["Layer 4: Session Security<br>(Nonces, anti-replay)"]
+    D --> E["Layer 5: Model Security<br>(Obfuscation, adversarial defense)"]
+    E --> F["Layer 6: API Security<br>(Rate limiting, authentication)"]
+    F --> G["Layer 7: Monitoring<br>(Anomaly detection, alerting)"]
 ```
 
 ## Implementation Checklist

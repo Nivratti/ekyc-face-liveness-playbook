@@ -14,9 +14,9 @@ Digital attacks **bypass the physical camera entirely**, injecting manipulated c
 
 ```mermaid
 graph TD
-    A["Attacker installs\nvirtual camera software\n(OBS, ManyCam, v4l2loopback)"] --> B["Feeds pre-recorded\nor deepfake video\nas camera input"]
-    B --> C["Banking app opens\n'camera' — sees\nvirtual camera feed"]
-    C --> D["Liveness system\nreceives injected\nframes"]
+    A["Attacker installs<br>virtual camera software<br>(OBS, ManyCam, v4l2loopback)"] --> B["Feeds pre-recorded<br>or deepfake video<br>as camera input"]
+    B --> C["Banking app opens<br>'camera' — sees<br>virtual camera feed"]
+    C --> D["Liveness system<br>receives injected<br>frames"]
 ```
 
 ### Detection Methods
@@ -38,10 +38,10 @@ graph TD
 
 ```mermaid
 graph LR
-    A["Camera\nHardware"] --> B["Camera HAL\n(Hardware Abstraction)"]
-    B --> C["Camera2 API\n/ CameraX"]
-    C --> D["⚠️ HOOK POINT:\nFrida/Xposed\nintercepts here"]
-    D --> E["Banking App\n(receives modified frames)"]
+    A["Camera<br>Hardware"] --> B["Camera HAL<br>(Hardware Abstraction)"]
+    B --> C["Camera2 API<br>/ CameraX"]
+    C --> D["⚠️ HOOK POINT:<br>Frida/Xposed<br>intercepts here"]
+    D --> E["Banking App<br>(receives modified frames)"]
 ```
 
 **Defense layers:**

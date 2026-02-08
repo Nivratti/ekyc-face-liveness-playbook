@@ -39,12 +39,12 @@ The user is instructed to turn their head in a specific direction (left, right, 
 
 ```mermaid
 graph TD
-    A["Challenge Issued:\n'Turn head left'"] --> B["Face Landmark\nTracking (478 points)"]
-    B --> C["3D Head Pose\nEstimation"]
-    C --> D{"Yaw angle\nchanged > 15°?"}
-    D -->|Yes| E["Analyze Motion\nNaturalness"]
+    A["Challenge Issued:<br>'Turn head left'"] --> B["Face Landmark<br>Tracking (478 points)"]
+    B --> C["3D Head Pose<br>Estimation"]
+    C --> D{"Yaw angle<br>changed > 15°?"}
+    D -->|Yes| E["Analyze Motion<br>Naturalness"]
     D -->|No| F["Timeout / Retry"]
-    E --> G{"Natural motion\ncharacteristics?"}
+    E --> G{"Natural motion<br>characteristics?"}
     G -->|Yes| H["✅ Challenge Passed"]
     G -->|No| I["❌ Suspicious Motion"]
     
@@ -111,12 +111,12 @@ The user follows a moving target on the screen with their eyes.
 
 ```mermaid
 graph LR
-    A["Random target\nappears on screen"] --> B["User tracks\nwith eyes"]
-    B --> C["Iris position\nextracted per frame"]
-    C --> D["Gaze trajectory\nmapped"]
-    D --> E{"Trajectory matches\ntarget path?"}
-    E -->|Match| F["Analyze saccadic\npatterns"]
-    F --> G{"Natural eye\nmovement?"}
+    A["Random target<br>appears on screen"] --> B["User tracks<br>with eyes"]
+    B --> C["Iris position<br>extracted per frame"]
+    C --> D["Gaze trajectory<br>mapped"]
+    D --> E{"Trajectory matches<br>target path?"}
+    E -->|Match| F["Analyze saccadic<br>patterns"]
+    F --> G{"Natural eye<br>movement?"}
     G -->|Yes| H["✅ Pass"]
     G -->|No| I["❌ Fail"]
     
@@ -145,10 +145,10 @@ The device screen flashes a random sequence of colors while the front camera cap
 
 ```mermaid
 graph TD
-    A["Generate random\ncolor sequence:\nR→G→B→W→R→B"] --> B["Flash each color\nfor 200-500ms"]
-    B --> C["Capture face under\neach illumination"]
-    C --> D["Analyze per-color\nreflectance response"]
-    D --> E{"Response matches\nexpected skin\nreflectance model?"}
+    A["Generate random<br>color sequence:<br>R→G→B→W→R→B"] --> B["Flash each color<br>for 200-500ms"]
+    B --> C["Capture face under<br>each illumination"]
+    C --> D["Analyze per-color<br>reflectance response"]
+    D --> E{"Response matches<br>expected skin<br>reflectance model?"}
     E -->|Yes| F["✅ Live"]
     E -->|No| G["❌ Spoof"]
     
@@ -208,22 +208,22 @@ The randomization of challenges is critical — predictable challenges can be pr
 
 ```mermaid
 graph TD
-    A["Server generates\nchallenge pool"] --> B["Random selection\n(cryptographically secure)"]
-    B --> C["Challenge sequence\ngenerated"]
-    C --> D{"Challenge type\nrandomization"}
-    D --> E["Random direction\n(head movement)"]
-    D --> F["Random expression\n(smile/blink/brow)"]
-    D --> G["Random gaze target\nposition & path"]
-    D --> H["Random color\nsequence"]
-    D --> I["Random speech\nphrase"]
+    A["Server generates<br>challenge pool"] --> B["Random selection<br>(cryptographically secure)"]
+    B --> C["Challenge sequence<br>generated"]
+    C --> D{"Challenge type<br>randomization"}
+    D --> E["Random direction<br>(head movement)"]
+    D --> F["Random expression<br>(smile/blink/brow)"]
+    D --> G["Random gaze target<br>position & path"]
+    D --> H["Random color<br>sequence"]
+    D --> I["Random speech<br>phrase"]
     
-    E --> J["Sequence: 2-4\nchallenges from\ndifferent types"]
+    E --> J["Sequence: 2-4<br>challenges from<br>different types"]
     F --> J
     G --> J
     H --> J
     I --> J
     
-    J --> K["Bound to session\nwith nonce +\ntimestamp"]
+    J --> K["Bound to session<br>with nonce +<br>timestamp"]
 ```
 
 **Randomization principles:**
@@ -240,16 +240,16 @@ graph TD
 
 ```mermaid
 graph TD
-    A["Challenge 1\nScore: 0.92"] --> E["Weighted\nAggregation"]
-    B["Challenge 2\nScore: 0.87"] --> E
-    C["Challenge 3\nScore: 0.95"] --> E
-    D["Temporal Consistency\nScore: 0.90"] --> E
+    A["Challenge 1<br>Score: 0.92"] --> E["Weighted<br>Aggregation"]
+    B["Challenge 2<br>Score: 0.87"] --> E
+    C["Challenge 3<br>Score: 0.95"] --> E
+    D["Temporal Consistency<br>Score: 0.90"] --> E
     
-    E --> F["Active Liveness\nScore: 0.91"]
-    F --> G{"Threshold\nCheck"}
-    G -->|"≥ 0.85"| H["✅ Active\nLiveness Pass"]
-    G -->|"0.60 - 0.85"| I["⚠️ Additional\nChallenge"]
-    G -->|"< 0.60"| J["❌ Active\nLiveness Fail"]
+    E --> F["Active Liveness<br>Score: 0.91"]
+    F --> G{"Threshold<br>Check"}
+    G -->|"≥ 0.85"| H["✅ Active<br>Liveness Pass"]
+    G -->|"0.60 - 0.85"| I["⚠️ Additional<br>Challenge"]
+    G -->|"< 0.60"| J["❌ Active<br>Liveness Fail"]
     
     style H fill:#27ae60,color:#fff
     style I fill:#f39c12,color:#fff

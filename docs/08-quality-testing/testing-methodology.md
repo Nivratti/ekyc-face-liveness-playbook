@@ -6,10 +6,10 @@
 
 ```mermaid
 graph TD
-    A["Unit Tests\n(Component level)"] --> B["Integration Tests\n(Pipeline level)"]
-    B --> C["PAD Evaluation\n(ISO 30107-3\nprotocol)"]
-    C --> D["Red Team\nExercises"]
-    D --> E["Production\nMonitoring"]
+    A["Unit Tests<br>(Component level)"] --> B["Integration Tests<br>(Pipeline level)"]
+    B --> C["PAD Evaluation<br>(ISO 30107-3<br>protocol)"]
+    C --> D["Red Team<br>Exercises"]
+    D --> E["Production<br>Monitoring"]
 ```
 
 ## Internal PAD Test Protocol

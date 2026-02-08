@@ -8,11 +8,11 @@ For high-value or high-risk transactions, liveness verification serves as a **st
 
 ```mermaid
 graph TD
-    A["Customer initiates\ntransaction"] --> B{"Transaction\nrisk level?"}
-    B -->|"Low (< $1K)"| C["Standard auth\n(PIN/OTP)"]
-    B -->|"Medium ($1K-50K)"| D["Passive liveness\n(single selfie)"]
-    B -->|"High (> $50K)"| E["Active liveness\n(challenges +\ndeepfake detection)"]
-    B -->|"Critical (> $500K)"| F["Full liveness +\nmanual approval"]
+    A["Customer initiates<br>transaction"] --> B{"Transaction<br>risk level?"}
+    B -->|"Low (< $1K)"| C["Standard auth<br>(PIN/OTP)"]
+    B -->|"Medium ($1K-50K)"| D["Passive liveness<br>(single selfie)"]
+    B -->|"High (> $50K)"| E["Active liveness<br>(challenges +<br>deepfake detection)"]
+    B -->|"Critical (> $500K)"| F["Full liveness +<br>manual approval"]
 ```
 
 | Transaction Type | Liveness Requirement | Threshold |

@@ -8,13 +8,13 @@ Face liveness verification doesn't operate in isolation — it's one critical st
 
 ```mermaid
 graph TD
-    A["👤 User Initiates\nKYC Process"] --> B["📄 Stage 1:\nDocument Capture"]
-    B --> C["🔍 Stage 2:\nDocument Authentication"]
-    C --> D["📝 Stage 3:\nOCR & Data Extraction"]
-    D --> E["🧬 Stage 4:\nFACE LIVENESS\nVERIFICATION"]
-    E --> F["👥 Stage 5:\nFace Matching"]
-    F --> G["🗄️ Stage 6:\nDatabase & Watchlist Checks"]
-    G --> H["⚖️ Stage 7:\nRisk Scoring & Decision"]
+    A["👤 User Initiates<br>KYC Process"] --> B["📄 Stage 1:<br>Document Capture"]
+    B --> C["🔍 Stage 2:<br>Document Authentication"]
+    C --> D["📝 Stage 3:<br>OCR & Data Extraction"]
+    D --> E["🧬 Stage 4:<br>FACE LIVENESS<br>VERIFICATION"]
+    E --> F["👥 Stage 5:<br>Face Matching"]
+    F --> G["🗄️ Stage 6:<br>Database & Watchlist Checks"]
+    G --> H["⚖️ Stage 7:<br>Risk Scoring & Decision"]
     H --> I{"Decision"}
     I -->|"✅ Approved"| J["Account Opened"]
     I -->|"⚠️ Review"| K["Manual Review Queue"]
@@ -96,13 +96,13 @@ Structured data is extracted from the authenticated document using Optical Chara
 ```mermaid
 graph LR
     subgraph "Stage 4: Liveness Verification (Detailed)"
-        A["Camera\nFeed"] --> B["Face\nDetection"]
-        B --> C["Quality\nAssessment"]
-        C -->|"Pass"| D["Passive\nLiveness"]
-        C -->|"Fail"| C2["Re-capture\nGuidance"]
-        D --> E["Active\nChallenge\n(if required)"]
-        E --> F["Deepfake\nDetection"]
-        F --> G["Score\nFusion"]
+        A["Camera<br>Feed"] --> B["Face<br>Detection"]
+        B --> C["Quality<br>Assessment"]
+        C -->|"Pass"| D["Passive<br>Liveness"]
+        C -->|"Fail"| C2["Re-capture<br>Guidance"]
+        D --> E["Active<br>Challenge<br>(if required)"]
+        E --> F["Deepfake<br>Detection"]
+        F --> G["Score<br>Fusion"]
         G --> H{"Decision"}
         H -->|"Live"| I["→ Stage 5"]
         H -->|"Spoof"| J["❌ Reject"]
@@ -162,9 +162,9 @@ graph TD
     F["Device/Behavioral Signals"] --> G
     
     G --> H{"Risk Level"}
-    H -->|"Low Risk"| I["✅ Auto-Approve\n(STP - Straight Through Processing)"]
-    H -->|"Medium Risk"| J["⚠️ Manual Review\n(Enhanced Due Diligence)"]
-    H -->|"High Risk"| K["❌ Auto-Reject\n(with reason codes)"]
+    H -->|"Low Risk"| I["✅ Auto-Approve<br>(STP - Straight Through Processing)"]
+    H -->|"Medium Risk"| J["⚠️ Manual Review<br>(Enhanced Due Diligence)"]
+    H -->|"High Risk"| K["❌ Auto-Reject<br>(with reason codes)"]
     
     style I fill:#27ae60,stroke:#1e8449,color:#fff
     style J fill:#f39c12,stroke:#d68910,color:#fff

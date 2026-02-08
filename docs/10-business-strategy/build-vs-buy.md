@@ -6,14 +6,14 @@
 
 ```mermaid
 graph TD
-    A{"Core competency\nin biometric AI?"} -->|"Yes"| B{"Budget for\n5+ person ML team\n(ongoing)?"}
+    A{"Core competency<br>in biometric AI?"} -->|"Yes"| B{"Budget for<br>5+ person ML team<br>(ongoing)?"}
     A -->|"No"| C["BUY (SDK/API)"]
     
-    B -->|"Yes"| D{"Regulatory need\nfor full control?"}
+    B -->|"Yes"| D{"Regulatory need<br>for full control?"}
     B -->|"No"| C
     
     D -->|"Yes"| E["BUILD in-house"]
-    D -->|"No"| F["HYBRID\n(Buy SDK +\ncustomize)"]
+    D -->|"No"| F["HYBRID<br>(Buy SDK +<br>customize)"]
 ```
 
 ## Comparison

@@ -12,32 +12,32 @@ Understanding every possible attack vector is **the foundation of building a sec
 
 ```mermaid
 graph TD
-    ROOT["Face Liveness\nAttack Vectors"] --> A["🖼️ Physical\nPresentation Attacks"]
-    ROOT --> B["💻 Digital &\nInjection Attacks"]
-    ROOT --> C["🤖 AI & Generative\nAttacks"]
-    ROOT --> D["🧠 Social Engineering\n& Process Attacks"]
-    ROOT --> E["⚔️ Adversarial\nML Attacks"]
+    ROOT["Face Liveness<br>Attack Vectors"] --> A["🖼️ Physical<br>Presentation Attacks"]
+    ROOT --> B["💻 Digital &<br>Injection Attacks"]
+    ROOT --> C["🤖 AI & Generative<br>Attacks"]
+    ROOT --> D["🧠 Social Engineering<br>& Process Attacks"]
+    ROOT --> E["⚔️ Adversarial<br>ML Attacks"]
     
     A --> A1["2D Attacks"]
     A --> A2["3D Attacks"]
-    A --> A3["Partial/Hybrid\nPhysical"]
+    A --> A3["Partial/Hybrid<br>Physical"]
     
-    B --> B1["Virtual Camera\nInjection"]
-    B --> B2["API/Network\nAttacks"]
-    B --> B3["SDK/App\nTampering"]
+    B --> B1["Virtual Camera<br>Injection"]
+    B --> B2["API/Network<br>Attacks"]
+    B --> B3["SDK/App<br>Tampering"]
     
     C --> C1["Deepfakes"]
-    C --> C2["Synthetic\nIdentity"]
+    C --> C2["Synthetic<br>Identity"]
     C --> C3["Face Morphing"]
     C --> C4["AI Enhancement"]
     
-    D --> D1["Coercion &\nCollusion"]
-    D --> D2["Process\nManipulation"]
-    D --> D3["Identity\nExploitation"]
+    D --> D1["Coercion &<br>Collusion"]
+    D --> D2["Process<br>Manipulation"]
+    D --> D3["Identity<br>Exploitation"]
     
-    E --> E1["White-box\nAttacks"]
-    E --> E2["Black-box\nAttacks"]
-    E --> E3["Model\nExtraction"]
+    E --> E1["White-box<br>Attacks"]
+    E --> E2["Black-box<br>Attacks"]
+    E --> E3["Model<br>Extraction"]
 ```
 
 ---

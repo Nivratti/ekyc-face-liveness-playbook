@@ -14,17 +14,17 @@ Hybrid liveness detection combines **active and passive methods** into a unified
 
 ```mermaid
 graph TD
-    A["User takes selfie\nor looks at camera"] --> B["Passive Liveness\nAnalysis"]
+    A["User takes selfie<br>or looks at camera"] --> B["Passive Liveness<br>Analysis"]
     B --> C{"Passive Score"}
-    C -->|"≥ 0.90\n(High Confidence Live)"| D["✅ Pass\n(No active needed)"]
-    C -->|"0.55 - 0.90\n(Uncertain)"| E["Trigger Active\nChallenge"]
-    C -->|"< 0.55\n(Likely Spoof)"| F["❌ Reject\n(No recovery)"]
+    C -->|"≥ 0.90<br>(High Confidence Live)"| D["✅ Pass<br>(No active needed)"]
+    C -->|"0.55 - 0.90<br>(Uncertain)"| E["Trigger Active<br>Challenge"]
+    C -->|"< 0.55<br>(Likely Spoof)"| F["❌ Reject<br>(No recovery)"]
     
-    E --> G["Active Challenge\nScore"]
-    G --> H{"Combined\nScore"}
+    E --> G["Active Challenge<br>Score"]
+    G --> H{"Combined<br>Score"}
     H -->|"Pass"| I["✅ Verified"]
     H -->|"Fail"| J["❌ Reject"]
-    H -->|"Still Uncertain"| K["⚠️ Escalate to\nManual Review / V-CIP"]
+    H -->|"Still Uncertain"| K["⚠️ Escalate to<br>Manual Review / V-CIP"]
     
     style D fill:#27ae60,color:#fff
     style I fill:#27ae60,color:#fff
@@ -46,15 +46,15 @@ Both active and passive analysis run simultaneously on the same video capture.
 
 ```mermaid
 graph TD
-    A["Video Capture\n(5-10 seconds)"] --> B["Passive Analysis\n(every frame)"]
-    A --> C["Active Challenge\n(during capture)"]
+    A["Video Capture<br>(5-10 seconds)"] --> B["Passive Analysis<br>(every frame)"]
+    A --> C["Active Challenge<br>(during capture)"]
     
-    B --> D["Passive Score:\nTexture + Depth +\nFrequency"]
-    C --> E["Active Score:\nChallenge compliance +\nMotion naturalness"]
-    A --> F["Deepfake Score:\nTemporal consistency +\nArtifact detection"]
-    A --> G["Device Integrity\nScore"]
+    B --> D["Passive Score:<br>Texture + Depth +<br>Frequency"]
+    C --> E["Active Score:<br>Challenge compliance +<br>Motion naturalness"]
+    A --> F["Deepfake Score:<br>Temporal consistency +<br>Artifact detection"]
+    A --> G["Device Integrity<br>Score"]
     
-    D --> H["Score Fusion\nEngine"]
+    D --> H["Score Fusion<br>Engine"]
     E --> H
     F --> H
     G --> H

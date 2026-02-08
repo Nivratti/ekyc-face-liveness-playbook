@@ -8,9 +8,9 @@
 graph TD
     A["Liveness Score"] --> F["Fraud Decision Engine"]
     B["Device Fingerprint"] --> F
-    C["Velocity Checks\n(attempts per device/IP)"] --> F
-    D["Behavioral Biometrics\n(typing, swiping patterns)"] --> F
-    E["Network Intelligence\n(IP reputation, VPN/proxy)"] --> F
+    C["Velocity Checks<br>(attempts per device/IP)"] --> F
+    D["Behavioral Biometrics<br>(typing, swiping patterns)"] --> F
+    E["Network Intelligence<br>(IP reputation, VPN/proxy)"] --> F
     
     F --> G{"Risk Level"}
 ```

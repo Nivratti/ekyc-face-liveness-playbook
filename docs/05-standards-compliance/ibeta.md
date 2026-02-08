@@ -83,13 +83,13 @@ Extends Level 1 with **three-dimensional attack instruments** — masks, mannequ
 
 ```mermaid
 graph TD
-    A["1. Application &\nContract\n(2-4 weeks)"] --> B["2. SDK/API\nSubmission\n(1 week)"]
-    B --> C["3. Test Setup &\nCalibration\n(1-2 weeks)"]
-    C --> D["4. Data Collection\n(Attacks + Bona Fide)\n(2-4 weeks)"]
-    D --> E["5. Testing &\nAnalysis\n(2-4 weeks)"]
+    A["1. Application &<br>Contract<br>(2-4 weeks)"] --> B["2. SDK/API<br>Submission<br>(1 week)"]
+    B --> C["3. Test Setup &<br>Calibration<br>(1-2 weeks)"]
+    C --> D["4. Data Collection<br>(Attacks + Bona Fide)<br>(2-4 weeks)"]
+    D --> E["5. Testing &<br>Analysis<br>(2-4 weeks)"]
     E --> F{"6. Results"}
-    F -->|"Pass"| G["Certificate Issued\n+ Public Report"]
-    F -->|"Fail"| H["Detailed Failure\nReport → Fix → Retest"]
+    F -->|"Pass"| G["Certificate Issued<br>+ Public Report"]
+    F -->|"Fail"| H["Detailed Failure<br>Report → Fix → Retest"]
 ```
 
 | Phase | Duration | Cost (Approximate) |

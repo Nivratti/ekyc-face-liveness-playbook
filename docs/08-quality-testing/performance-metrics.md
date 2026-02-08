@@ -8,11 +8,11 @@
 
 ```mermaid
 graph LR
-    A["Tighter Threshold\n(More Secure)"] --> B["Lower APCER\n(Fewer attacks pass)"]
-    A --> C["Higher BPCER\n(More genuine users rejected)"]
+    A["Tighter Threshold<br>(More Secure)"] --> B["Lower APCER<br>(Fewer attacks pass)"]
+    A --> C["Higher BPCER<br>(More genuine users rejected)"]
     
-    D["Looser Threshold\n(More Permissive)"] --> E["Higher APCER\n(More attacks pass)"]
-    D --> F["Lower BPCER\n(Fewer genuine users rejected)"]
+    D["Looser Threshold<br>(More Permissive)"] --> E["Higher APCER<br>(More attacks pass)"]
+    D --> F["Lower BPCER<br>(Fewer genuine users rejected)"]
 ```
 
 ### Metrics Reference

@@ -45,11 +45,11 @@ FRVT is NIST's **ongoing evaluation** of face recognition technology. It has mul
 
 ```mermaid
 graph TD
-    A["1. Review NIST FRVT\nAPI specifications"] --> B["2. Implement NIST\nstandard API wrapper"]
-    B --> C["3. Package algorithm\nas Linux library\n(.so / Docker)"]
-    C --> D["4. Submit via NIST\nonline portal"]
-    D --> E["5. NIST runs evaluation\non their infrastructure"]
-    E --> F["6. Results published\nin NIST report"]
+    A["1. Review NIST FRVT<br>API specifications"] --> B["2. Implement NIST<br>standard API wrapper"]
+    B --> C["3. Package algorithm<br>as Linux library<br>(.so / Docker)"]
+    C --> D["4. Submit via NIST<br>online portal"]
+    D --> E["5. NIST runs evaluation<br>on their infrastructure"]
+    E --> F["6. Results published<br>in NIST report"]
 ```
 
 **Submission requirements:**
@@ -85,11 +85,11 @@ Particularly relevant for banking because morphed photos are used in **document 
 
 ```mermaid
 graph LR
-    A["Person A's\nface photo"] --> C["Morphing\nAlgorithm"]
-    B["Person B's\nface photo"] --> C
-    C --> D["Morphed face\n(matches both\nA and B)"]
-    D --> E["Used on\nfraudulent ID"]
-    E --> F["Both A and B\ncan pass face\nmatching against\nthis document"]
+    A["Person A's<br>face photo"] --> C["Morphing<br>Algorithm"]
+    B["Person B's<br>face photo"] --> C
+    C --> D["Morphed face<br>(matches both<br>A and B)"]
+    D --> E["Used on<br>fraudulent ID"]
+    E --> F["Both A and B<br>can pass face<br>matching against<br>this document"]
 ```
 
 **NIST FATE Morph Detection evaluates:**
@@ -148,12 +148,12 @@ This is NIST's **prescriptive standard** for digital identity verification, dire
 
 ```mermaid
 graph TD
-    A["Regulatory Requirement:\n'Implement biometric\nverification with anti-spoofing'"] --> B{"Which standard\nto reference?"}
-    B --> C["ISO/IEC 30107-3\n(Testing methodology)"]
-    B --> D["NIST SP 800-63B\n(Identity assurance levels)"]
-    B --> E["iBeta Certification\n(Third-party validation)"]
+    A["Regulatory Requirement:<br>'Implement biometric<br>verification with anti-spoofing'"] --> B{"Which standard<br>to reference?"}
+    B --> C["ISO/IEC 30107-3<br>(Testing methodology)"]
+    B --> D["NIST SP 800-63B<br>(Identity assurance levels)"]
+    B --> E["iBeta Certification<br>(Third-party validation)"]
     
-    C --> F["Your Compliance\nDocumentation"]
+    C --> F["Your Compliance<br>Documentation"]
     D --> F
     E --> F
     

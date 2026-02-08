@@ -10,17 +10,17 @@ Digital account opening is the **highest-volume** use case for face liveness ver
 
 ```mermaid
 graph TD
-    A["Customer downloads\nbanking app"] --> B["Selects 'Open Account'"]
-    B --> C["Enters basic info\n(name, phone, email)"]
-    C --> D["OTP verification\n(phone/email)"]
-    D --> E["Document capture\n(ID front + back)"]
-    E --> F["Document verification\n& OCR extraction"]
-    F --> G["FACE LIVENESS\nVERIFICATION"]
-    G --> H["Face matching\n(live face vs document photo)"]
-    H --> I["PEP/Sanctions\nscreening"]
+    A["Customer downloads<br>banking app"] --> B["Selects 'Open Account'"]
+    B --> C["Enters basic info<br>(name, phone, email)"]
+    C --> D["OTP verification<br>(phone/email)"]
+    D --> E["Document capture<br>(ID front + back)"]
+    E --> F["Document verification<br>& OCR extraction"]
+    F --> G["FACE LIVENESS<br>VERIFICATION"]
+    G --> H["Face matching<br>(live face vs document photo)"]
+    H --> I["PEP/Sanctions<br>screening"]
     I --> J{"Risk Decision"}
-    J -->|"Auto-approve"| K["Account activated\n(2-5 minutes total)"]
-    J -->|"Review"| L["Manual review\n(24-48 hours)"]
+    J -->|"Auto-approve"| K["Account activated<br>(2-5 minutes total)"]
+    J -->|"Review"| L["Manual review<br>(24-48 hours)"]
     J -->|"Reject"| M["Application declined"]
 ```
 

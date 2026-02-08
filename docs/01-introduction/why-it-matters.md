@@ -25,13 +25,13 @@ Identity fraud is the **fastest-growing financial crime category globally**. Wit
 
 ```mermaid
 graph TD
-    A["Attacker obtains\nvictim's photo\n(social media, data breach)"] --> B["Presents photo/deepfake\nto eKYC system"]
+    A["Attacker obtains<br>victim's photo<br>(social media, data breach)"] --> B["Presents photo/deepfake<br>to eKYC system"]
     B --> C{"Liveness Check?"}
-    C -->|"No Liveness"| D["Account opened\nin victim's name"]
-    C -->|"Weak Liveness"| E["Sophisticated attack\nbypasses check"]
+    C -->|"No Liveness"| D["Account opened<br>in victim's name"]
+    C -->|"Weak Liveness"| E["Sophisticated attack<br>bypasses check"]
     C -->|"Strong Liveness"| F["❌ Attack blocked"]
     
-    D --> G["💰 Fraud Executed\n- Money mule account\n- Loan fraud\n- Credit card fraud\n- Money laundering"]
+    D --> G["💰 Fraud Executed<br>- Money mule account<br>- Loan fraud<br>- Credit card fraud<br>- Money laundering"]
     E --> G
     
     style F fill:#27ae60,stroke:#1e8449,color:#fff
@@ -84,11 +84,11 @@ Liveness verification, when implemented well, **enhances** rather than hinders c
 ```mermaid
 graph LR
     subgraph "Without Liveness (Branch Required)"
-        A1["Customer starts\nonline application"] --> A2["Must visit branch\nfor ID verification"] --> A3["30-60 min wait\n+ travel time"] --> A4["Account opened\n(Days later)"]
+        A1["Customer starts<br>online application"] --> A2["Must visit branch<br>for ID verification"] --> A3["30-60 min wait<br>+ travel time"] --> A4["Account opened<br>(Days later)"]
     end
     
     subgraph "With Liveness (Fully Digital)"
-        B1["Customer starts\nmobile application"] --> B2["Selfie + liveness\n(10-30 seconds)"] --> B3["Instant verification\n+ face matching"] --> B4["Account opened\n(Minutes)"]
+        B1["Customer starts<br>mobile application"] --> B2["Selfie + liveness<br>(10-30 seconds)"] --> B3["Instant verification<br>+ face matching"] --> B4["Account opened<br>(Minutes)"]
     end
 ```
 

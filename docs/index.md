@@ -25,37 +25,37 @@
 
 This guide is organized into **10 parts** with **50+ detailed pages**:
 
-### :material-book-open-variant: Part I — Foundations
+### :material-book-open-variant: [Part I — Foundations](01-introduction/what-is-face-liveness.md)
 What face liveness is, why it's non-negotiable for banking, where it fits in the eKYC pipeline, and the terminology you need to know.
 
-### :material-shield-check: Part II — Liveness Methods  
+### :material-shield-check: [Part II — Liveness Methods](02-fundamentals/active-liveness.md)
 Deep dive into active, passive, hybrid, and hardware-assisted liveness detection — with detailed comparison matrices.
 
-### :material-skull-crossbones: Part III — Attack Landscape  
+### :material-skull-crossbones: [Part III — Attack Landscape](03-attack-landscape/taxonomy-overview.md)
 The most comprehensive attack taxonomy available — from printed photos to adversarial ML attacks, real-time deepfakes, injection attacks, and social engineering vectors.
 
-### :material-cpu-64-bit: Part IV — Technical Architecture  
+### :material-cpu-64-bit: [Part IV — Technical Architecture](04-technical-architecture/system-overview.md)
 Client-side and server-side components, model architectures (backbones, training approaches, loss functions), score fusion strategies, and integration patterns.
 
-### :material-certificate: Part V — Standards & Compliance  
+### :material-certificate: [Part V — Standards & Compliance](05-standards-compliance/iso-30107.md)
 ISO 30107, iBeta Level 1 & 2, NIST FRVT PAD, FIDO certification, and regulatory requirements across India, EU, US, and APAC.
 
-### :material-rocket-launch: Part VI — Deployment & Operations  
+### :material-rocket-launch: [Part VI — Deployment & Operations](06-deployment-operations/input-quality.md)
 Input quality requirements, device considerations, infrastructure scaling, UX optimization, monitoring, model updates, and network considerations.
 
-### :material-bank: Part VII — Banking Use Cases  
+### :material-bank: [Part VII — Banking Use Cases](07-banking-use-cases/account-opening.md)
 Detailed flows for account opening, transaction authentication, Video KYC (V-CIP), loan disbursement, re-KYC, agent-assisted KYC, and cross-border banking.
 
-### :material-test-tube: Part VIII — Quality & Testing  
+### :material-test-tube: [Part VIII — Quality & Testing](08-quality-testing/performance-metrics.md)
 Performance metrics, testing methodology, red team exercises, edge case handling, demographic fairness testing, and dataset strategy.
 
-### :material-lock: Part IX — Security & Privacy  
+### :material-lock: [Part IX — Security & Privacy](09-security-privacy/security-hardening.md)
 Security hardening, anti-fraud intelligence, privacy/data protection, incident response playbooks, and legal/contractual frameworks.
 
-### :material-chart-line: Part X — Business Strategy  
+### :material-chart-line: [Part X — Business Strategy](10-business-strategy/build-vs-buy.md)
 Build vs buy, vendor evaluation, cost/ROI analysis, implementation roadmap, real-world case studies, and future trends.
 
-### :material-file-document: Appendices  
+### :material-file-document: [Appendices](appendices/rfp-template.md)
 RFP templates, iBeta PAI species reference, regulatory links, research papers, and production go-live checklists.
 
 ---

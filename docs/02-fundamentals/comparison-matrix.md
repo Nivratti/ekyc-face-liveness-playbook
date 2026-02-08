@@ -26,15 +26,15 @@
 
 ```mermaid
 graph TD
-    A["What is your\nprimary deployment?"] --> B{"Mobile App?"}
-    B -->|"Yes"| C{"User base\ndevice diversity?"}
-    B -->|"No (Web/Kiosk)"| D{"Controlled\nhardware?"}
+    A["What is your<br>primary deployment?"] --> B{"Mobile App?"}
+    B -->|"Yes"| C{"User base<br>device diversity?"}
+    B -->|"No (Web/Kiosk)"| D{"Controlled<br>hardware?"}
     
-    C -->|"High diversity\n(India, SEA, Africa)"| E["Hybrid:\nPassive-first +\nActive escalation"]
-    C -->|"Flagship devices\n(Developed markets)"| F["Hybrid with\nhardware signals\nwhen available"]
+    C -->|"High diversity<br>(India, SEA, Africa)"| E["Hybrid:<br>Passive-first +<br>Active escalation"]
+    C -->|"Flagship devices<br>(Developed markets)"| F["Hybrid with<br>hardware signals<br>when available"]
     
-    D -->|"Yes (ATM/Kiosk)"| G["Hardware-assisted\n(NIR + RGB)"]
-    D -->|"No (Web browser)"| H["Passive primary +\nDevice attestation"]
+    D -->|"Yes (ATM/Kiosk)"| G["Hardware-assisted<br>(NIR + RGB)"]
+    D -->|"No (Web browser)"| H["Passive primary +<br>Device attestation"]
     
     style E fill:#1B4F72,color:#fff
     style F fill:#2471A3,color:#fff

@@ -10,11 +10,11 @@ Video-based Customer Identification Process (V-CIP) is an **RBI-approved method*
 
 ```mermaid
 graph TD
-    A["Customer connects\nto video call"] --> B["Automated liveness\ncheck runs\ncontinuously"]
-    B --> C["Bank official\nverifies identity\nvia video"]
-    C --> D["Official captures\nscreenshots as\nevidence"]
-    D --> E["Automated face\nmatching against\nID document"]
-    E --> F["V-CIP session\nrecorded and\narchived"]
+    A["Customer connects<br>to video call"] --> B["Automated liveness<br>check runs<br>continuously"]
+    B --> C["Bank official<br>verifies identity<br>via video"]
+    C --> D["Official captures<br>screenshots as<br>evidence"]
+    D --> E["Automated face<br>matching against<br>ID document"]
+    E --> F["V-CIP session<br>recorded and<br>archived"]
 ```
 
 | V-CIP Requirement | Liveness Role |

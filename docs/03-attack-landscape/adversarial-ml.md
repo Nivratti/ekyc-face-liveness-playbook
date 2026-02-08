@@ -14,9 +14,9 @@ Adversarial ML attacks target the **machine learning models** powering the liven
 
 ```mermaid
 graph LR
-    A["Attacker obtains\nmodel weights"] --> B["Computes gradient\nof loss w.r.t.\ninput pixels"]
-    B --> C["Adds small\nperturbation\nto spoof image"]
-    C --> D["Perturbed image\nfools model into\npredicting 'live'"]
+    A["Attacker obtains<br>model weights"] --> B["Computes gradient<br>of loss w.r.t.<br>input pixels"]
+    B --> C["Adds small<br>perturbation<br>to spoof image"]
+    C --> D["Perturbed image<br>fools model into<br>predicting 'live'"]
 ```
 
 | Method | Perturbation Size | Success Rate | Detectability |
@@ -39,10 +39,10 @@ graph LR
 
 ```mermaid
 graph TD
-    A["Attacker queries\nliveness API\nwith diverse inputs"] --> B["Collects input-score\npairs (thousands)"]
-    B --> C["Trains surrogate\nmodel to mimic\nthe API"]
-    C --> D["Crafts white-box\nadversarial examples\non surrogate"]
-    D --> E["Adversarial examples\ntransfer to real model"]
+    A["Attacker queries<br>liveness API<br>with diverse inputs"] --> B["Collects input-score<br>pairs (thousands)"]
+    B --> C["Trains surrogate<br>model to mimic<br>the API"]
+    C --> D["Crafts white-box<br>adversarial examples<br>on surrogate"]
+    D --> E["Adversarial examples<br>transfer to real model"]
 ```
 
 ---

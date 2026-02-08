@@ -15,11 +15,11 @@ Physical presentation attacks involve presenting a **tangible artifact** to the 
 ```mermaid
 graph TD
     subgraph "Print Attack Variants"
-        A["Standard office\nprint (A4)\n🟢 Easy to detect"]
-        B["Photo lab print\n(glossy/matte)\n🟡 Moderate"]
-        C["Large format\nposter print\n🟡 Moderate"]
-        D["Curved/bent\nphoto on form\n🟡 Medium"]
-        E["Photo with eye\ncutouts (attacker\nblinks through)\n🟡 Medium"]
+        A["Standard office<br>print (A4)<br>🟢 Easy to detect"]
+        B["Photo lab print<br>(glossy/matte)<br>🟡 Moderate"]
+        C["Large format<br>poster print<br>🟡 Moderate"]
+        D["Curved/bent<br>photo on form<br>🟡 Medium"]
+        E["Photo with eye<br>cutouts (attacker<br>blinks through)<br>🟡 Medium"]
     end
 ```
 
@@ -53,10 +53,10 @@ graph TD
 
 ```mermaid
 graph LR
-    A["Paper Mask\n(L1 Sophistication)\n$5"] --> B["Latex Mask\n(L2)\n$50-200"]
-    B --> C["3D-Printed\nRigid Mask\n(L3)\n$500-2000"]
-    C --> D["Silicone Mask\n(L4)\n$3000-15000"]
-    D --> E["Animatronic\nSilicone Mask\n(L5)\n$10000+"]
+    A["Paper Mask<br>(L1 Sophistication)<br>$5"] --> B["Latex Mask<br>(L2)<br>$50-200"]
+    B --> C["3D-Printed<br>Rigid Mask<br>(L3)<br>$500-2000"]
+    C --> D["Silicone Mask<br>(L4)<br>$3000-15000"]
+    D --> E["Animatronic<br>Silicone Mask<br>(L5)<br>$10000+"]
     
     style A fill:#27ae60,color:#fff
     style B fill:#f1c40f,color:#000
@@ -100,10 +100,10 @@ Attacker covers part of their face with a screen or print showing the target's f
 
 ```mermaid
 graph LR
-    A["Attacker's\nlower face\n(real, live)"] --> C["Combined\npresentation"]
-    B["Target's upper\nface on screen\n(spoofed)"] --> C
-    C --> D{"Liveness\nSystem"}
-    D --> E["Must detect\nboundary between\nreal and fake regions"]
+    A["Attacker's<br>lower face<br>(real, live)"] --> C["Combined<br>presentation"]
+    B["Target's upper<br>face on screen<br>(spoofed)"] --> C
+    C --> D{"Liveness<br>System"}
+    D --> E["Must detect<br>boundary between<br>real and fake regions"]
 ```
 
 **Detection approach:**
