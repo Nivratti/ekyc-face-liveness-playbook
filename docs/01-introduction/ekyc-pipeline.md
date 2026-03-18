@@ -94,7 +94,7 @@ Structured data is extracted from the authenticated document using Optical Chara
 | **Output** | Liveness score (0-1), liveness decision (live/spoof/uncertain), attack type classification (if detected), captured face image(s) for matching |
 
 ```mermaid
-graph LR
+graph TD
     subgraph "Stage 4: Liveness Verification (Detailed)"
         A["Camera<br>Feed"] --> B["Face<br>Detection"]
         B --> C["Quality<br>Assessment"]

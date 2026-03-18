@@ -7,7 +7,7 @@
 ### The APCER-BPCER Tradeoff
 
 ```mermaid
-graph LR
+graph TD
     A["Tighter Threshold<br>(More Secure)"] --> B["Lower APCER<br>(Fewer attacks pass)"]
     A --> C["Higher BPCER<br>(More genuine users rejected)"]
     

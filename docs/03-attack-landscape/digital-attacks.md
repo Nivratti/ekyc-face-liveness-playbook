@@ -37,7 +37,7 @@ graph TD
 ### Android (Frida / Xposed)
 
 ```mermaid
-graph LR
+graph TD
     A["Camera<br>Hardware"] --> B["Camera HAL<br>(Hardware Abstraction)"]
     B --> C["Camera2 API<br>/ CameraX"]
     C --> D["⚠️ HOOK POINT:<br>Frida/Xposed<br>intercepts here"]

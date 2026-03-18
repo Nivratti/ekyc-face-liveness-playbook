@@ -110,7 +110,7 @@ The user follows a moving target on the screen with their eyes.
 **How It Works:**
 
 ```mermaid
-graph LR
+graph TD
     A["Random target<br>appears on screen"] --> B["User tracks<br>with eyes"]
     B --> C["Iris position<br>extracted per frame"]
     C --> D["Gaze trajectory<br>mapped"]

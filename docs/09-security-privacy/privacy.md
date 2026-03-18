@@ -5,7 +5,7 @@
 ## Biometric Data Lifecycle
 
 ```mermaid
-graph LR
+graph TD
     A["Capture"] --> B["Process"] --> C["Store<br>(if required)"] --> D["Retain<br>(per regulation)"] --> E["Delete<br>(mandatory)"]
 ```
 

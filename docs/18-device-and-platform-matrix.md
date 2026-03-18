@@ -122,10 +122,10 @@ This is normal if it is documented and evaluated.
 ## Suggested rollout matrix
 
 ```mermaid
-flowchart LR
+flowchart TB
     A[Lab validation] --> B[Internal beta]
-    B --> C[Small guarded rollout]
-    C --> D[Segment review by channel]
+    B --> C[Small guarded<br/>rollout]
+    C --> D[Segment review<br/>by channel]
     D --> E[Wider rollout]
 ```
 

@@ -100,11 +100,11 @@ A healthy product review usually looks at all three groups together.
 ## Suggested product rollout approach
 
 ```mermaid
-flowchart LR
-    A[Choose target journey] --> B[Define fraud and UX goals]
-    B --> C[Pilot on limited traffic]
-    C --> D[Review metrics by segment]
-    D --> E[Adjust thresholds and guidance]
+flowchart TB
+    A[Choose target<br/>journey] --> B[Define fraud and<br/>UX goals]
+    B --> C[Pilot on limited<br/>traffic]
+    C --> D[Review metrics<br/>by segment]
+    D --> E[Adjust thresholds<br/>and guidance]
     E --> F[Expand gradually]
 ```
 

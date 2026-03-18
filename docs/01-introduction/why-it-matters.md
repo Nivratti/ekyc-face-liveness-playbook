@@ -82,7 +82,7 @@ Liveness verification, when implemented well, **enhances** rather than hinders c
 **The Digital Onboarding Gap:**
 
 ```mermaid
-graph LR
+graph TD
     subgraph "Without Liveness (Branch Required)"
         A1["Customer starts<br>online application"] --> A2["Must visit branch<br>for ID verification"] --> A3["30-60 min wait<br>+ travel time"] --> A4["Account opened<br>(Days later)"]
     end

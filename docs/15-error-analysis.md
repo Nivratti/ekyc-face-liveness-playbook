@@ -35,12 +35,12 @@ Both matter, but the business impact is different.
 ## A practical error-analysis workflow
 
 ```mermaid
-flowchart LR
-    A[Collect failed cases] --> B[Group by error family]
+flowchart TB
+    A[Collect failed<br/>cases] --> B[Group by error<br/>family]
     B --> C[Slice by segment]
     C --> D[Review examples]
     D --> E[Assign root cause]
-    E --> F[Choose fix and owner]
+    E --> F[Choose fix<br/>and owner]
 ```
 
 ---

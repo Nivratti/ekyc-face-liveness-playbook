@@ -5,7 +5,7 @@
 ## The Arms Race
 
 ```mermaid
-graph LR
+graph TD
     A["2017: Basic<br>face swaps<br>(minutes to create,<br>easy to detect)"] --> B["2019: DeepFaceLab<br>(hours, moderate<br>detection)"]
     B --> C["2021: Real-time<br>face swap<br>(instant, harder<br>to detect)"]
     C --> D["2023: LivePortrait<br>One-shot animation<br>(seconds from single<br>photo, very hard)"]

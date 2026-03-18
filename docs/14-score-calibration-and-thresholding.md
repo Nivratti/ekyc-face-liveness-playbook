@@ -48,12 +48,12 @@ Calibration helps when:
 ## A practical calibration flow
 
 ```mermaid
-flowchart LR
-    A[Collect holdout scores] --> B[Check live vs spoof distributions]
-    B --> C[Fit calibration method]
+flowchart TB
+    A[Collect holdout<br/>scores] --> B[Check live vs spoof<br/>distributions]
+    B --> C[Fit calibration<br/>method]
     C --> D[Validate by segment]
-    D --> E[Set thresholds or bands]
-    E --> F[Monitor drift after release]
+    D --> E[Set thresholds<br/>or bands]
+    E --> F[Monitor drift<br/>after release]
 ```
 
 ---

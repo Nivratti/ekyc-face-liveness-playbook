@@ -10,7 +10,7 @@ Passive liveness detection analyzes a **single image or short video clip** witho
     From the user's perspective, passive liveness is invisible. They simply take a selfie or look at the camera, and the system makes its determination. This results in a **seamless, frictionless experience** with the highest completion rates.
 
 ```mermaid
-graph LR
+graph TD
     A["📸 User takes<br>selfie / looks<br>at camera"] --> B["Face Detection<br>& Quality Check"]
     B --> C["Feature<br>Extraction"]
     C --> D["Multi-Signal<br>Analysis"]
@@ -88,7 +88,7 @@ The model is trained with **auxiliary depth supervision** — alongside the live
 **Fourier Transform and Wavelet analysis** reveal frequency signatures characteristic of different media.
 
 ```mermaid
-graph LR
+graph TD
     A["Face Image"] --> B["2D FFT<br>(Fourier Transform)"]
     B --> C["Power Spectrum"]
     C --> D["Frequency<br>Signature Analysis"]

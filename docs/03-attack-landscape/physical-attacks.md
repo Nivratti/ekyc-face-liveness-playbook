@@ -52,7 +52,7 @@ graph TD
 ### Mask Attack Hierarchy
 
 ```mermaid
-graph LR
+graph TD
     A["Paper Mask<br>(L1 Sophistication)<br>$5"] --> B["Latex Mask<br>(L2)<br>$50-200"]
     B --> C["3D-Printed<br>Rigid Mask<br>(L3)<br>$500-2000"]
     C --> D["Silicone Mask<br>(L4)<br>$3000-15000"]
@@ -99,7 +99,7 @@ These are **combination attacks** that use real human elements alongside fake on
 Attacker covers part of their face with a screen or print showing the target's features while keeping part of their own face visible.
 
 ```mermaid
-graph LR
+graph TD
     A["Attacker's<br>lower face<br>(real, live)"] --> C["Combined<br>presentation"]
     B["Target's upper<br>face on screen<br>(spoofed)"] --> C
     C --> D{"Liveness<br>System"}

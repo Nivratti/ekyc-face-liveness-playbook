@@ -33,13 +33,13 @@ A strong evaluation should cover at least these dimensions:
 ## A simple evaluation flow
 
 ```mermaid
-flowchart LR
-    A[Define use case and threat model] --> B[Build evaluation dataset]
+flowchart TB
+    A[Define use case<br/>and threat model] --> B[Build evaluation<br/>dataset]
     B --> C[Choose metrics]
-    C --> D[Run tests by segment]
+    C --> D[Run tests by<br/>segment]
     D --> E[Calibrate thresholds]
     E --> F[Review failures]
-    F --> G[Approve, improve, or block release]
+    F --> G[Approve, improve,<br/>or block release]
 ```
 
 ---

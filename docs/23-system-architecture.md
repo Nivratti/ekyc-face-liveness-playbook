@@ -25,13 +25,13 @@ A practical architecture needs to connect:
 ## A simple end-to-end architecture
 
 ```mermaid
-flowchart LR
-    A[Client capture] --> B[Session and quality gate]
+flowchart TB
+    A[Client capture] --> B[Session and<br/>quality gate]
     B --> C[Liveness inference]
-    C --> D[Calibration and fusion]
+    C --> D[Calibration<br/>and fusion]
     D --> E[Decision policy]
     E --> F[Response to client]
-    E --> G[Audit log and monitoring]
+    E --> G[Audit log and<br/>monitoring]
 ```
 
 ---

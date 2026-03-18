@@ -124,12 +124,15 @@ flowchart TD
 Think about face liveness as one layer in a larger trust pipeline:
 
 ```mermaid
-flowchart LR
-    A[Capture] --> B[Quality checks]
-    B --> C[Liveness]
-    C --> D[Face match]
-    D --> E[Risk policy]
-    E --> F[Decision]
+flowchart TB
+    A[1. Capture]
+    B[2. Quality checks]
+    C[3. Liveness]
+    D[4. Face match]
+    E[5. Risk policy]
+    F[6. Decision]
+
+    A --> B --> C --> D --> E --> F
 ```
 
 Face liveness is important, but it is not the whole system.

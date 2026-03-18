@@ -13,7 +13,7 @@ Adversarial ML attacks target the **machine learning models** powering the liven
 ### White-Box Attacks (Attacker Has Model Access)
 
 ```mermaid
-graph LR
+graph TD
     A["Attacker obtains<br>model weights"] --> B["Computes gradient<br>of loss w.r.t.<br>input pixels"]
     B --> C["Adds small<br>perturbation<br>to spoof image"]
     C --> D["Perturbed image<br>fools model into<br>predicting 'live'"]

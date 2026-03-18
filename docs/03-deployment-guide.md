@@ -78,15 +78,15 @@ For many production systems, a hybrid design is the most practical choice.
 ## Deployment architecture view
 
 ```mermaid
-flowchart LR
-    A[Device capture] --> B{Where does liveness run?}
-    B --> C[On-device inference]
-    B --> D[Server-side inference]
+flowchart TB
+    A[Device capture] --> B{Where does<br/>liveness run?}
+    B --> C[On-device<br/>inference]
+    B --> D[Server-side<br/>inference]
     B --> E[Hybrid split]
     C --> F[Policy decision]
     D --> F
     E --> F
-    F --> G[Monitoring and audit]
+    F --> G[Monitoring<br/>and audit]
 ```
 
 ---

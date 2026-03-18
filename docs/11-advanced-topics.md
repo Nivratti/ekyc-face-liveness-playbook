@@ -39,11 +39,11 @@ This is why teams sometimes use model fusion.
 ## Simple fusion idea
 
 ```mermaid
-flowchart LR
-    A[Passive model score] --> D[Fusion layer]
-    B[Active challenge signal] --> D
-    C[Device or risk signals] --> D
-    D --> E[Final score or decision band]
+flowchart TB
+    A[Passive model<br/>score] --> D[Fusion layer]
+    B[Active challenge<br/>signal] --> D
+    C[Device or risk<br/>signals] --> D
+    D --> E[Final score or<br/>decision band]
 ```
 
 The fusion layer can be simple or advanced.

@@ -39,12 +39,12 @@ Some regulated or high-risk flows may add extra steps, but this structure is a g
 ## Visual flow
 
 ```mermaid
-flowchart LR
-    A[User starts onboarding] --> B[Permissions and session checks]
+flowchart TB
+    A[User starts<br/>onboarding] --> B[Permissions and<br/>session checks]
     B --> C[ID capture]
-    C --> D[Document verification]
-    D --> E[Selfie or short video capture]
-    E --> F[Face quality checks]
+    C --> D[Document<br/>verification]
+    D --> E[Selfie or short<br/>video capture]
+    E --> F[Face quality<br/>checks]
     F --> G[Face liveness]
     G --> H[Face match]
     H --> I[Risk checks]

@@ -21,12 +21,12 @@ This page answers that question with simple, reusable examples.
 Most real flows follow the same high-level pattern:
 
 ```mermaid
-flowchart LR
+flowchart TB
     A[Capture] --> B[Quality checks]
     B --> C[Liveness]
-    C --> D[Face match or identity step]
+    C --> D[Face match or<br/>identity step]
     D --> E[Risk policy]
-    E --> F[Pass, retry, review, or fail]
+    E --> F[Pass, retry,<br/>review, or fail]
 ```
 
 The details change by use case, but the basic idea stays similar.
@@ -133,12 +133,12 @@ Account recovery is often attacked because it can bypass the normal login path.
 ### Example flow
 
 ```mermaid
-flowchart LR
-    A[User requests recovery] --> B[Identity recovery checks]
+flowchart TB
+    A[User requests<br/>recovery] --> B[Identity recovery<br/>checks]
     B --> C[Capture selfie]
     C --> D[Liveness]
-    D --> E[Face match or agent review]
-    E --> F[Recovery approved or denied]
+    D --> E[Face match or<br/>agent review]
+    E --> F[Recovery approved<br/>or denied]
 ```
 
 ### Best practice

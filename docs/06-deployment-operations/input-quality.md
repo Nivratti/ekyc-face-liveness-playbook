@@ -77,7 +77,7 @@ graph TD
 ### Face Pose Angles
 
 ```mermaid
-graph LR
+graph TD
     subgraph "Acceptable Pose Range"
         A["YAW<br>(left/right)<br>±20°"]
         B["PITCH<br>(up/down)<br>±15°"]

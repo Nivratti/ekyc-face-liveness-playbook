@@ -107,7 +107,7 @@ It gives a better balance between security and usability. Many production system
 ## Simple comparison view
 
 ```mermaid
-flowchart LR
+flowchart TB
     A[Passive] --> D[Low friction]
     B[Active] --> E[Higher user effort]
     C[Hybrid] --> F[Balanced path]
@@ -153,13 +153,13 @@ A good production system should check capture quality early and guide the user b
 A practical face liveness flow often looks like this:
 
 ```mermaid
-flowchart LR
-    A[Capture image or short video] --> B[Detect face]
-    B --> C[Run quality checks]
-    C --> D[Extract liveness signals]
-    D --> E[Produce score or decision]
-    E --> F[Apply threshold and policy]
-    F --> G[Pass, retry, escalate, or fail]
+flowchart TB
+    A[Capture image<br/>or short video] --> B[Detect face]
+    B --> C[Run quality<br/>checks]
+    C --> D[Extract liveness<br/>signals]
+    D --> E[Produce score<br/>or decision]
+    E --> F[Apply threshold<br/>and policy]
+    F --> G[Pass, retry,<br/>escalate, or fail]
 ```
 
 In many real systems, the final decision may also consider:

@@ -23,12 +23,12 @@ Stop common spoof attacks without creating too much onboarding friction.
 ### Typical flow
 
 ```mermaid
-flowchart LR
+flowchart TB
     A[Capture selfie] --> B[Quality check]
     B --> C[Liveness]
     C --> D[Face match to ID]
     D --> E[Risk policy]
-    E --> F[Pass, retry, or manual review]
+    E --> F[Pass, retry,<br/>or manual review]
 ```
 
 ### Common concerns

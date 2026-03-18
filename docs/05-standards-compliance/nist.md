@@ -84,7 +84,7 @@ FATE is NIST's broader evaluation framework covering multiple face analysis capa
 Particularly relevant for banking because morphed photos are used in **document fraud**:
 
 ```mermaid
-graph LR
+graph TD
     A["Person A's<br>face photo"] --> C["Morphing<br>Algorithm"]
     B["Person B's<br>face photo"] --> C
     C --> D["Morphed face<br>(matches both<br>A and B)"]

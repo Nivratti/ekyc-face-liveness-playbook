@@ -42,18 +42,19 @@ Fusion gives the system a way to reason across these signals instead of treating
 ## A simple fusion view
 
 ```mermaid
-flowchart LR
-    A[Input capture] --> B[Base model A]
+flowchart TB
+    A[Input capture]
+    A --> B[Base model A]
     A --> C[Base model B]
     A --> D[Base model C]
     A --> E[Quality features]
-    A --> F[Device and session features]
+    A --> F[Device and session<br/>features]
     B --> G[Fusion layer]
     C --> G
     D --> G
     E --> G
     F --> G
-    G --> H[Final score or decision band]
+    G --> H[Final score or<br/>decision band]
 ```
 
 ---

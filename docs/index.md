@@ -81,11 +81,15 @@ Go to:
 ## Reading phases
 
 ```mermaid
-flowchart LR
-    A[Start Here] --> B[Practical Playbook]
-    B --> C[Engineering and Operations]
-    C --> D[Support and Architecture]
-    A --> E[Appendix and Deep Reference]
+flowchart TB
+    A[Start Here]
+    B[Practical Playbook]
+    C[Engineering and Operations]
+    D[Support and Architecture]
+    E[Appendix and Deep Reference]
+
+    A --> B --> C --> D
+    A --> E
     B --> E
     C --> E
     D --> E

@@ -18,7 +18,7 @@ In simple terms, it answers one critical question:
 Without liveness verification, a facial recognition system has no way to distinguish between:
 
 ```mermaid
-graph LR
+graph TD
     A["📸 Camera Sensor"] --> B{"What does it see?"}
     B --> C["✅ Real Person<br>(Bona Fide)"]
     B --> D["❌ Printed Photo"]

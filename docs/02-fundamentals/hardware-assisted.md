@@ -15,7 +15,7 @@ Hardware-assisted liveness leverages **specialized sensors** beyond the standard
 A projector emits a known pattern of **infrared dots** (30,000+ dots for Face ID) onto the face. An IR camera captures the deformed pattern. The deformation encodes 3D depth information.
 
 ```mermaid
-graph LR
+graph TD
     A["IR Dot<br>Projector"] --> B["30,000+ IR dots<br>projected onto face"]
     B --> C["IR Camera<br>captures deformed<br>pattern"]
     C --> D["Triangulation<br>algorithm"]

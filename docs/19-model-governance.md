@@ -97,9 +97,9 @@ This becomes very helpful during incidents.
 A safe rollout is usually staged.
 
 ```mermaid
-flowchart LR
+flowchart TB
     A[Offline validation] --> B[Internal testing]
-    B --> C[Shadow or guarded rollout]
+    B --> C[Shadow or guarded<br/>rollout]
     C --> D[Segment monitoring]
     D --> E[General release]
 ```

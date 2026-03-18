@@ -15,9 +15,9 @@ Use this page as a practical checklist for planning, evaluating, deploying, and 
 ## Lifecycle view
 
 ```mermaid
-flowchart LR
-    A[Choose use case and threat model] --> B[Design capture and decision policy]
-    B --> C[Test on realistic data]
+flowchart TB
+    A[Choose use case<br/>and threat model] --> B[Design capture and<br/>decision policy]
+    B --> C[Test on realistic<br/>data]
     C --> D[Deploy gradually]
     D --> E[Monitor and improve]
 ```

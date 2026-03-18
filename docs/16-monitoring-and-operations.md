@@ -36,11 +36,11 @@ A good monitoring plan covers four layers.
 ## A simple monitoring loop
 
 ```mermaid
-flowchart LR
+flowchart TB
     A[Live traffic] --> B[Metrics and logs]
     B --> C[Dashboards and alerts]
     C --> D[Incident triage]
-    D --> E[Fix, rollback, or retrain]
+    D --> E[Fix, rollback,<br/>or retrain]
     E --> F[Release validation]
 ```
 
