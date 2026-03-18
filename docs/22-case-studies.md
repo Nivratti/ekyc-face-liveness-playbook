@@ -150,6 +150,12 @@ That is why a single universal policy rarely works across all journeys.
 
 ---
 
+## Need term help?
+
+If any technical terms on this page feel dense, use [Appendix A1 — Key Terms](appendix/A1-key-terms.md) first and then jump to the relevant appendix page for deeper detail.
+
+---
+
 ## Related docs
 
 - [05. Real-World Examples](05-real-world-examples.md)

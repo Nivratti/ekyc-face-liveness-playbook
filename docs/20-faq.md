@@ -137,6 +137,12 @@ A strong first version usually focuses on:
 
 ---
 
+## Need term help?
+
+If any technical terms on this page feel dense, use [Appendix A1 — Key Terms](appendix/A1-key-terms.md) first and then jump to the relevant appendix page for deeper detail.
+
+---
+
 ## Related docs
 
 - [01. Face Liveness Guide](01-face-liveness-guide.md)

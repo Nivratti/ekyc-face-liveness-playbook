@@ -163,6 +163,12 @@ That is what makes a technically good system operationally mature.
 
 ---
 
+## Need term help?
+
+If any technical terms on this page feel dense, use [Appendix A1 — Key Terms](appendix/A1-key-terms.md) first and then jump to the relevant appendix page for deeper detail.
+
+---
+
 ## Related docs
 
 - [14. Score Calibration and Thresholding](14-score-calibration-and-thresholding.md)

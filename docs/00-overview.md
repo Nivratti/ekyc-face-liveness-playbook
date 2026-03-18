@@ -74,34 +74,25 @@ That is why remote eKYC usually needs both.
 
 ---
 
-## The five main pages
+## The main guide by phase
 
-| Page | Why it exists |
-|------|---------------|
-| [01. Face Liveness Guide](01-face-liveness-guide.md) | Explains the core concepts in simple English |
-| [02. eKYC Integration](02-ekyc-integration.md) | Shows where liveness fits in the full onboarding flow |
-| [03. Deployment Guide](03-deployment-guide.md) | Covers real engineering and runtime choices |
-| [04. Best Practices](04-best-practices.md) | Gives a practical do-and-don't checklist |
-| [05. Real-World Examples](05-real-world-examples.md) | Shows where liveness is used in actual journeys |
-| [06. API and Response Examples](06-api-and-response-examples.md) | Gives practical response patterns and integration ideas |
-| [07. Decision Logic](07-decision-logic.md) | Shows how to turn score into action |
-| [08. Evaluation Playbook](08-evaluation-playbook.md) | Explains how to test readiness on real attacks and devices |
-| [09. Common Failures](09-common-failures.md) | Explains where production issues usually come from |
-| [10. Product Guide](10-product-guide.md) | Translates liveness into product trade-offs |
-| [11. Advanced Topics](11-advanced-topics.md) | Introduces fusion, calibration, and maturity topics |
-| [12. Fusion and Meta-Model](12-fusion-and-meta-model.md) | Explains how to combine multiple signals into one decision layer |
-| [13. Dataset Strategy](13-dataset-strategy.md) | Defines the data needed for base models, fusion, and reliable testing |
-| [14. Score Calibration and Thresholding](14-score-calibration-and-thresholding.md) | Shows how scores become stable policy decisions |
-| [15. Error Analysis](15-error-analysis.md) | Turns failures into root causes and next actions |
-| [16. Monitoring and Operations](16-monitoring-and-operations.md) | Covers dashboards, alerts, and post-launch control |
-| [17. Security Hardening](17-security-hardening.md) | Adds the non-model controls that protect the full system |
-| [18. Device and Platform Matrix](18-device-and-platform-matrix.md) | Maps app, web, browser, and device-class differences |
-| [19. Model Governance](19-model-governance.md) | Explains release discipline, rollback, and auditability |
-| [20. FAQ](20-faq.md) | Gives fast answers to common questions |
-| [21. Troubleshooting](21-troubleshooting.md) | Helps teams debug issues quickly in production |
-| [22. Case Studies](22-case-studies.md) | Shows how policy changes by journey type |
-| [23. System Architecture](23-system-architecture.md) | Ties capture, inference, policy, and monitoring into one system view |
-| [Appendix](appendix/A1-key-terms.md) | Holds deep technical, metrics, security, and vendor material |
+| Phase | What it includes |
+|------|-------------------|
+| Start Here | [01. Face Liveness Guide](01-face-liveness-guide.md), [02. eKYC Integration](02-ekyc-integration.md), [03. Deployment Guide](03-deployment-guide.md), [04. Best Practices](04-best-practices.md) |
+| Practical Playbook | [05. Real-World Examples](05-real-world-examples.md), [06. API and Response Examples](06-api-and-response-examples.md), [07. Decision Logic](07-decision-logic.md), [08. Evaluation Playbook](08-evaluation-playbook.md), [09. Common Failures](09-common-failures.md), [10. Product Guide](10-product-guide.md) |
+| Engineering and Operations | [11. Advanced Topics](11-advanced-topics.md), [12. Fusion and Meta-Model](12-fusion-and-meta-model.md), [13. Dataset Strategy](13-dataset-strategy.md), [14. Score Calibration and Thresholding](14-score-calibration-and-thresholding.md), [15. Error Analysis](15-error-analysis.md), [16. Monitoring and Operations](16-monitoring-and-operations.md), [17. Security Hardening](17-security-hardening.md), [18. Device and Platform Matrix](18-device-and-platform-matrix.md), [19. Model Governance](19-model-governance.md) |
+| Support and Architecture | [20. FAQ](20-faq.md), [21. Troubleshooting](21-troubleshooting.md), [22. Case Studies](22-case-studies.md), [23. System Architecture](23-system-architecture.md) |
+| Appendix | [A1 to A10](appendix/A1-key-terms.md) for glossary, metrics, standards, data policy, and experiment design |
+
+---
+
+## Need term help early?
+
+If terms like **APCER**, **BPCER**, **calibration**, **virtual camera**, or **policy engine** are unfamiliar, keep these nearby while reading advanced pages:
+
+- [Appendix A1 — Key Terms](appendix/A1-key-terms.md)
+- [Appendix A3 — Metrics and Evaluation](appendix/A3-metrics-and-evaluation.md)
+- [Appendix A5 — Security and Privacy](appendix/A5-security-and-privacy.md)
 
 ---
 

@@ -172,6 +172,12 @@ That is why advanced design should build on strong foundations, not replace them
 
 ---
 
+## Need term help?
+
+If any technical terms on this page feel dense, use [Appendix A1 — Key Terms](appendix/A1-key-terms.md) first and then jump to the relevant appendix page for deeper detail.
+
+---
+
 ## Related docs
 
 - [03. Deployment Guide](03-deployment-guide.md)

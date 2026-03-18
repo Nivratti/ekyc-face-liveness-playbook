@@ -186,6 +186,12 @@ Without that, the team ends up guessing.
 
 ---
 
+## Need term help?
+
+If any technical terms on this page feel dense, use [Appendix A1 — Key Terms](appendix/A1-key-terms.md) first and then jump to the relevant appendix page for deeper detail.
+
+---
+
 ## Related docs
 
 - [15. Error Analysis](15-error-analysis.md)

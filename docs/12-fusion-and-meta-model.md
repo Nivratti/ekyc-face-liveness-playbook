@@ -218,6 +218,94 @@ A meta-model can be trained on top of the base signals.
 In many cases, a well-designed gradient-boosted tree or logistic regression is enough.
 
 ---
+## Example fusion feature payload
+
+A practical fusion system often works with a tabular feature record like this:
+
+```json
+{
+  "request_id": "8c4d3f9a",
+  "flow_type": "account_opening",
+  "risk_tier": "high",
+  "platform": "android",
+  "device_class": "mid_range",
+  "model_scores": {
+    "passive": 0.81,
+    "active": 0.72,
+    "aux_spoof": 0.18
+  },
+  "quality": {
+    "blur_score": 0.14,
+    "brightness_score": 0.63,
+    "pose_score": 0.91,
+    "face_size_ratio": 0.34
+  },
+  "security": {
+    "root_signal": false,
+    "emulator_signal": false,
+    "virtual_camera_signal": false
+  },
+  "context": {
+    "retry_count": 1,
+    "challenge_passed": true
+  }
+}
+```
+
+This is the kind of row that later becomes training data for a meta-model.
+
+---
+
+## Example fusion decision record
+
+The output should stay explainable enough for monitoring and review.
+
+```json
+{
+  "request_id": "8c4d3f9a",
+  "fusion_score": 0.87,
+  "decision_band": "pass",
+  "reason_codes": [
+    "passive_score_high",
+    "challenge_passed",
+    "quality_ok",
+    "no_high_risk_security_signal"
+  ],
+  "model_versions": {
+    "passive": "v2.3.0",
+    "active": "v1.9.1",
+    "fusion": "v0.6.4"
+  }
+}
+```
+
+Even if the fusion layer is learned, keep reason fields or score components where possible. That makes incident review and policy tuning much easier.
+
+---
+
+## When fusion should **not** be added yet
+
+Fusion is usually premature when:
+
+- base-model behavior is not yet stable
+- labels are noisy or incomplete
+- device metadata is unreliable
+- teams are not logging enough intermediate signals
+- thresholding and retry logic are still changing weekly
+
+In these cases, strong basics usually matter more than a clever second-stage model.
+
+---
+
+## Need term help?
+
+For terms used on this page, keep these references nearby:
+
+- [Appendix A1 — Key Terms](appendix/A1-key-terms.md)
+- [Appendix A3 — Metrics and Evaluation](appendix/A3-metrics-and-evaluation.md)
+- [13. Dataset Strategy](13-dataset-strategy.md)
+
+---
 
 ## Training target design
 

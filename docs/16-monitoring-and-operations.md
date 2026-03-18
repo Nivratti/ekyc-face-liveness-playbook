@@ -191,6 +191,65 @@ Keep privacy policy and retention rules in mind when designing logs.
 
 ---
 
+## Example monitoring event
+
+A monitoring-friendly event should preserve enough context to explain what happened without exposing more data than necessary.
+
+```json
+{
+  "request_id": "req_34b9",
+  "timestamp": "2026-03-18T11:42:09Z",
+  "flow_type": "transaction_approval",
+  "platform": "web",
+  "browser_family": "chrome",
+  "sdk_version": "web-2.4.1",
+  "model_version": "fusion-0.6.4",
+  "policy_version": "policy-2026-03-10",
+  "decision": "retry",
+  "decision_band": "uncertain",
+  "latency_ms": 1288,
+  "quality": {
+    "blur_score": 0.31,
+    "brightness_score": 0.42
+  },
+  "scores": {
+    "passive": 0.58,
+    "active": 0.62,
+    "fusion": 0.61
+  },
+  "security": {
+    "virtual_camera_signal": false,
+    "injection_signal": false
+  }
+}
+```
+
+This kind of event supports dashboards, incident review, and threshold tuning.
+
+---
+
+## Example alert thresholds
+
+| Signal | Example trigger | Typical first action |
+|--------|------------------|----------------------|
+| retry rate | +25% vs trailing 7-day baseline | check quality, browser, and threshold slices |
+| p95 latency | above 2x normal for 15 minutes | inspect infrastructure, model load, and timeouts |
+| disagreement rate | above normal after release | compare calibration and fusion versions |
+| spoof acceptance proxy | spike in one flow or geography | tighten policy, review sessions, escalate fraud review |
+| camera failures | one client version spikes | pause rollout or hotfix SDK |
+
+---
+
+## Need term help?
+
+For terms used on this page, keep these references nearby:
+
+- [Appendix A1 — Key Terms](appendix/A1-key-terms.md)
+- [Appendix A3 — Metrics and Evaluation](appendix/A3-metrics-and-evaluation.md)
+- [19. Model Governance](19-model-governance.md)
+
+---
+
 ## Common operational mistakes
 
 | Mistake | Why it hurts |
