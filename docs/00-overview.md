@@ -82,6 +82,13 @@ That is why remote eKYC usually needs both.
 | [02. eKYC Integration](02-ekyc-integration.md) | Shows where liveness fits in the full onboarding flow |
 | [03. Deployment Guide](03-deployment-guide.md) | Covers real engineering and runtime choices |
 | [04. Best Practices](04-best-practices.md) | Gives a practical do-and-don't checklist |
+| [05. Real-World Examples](05-real-world-examples.md) | Shows where liveness is used in actual journeys |
+| [06. API and Response Examples](06-api-and-response-examples.md) | Gives practical response patterns and integration ideas |
+| [07. Decision Logic](07-decision-logic.md) | Shows how to turn score into action |
+| [08. Evaluation Playbook](08-evaluation-playbook.md) | Explains how to test readiness on real attacks and devices |
+| [09. Common Failures](09-common-failures.md) | Explains where production issues usually come from |
+| [10. Product Guide](10-product-guide.md) | Translates liveness into product trade-offs |
+| [11. Advanced Topics](11-advanced-topics.md) | Introduces fusion, calibration, and maturity topics |
 | [Appendix](appendix/A1-key-terms.md) | Holds deep technical, metrics, security, and vendor material |
 
 ---
@@ -124,6 +131,7 @@ Face liveness is important, but it is not the whole system.
 
 - [01. Face Liveness Guide](01-face-liveness-guide.md)
 - [02. eKYC Integration](02-ekyc-integration.md)
+- [05. Real-World Examples](05-real-world-examples.md)
 - [Appendix A1 — Key Terms](appendix/A1-key-terms.md)
 
 ## Read next

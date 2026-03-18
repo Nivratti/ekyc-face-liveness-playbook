@@ -91,6 +91,13 @@ nav:
     - "02. eKYC Integration": 02-ekyc-integration.md
     - "03. Deployment Guide": 03-deployment-guide.md
     - "04. Best Practices": 04-best-practices.md
+    - "05. Real-World Examples": 05-real-world-examples.md
+    - "06. API and Response Examples": 06-api-and-response-examples.md
+    - "07. Decision Logic": 07-decision-logic.md
+    - "08. Evaluation Playbook": 08-evaluation-playbook.md
+    - "09. Common Failures": 09-common-failures.md
+    - "10. Product Guide": 10-product-guide.md
+    - "11. Advanced Topics": 11-advanced-topics.md
 
   - Appendix:
     - "A1. Key Terms": appendix/A1-key-terms.md

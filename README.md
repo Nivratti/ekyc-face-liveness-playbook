@@ -39,6 +39,13 @@ Use this when you need metrics detail, standards context, security controls, ven
 3. [docs/02-ekyc-integration.md](docs/02-ekyc-integration.md)
 4. [docs/03-deployment-guide.md](docs/03-deployment-guide.md)
 5. [docs/04-best-practices.md](docs/04-best-practices.md)
+6. [docs/05-real-world-examples.md](docs/05-real-world-examples.md)
+7. [docs/06-api-and-response-examples.md](docs/06-api-and-response-examples.md)
+8. [docs/07-decision-logic.md](docs/07-decision-logic.md)
+9. [docs/08-evaluation-playbook.md](docs/08-evaluation-playbook.md)
+10. [docs/09-common-failures.md](docs/09-common-failures.md)
+11. [docs/10-product-guide.md](docs/10-product-guide.md)
+12. [docs/11-advanced-topics.md](docs/11-advanced-topics.md)
 
 ## Appendix map
 
@@ -70,6 +77,13 @@ face-liveness-docs/
 │  ├─ 02-ekyc-integration.md
 │  ├─ 03-deployment-guide.md
 │  ├─ 04-best-practices.md
+│  ├─ 05-real-world-examples.md
+│  ├─ 06-api-and-response-examples.md
+│  ├─ 07-decision-logic.md
+│  ├─ 08-evaluation-playbook.md
+│  ├─ 09-common-failures.md
+│  ├─ 10-product-guide.md
+│  ├─ 11-advanced-topics.md
 │  ├─ appendix/
 │  ├─ images/
 │  └─ ... detailed topic folders ...

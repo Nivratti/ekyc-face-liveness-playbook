@@ -29,6 +29,13 @@ Then read:
 
 4. [03. Deployment Guide](03-deployment-guide.md)
 5. [04. Best Practices](04-best-practices.md)
+6. [05. Real-World Examples](05-real-world-examples.md)
+7. [06. API and Response Examples](06-api-and-response-examples.md)
+8. [07. Decision Logic](07-decision-logic.md)
+9. [08. Evaluation Playbook](08-evaluation-playbook.md)
+10. [09. Common Failures](09-common-failures.md)
+11. [10. Product Guide](10-product-guide.md)
+12. [11. Advanced Topics](11-advanced-topics.md)
 
 ### Need deeper detail?
 Go to:
@@ -46,10 +53,24 @@ flowchart LR
     B --> C[02 eKYC Integration]
     C --> D[03 Deployment Guide]
     D --> E[04 Best Practices]
+    E --> G[05 Real-World Examples]
+    G --> H[06 API and Response Examples]
+    H --> I[07 Decision Logic]
+    I --> J[08 Evaluation Playbook]
+    J --> K[09 Common Failures]
+    K --> L[10 Product Guide]
+    L --> M[11 Advanced Topics]
     B --> F[Appendix]
     C --> F
     D --> F
     E --> F
+    G --> F
+    H --> F
+    I --> F
+    J --> F
+    K --> F
+    L --> F
+    M --> F
 ```
 
 ---

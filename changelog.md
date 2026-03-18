@@ -1,5 +1,17 @@
 # Changelog
 
+## Latest update
+
+- added `docs/05-real-world-examples.md`
+- added `docs/06-api-and-response-examples.md`
+- added `docs/07-decision-logic.md`
+- added `docs/08-evaluation-playbook.md`
+- added `docs/09-common-failures.md`
+- added `docs/10-product-guide.md`
+- added `docs/11-advanced-topics.md`
+- extended MkDocs navigation for the practical playbook path
+- updated `README.md`, `docs/index.md`, `docs/00-overview.md`, and `docs/04-best-practices.md` to link the new pages
+
 ## 2026-03-18
 
 ### Navigation and usability polish

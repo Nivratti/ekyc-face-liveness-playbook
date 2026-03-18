@@ -185,9 +185,11 @@ That is why successful teams treat face liveness as a product and platform capab
 
 - [01. Face Liveness Guide](01-face-liveness-guide.md)
 - [03. Deployment Guide](03-deployment-guide.md)
+- [05. Real-World Examples](05-real-world-examples.md)
+- [07. Decision Logic](07-decision-logic.md)
 - [Appendix A6 — Vendor Evaluation Checklist](appendix/A6-vendor-evaluation-checklist.md)
 - [Appendix A7 — References](appendix/A7-references.md)
 
 ## Read next
 
-Use [Appendix A1 — Key Terms](appendix/A1-key-terms.md) if you want the deep-reference entry point.
+Go to [05. Real-World Examples](05-real-world-examples.md).
