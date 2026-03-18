@@ -1,17 +1,17 @@
 # Face Liveness Docs
 
-## Simple Main Guide + Deep Reference for eKYC Teams
+## Simple main guide + deep reference for eKYC teams
 
-This site is designed to be easy for first-time readers **and** useful for advanced technical teams.
+This documentation is designed to be easy for first-time readers **and** still useful for deeper technical work.
 
-Instead of forcing everyone through a long encyclopedia-style flow, the site now has two layers:
+Instead of forcing everyone through a long encyclopedia-style path, the site has two layers:
 
 - **Main guide** — simple, practical, and fast to understand
 - **Appendix / deep reference** — detailed technical, testing, standards, security, and vendor material
 
 ---
 
-## Start Here
+## Start here
 
 ### New to face liveness?
 Read these first:
@@ -34,30 +34,30 @@ Then read:
 Go to:
 
 - [Appendix](appendix/A1-key-terms.md)
-- Detailed topic chapters under **Deep Reference by Topic** in the left navigation
+- the detailed topic chapters under **Deep Reference by Topic** in the left navigation
 
 ---
 
-## What This Documentation Covers
+## What this documentation covers
 
 - what face liveness is
 - why it matters in eKYC
-- active, passive, and hybrid approaches
-- attack types from photo replay to AI-generated spoofing
-- score interpretation and thresholding
-- deployment choices such as on-device vs server-side
-- testing, metrics, and operational monitoring
+- how passive, active, and hybrid methods differ
+- common attack types from print and replay to injection and AI-generated content
+- input quality, score interpretation, and thresholding
+- deployment choices such as on-device, server-side, and hybrid
+- testing, monitoring, and model updates
 - security, privacy, and vendor evaluation
 
 ---
 
-## How to Use This Site
+## How to use this site
 
 !!! tip "Fastest practical path"
-    If you want a simple but complete understanding, read the 5 main pages first. That gives you the end-to-end picture without heavy detail overload.
+    If you want a simple but complete understanding, read the five main pages first. That gives you the end-to-end picture without getting overloaded by standards and taxonomy detail.
 
 !!! tip "Use appendix only when needed"
-    The appendix is there so the main guide stays clean. Use it when you need taxonomy depth, metrics detail, standards mapping, or procurement checklists.
+    The appendix exists so the main guide stays clean. Use it when you need attack depth, metrics detail, standards mapping, or procurement checklists.
 
-!!! note "Legacy detailed chapters are preserved"
-    The original deep-dive topic pages are still available. They are now treated as detailed reference rather than the first reading path.
+!!! note "Detailed topic pages are preserved"
+    The earlier deep-dive chapters are still available. They now serve as reference material rather than the first reading path.

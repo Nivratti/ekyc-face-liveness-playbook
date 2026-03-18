@@ -2,178 +2,213 @@
 
 ## What this page covers
 
-This page explains where face liveness fits into the **end-to-end eKYC workflow**.
+This page explains where face liveness fits inside the **full remote eKYC flow**.
 
 The main idea is simple:
 
-> Face liveness should not be treated as a standalone feature. It should be placed at the right point in the capture, identity, fraud, and decision pipeline.
+> Face liveness should not be treated as a standalone feature. It should sit at the right point in the capture, identity, fraud, and decision pipeline.
 
 ---
 
-## Typical remote eKYC flow
+## A typical remote eKYC flow
 
 A common flow looks like this:
 
 1. User starts onboarding
-2. Device/browser permissions are checked
-3. Document capture happens
+2. Device or browser permissions are checked
+3. ID document capture happens
 4. Document verification happens
-5. Selfie or video capture happens
+5. Selfie or short video capture happens
 6. Face quality checks run
 7. Face liveness runs
-8. Face match against document portrait or enrolled face runs
-9. Additional fraud/risk checks run
+8. Face match runs against the ID portrait or enrolled face
+9. Other fraud and risk checks run
 10. Final policy decision is made
-11. Audit trail is stored
+11. Audit records are stored
 
-Depending on the business and regulation, some steps may be reordered or expanded.
+Some regulated or high-risk flows may add extra steps, but this structure is a good mental model.
 
 ---
 
-## Where liveness should be placed
+## Where liveness should sit
 
-In most flows, face liveness should happen **before trusting the selfie for identity comparison**.
+In most flows, face liveness should happen **before you fully trust the selfie for identity comparison**.
 
-That is because a clean face match score is not enough if the image or video itself is spoofed.
+Why? Because a clean face match score does not prove the media is real.
 
-### Common placement options
+### Common placement patterns
 
-#### Option A — quality check first, then liveness, then face match
+#### Pattern A — quality check → liveness → face match
 This is often the clearest production flow.
 
-- reject unusable captures early
-- avoid wasting compute on clearly bad input
-- validate live presence before identity comparison
+Benefits:
 
-#### Option B — run liveness and face match in parallel
-Useful when low latency matters and the system can safely gate the final decision after both results are available.
+- bad input is rejected early
+- compute is not wasted on obviously unusable capture
+- live presence is checked before identity trust increases
 
-#### Option C — adaptive flow
-Use passive liveness first, then ask for active challenge only when confidence is weak or risk is high.
+#### Pattern B — liveness and face match in parallel
+Useful when latency matters and the final decision waits for both results.
+
+Benefits:
+
+- faster end-to-end flow
+- good for optimized production systems
+
+Watchouts:
+
+- the policy layer must still treat both checks separately
+- a strong face match should not hide a weak liveness result
+
+#### Pattern C — adaptive flow
+Use passive liveness first, then ask for an active challenge only when risk is high or confidence is weak.
+
+Benefits:
+
+- better balance of security and user experience
+- lower friction for good users
 
 ---
 
-## Example decision pipeline
+## A simple decision pipeline
 
-### Step 1: Capture checks
-Look for:
-- face present
-- single face
+### Step 1 — capture checks
+Check for things like:
+
+- single face present
 - enough brightness
 - acceptable blur
 - stable framing
+- face size in range
 
-### Step 2: Liveness decision
-Possible outputs:
+### Step 2 — liveness result
+Possible outcomes:
+
 - pass
-- uncertain / retry
+- uncertain
 - fail
 
-### Step 3: Face match
-Possible outputs:
+### Step 3 — face match result
+Possible outcomes:
+
 - strong match
 - weak match
 - no match
 
-### Step 4: Risk policy
-Bring in:
+### Step 4 — risk policy
+Bring in supporting signals such as:
+
 - document confidence
 - device risk
 - prior fraud signals
 - retry history
-- business rules
+- account policy
 
-### Step 5: Final action
+### Step 5 — final action
 Possible actions:
+
 - auto approve
-- ask for retry
-- ask for stronger challenge
-- escalate to manual review
+- retry
+- stronger challenge
+- manual review
 - hard reject
 
 ---
 
-## Retry logic matters
+## Why retry logic matters
 
-A retry is not just a UX detail. It is part of the security and conversion design.
+Retry is not only a UX feature. It is part of security design.
 
 ### Good retry design
-- explain the issue clearly
-- distinguish quality problems from spoof suspicion
-- cap retry attempts
-- log why each retry happened
-- use stronger checks after repeated uncertainty
+
+- explains the issue clearly
+- separates quality problems from spoof suspicion
+- caps the number of attempts
+- logs why each retry happened
+- can increase scrutiny after repeated uncertainty
 
 ### Bad retry design
-- vague error messages
+
+- vague messages such as “verification failed”
 - unlimited retries
-- using the same weak logic every time
-- no separation between quality failure and fraud suspicion
+- no difference between blur and spoof suspicion
+- repeated use of the exact same weak path
 
 ---
 
 ## Manual review and fallback
 
-Some systems need a fallback path for:
+Some systems need fallback for users who cannot pass the normal flow because of:
 
-- poor network or device conditions
-- accessibility constraints
-- older devices with weak camera performance
-- users who repeatedly land in the uncertain band
-- regulated flows that require human review
+- poor network conditions
+- weak camera hardware
+- accessibility needs
+- repeated uncertainty
+- regulated cases that require human review
 
-Fallback must be designed carefully. A weak fallback can become the easiest bypass path.
+Fallback is necessary, but it must be designed carefully. A weak fallback path can become the easiest fraud bypass.
 
 ---
 
 ## Audit trail and explainability
 
-A production eKYC system should record enough evidence to answer:
+A production eKYC system should record enough information to answer:
 
 - what capture was attempted
-- what quality checks failed or passed
+- which quality checks passed or failed
 - what liveness result was produced
 - what face match result was produced
 - what final decision was made
 - which model version and policy version were active
 
-This helps with fraud review, incident response, model monitoring, and regulator-facing traceability.
+This is useful for fraud review, incident response, model monitoring, customer support, and regulatory traceability.
 
 ---
 
 ## Integration patterns
 
 ### Mobile SDK flow
-Common when the business wants stronger control over capture UX and device context.
+Common when the team wants stronger control over capture UX, device signals, and runtime behavior.
 
 ### Web SDK flow
-Useful for fast rollout and broad reach, but browser and injection hardening become especially important.
+Useful for faster rollout and broad reach, but browser variability and injection hardening matter more.
 
 ### Backend API flow
-Useful for centralized decisioning, but raw media transport, latency, and privacy handling matter more.
+Useful for centralized decisioning, but raw media transport, latency, privacy, and secure session binding become more important.
 
 ### Hybrid flow
-Capture and some quality steps on device, with deeper scoring and policy on the server.
+Capture and some checks happen on device, while deeper scoring and policy run on the server.
+
+This is often the most practical design in real systems.
 
 ---
 
-## Practical guidance
+## A recommended default approach
 
-In most real eKYC systems, the strongest structure is:
+For many eKYC systems, a good default structure is:
 
 1. quality gating
 2. passive liveness
-3. adaptive challenge only when needed
+3. active challenge only when needed
 4. face match
 5. risk fusion
 6. final policy decision
 
-This gives a good balance of security, usability, and operational control.
+This usually gives a good balance of security, conversion, and operational control.
 
 ---
 
-## What to read next
+## Practical takeaway
 
-- For engineering choices: [03. Deployment Guide](03-deployment-guide.md)
-- For do-and-don't guidance: [04. Best Practices](04-best-practices.md)
-- For deeper architecture: `docs/04-technical-architecture/`
+The most important design mistake is treating face liveness like a detached model score.
+
+It should be integrated into:
+
+- capture quality
+- retry policy
+- face match logic
+- broader fraud checks
+- final business decisioning
+- audit and review workflows
+
+When it is placed correctly in the flow, face liveness becomes much more valuable and easier to operate.

@@ -1,88 +1,77 @@
 # 04. Best Practices
 
-## Use this page as a practical checklist
+## How to use this page
 
-This page summarizes the most important things teams should do when planning, evaluating, deploying, and maintaining a face liveness system for eKYC.
+Use this page as a practical checklist for planning, evaluating, deploying, and maintaining a face liveness system for eKYC.
 
 ---
 
 ## Before choosing a model or vendor
 
 ### Be clear about the use case
-A low-risk login flow and a high-risk remote onboarding flow do not need the same balance of security and friction.
+A low-risk login flow and a high-risk remote onboarding flow should not use the same assumptions.
+
+Define the actual business scenario first:
+
+- account opening
+- video KYC
+- transaction step-up
+- account recovery
+- fraud investigation support
 
 ### Define the threat model
-List the attacks you care most about:
+List the attacks you care about most.
+
+At minimum, consider:
+
 - print attacks
 - replay attacks
 - injection attacks
 - mask attacks
-- AI-generated media
-- process abuse and weak fallback abuse
+- AI-generated content
+- weak fallback abuse
 
-### Decide what “good enough” means
-You should define acceptable targets for:
-- spoof acceptance risk
-- genuine user rejection risk
-- latency
-- completion rate
-- retry rate
+### Ask for evidence, not only claims
+A vendor claim like “99% accuracy” is not enough.
 
----
+Ask for evidence by:
 
-## During solution evaluation
-
-### Test on realistic data
-Do not rely only on clean benchmark samples.
-
-Test across:
-- phones and browsers
-- low light and backlight
-- blur and motion
-- glasses and occlusion
-- different skin tones, age groups, and face shapes
-- different attack instruments and screen types
-
-### Evaluate the full pipeline
-A vendor demo may show only the model score. You need to understand:
-- capture UX
-- retry policy
-- API behavior
-- logging quality
-- device support
-- security hardening
-
-### Separate product claims from evidence
-Ask for clear evidence by attack type, device type, and evaluation setting.
+- attack type
+- device type
+- capture condition
+- region or environment
+- evaluation protocol
 
 ---
 
 ## During system design
 
-### Keep quality checks before expensive or decisive steps
-Bad input should be handled early.
+### Put quality checks early
+Bad input should be handled before expensive or decisive steps.
 
-### Treat uncertain scores differently from hard fails
-A three-way policy is usually better than a binary policy:
+### Separate uncertain cases from hard fails
+A three-way policy is usually better than a binary one:
+
 - pass
-- retry / escalate
+- retry or escalate
 - fail
 
 ### Keep face match and liveness logically separate
-Do not merge them so early that operators cannot reason about failure causes.
+Do not mix them so early that teams cannot explain why a case failed.
 
 ### Design fallback carefully
-Fallback is necessary in some environments, but a weak fallback path can become the easiest fraud bypass.
+Fallback is important, but a weak fallback can become the easiest path for fraud.
 
 ---
 
 ## During deployment
 
 ### Start with controlled rollout
-Pilot first. Measure behavior before full launch.
+Pilot first, then expand gradually.
 
 ### Monitor by segment, not just overall average
-Track by:
+Track outcomes by:
+
 - device model
 - OS version
 - app version
@@ -90,8 +79,8 @@ Track by:
 - region
 - network quality
 
-### Keep model version and policy version visible
-When outcomes shift, you need to know what changed.
+### Keep model and policy version visible
+If outcomes change, the team should know exactly what changed.
 
 ---
 
@@ -99,6 +88,7 @@ When outcomes shift, you need to know what changed.
 
 ### Monitor drift continuously
 Watch for changes in:
+
 - score distribution
 - retry rate
 - fail rate
@@ -106,38 +96,39 @@ Watch for changes in:
 - fraud outcomes
 
 ### Retest against new attacks
-Attackers adapt. New screen technologies, generative media methods, and injection tools can change risk quickly.
+Attackers adapt. Screen quality changes, new generative tools appear, and injection methods evolve.
 
-### Review accessibility and fairness impact
-A secure system that blocks too many genuine users creates operational and business problems.
+### Review fairness and accessibility impact
+A secure system that blocks too many genuine users creates real business and operational problems.
 
 ---
 
 ## Common mistakes to avoid
 
-### Mistake 1 — using only one benchmark number
-A single summary metric hides too much.
+### Mistake 1 — trusting a single benchmark number
+One summary metric hides too much.
 
 ### Mistake 2 — ignoring injection attacks
-Strong photo defense is not enough if the pipeline accepts injected media.
+Strong photo defense is not enough if the system accepts injected media.
 
-### Mistake 3 — tuning only for best-case devices
-Production traffic is not made of flagship phones only.
+### Mistake 3 — testing only on high-end devices
+Production traffic rarely looks that clean.
 
-### Mistake 4 — unlimited retries
-Too many retries can help attackers probe the system.
+### Mistake 4 — allowing too many retries
+Unlimited retries can help attackers learn the system.
 
-### Mistake 5 — weak incident response preparation
-You need a plan for sudden attack waves, model regressions, or device-specific failures.
+### Mistake 5 — weak incident response planning
+Teams need a plan for sudden attack waves, regressions, or device-specific failures.
 
 ---
 
 ## Recommended production checklist
 
 - [ ] clear threat model documented
+- [ ] target use case defined
 - [ ] quality gate defined
 - [ ] liveness thresholds defined
-- [ ] uncertain band / retry band defined
+- [ ] uncertain band defined
 - [ ] retry cap defined
 - [ ] manual review policy defined
 - [ ] device coverage tested
@@ -151,14 +142,28 @@ You need a plan for sudden attack waves, model regressions, or device-specific f
 
 ---
 
+## A simple rule of thumb
+
+A face liveness system is much healthier when the team can clearly answer these questions:
+
+1. What attacks are we trying to stop?
+2. What happens when the result is uncertain?
+3. What happens when the system starts drifting?
+4. How do we know a new model version is actually safer?
+5. What is our safest fallback path?
+
+If those answers are unclear, the system is probably not ready yet.
+
+---
+
 ## Final takeaway
 
 The best face liveness systems are not only accurate. They are also:
 
 - understandable
 - measurable
-- operationally safe
 - secure against realistic attacks
+- usable for genuine customers
 - manageable after launch
 
 That is why successful teams treat face liveness as a product and platform capability, not just a model output.

@@ -2,98 +2,144 @@
 
 ## What this page covers
 
-This page focuses on the practical side of taking face liveness from a model or SDK into a real production environment.
+This page focuses on the practical work of taking face liveness from a model or SDK into a real production environment.
 
-A system that works in a demo can still fail in production because of:
+A system that looks good in a demo can still fail in production because of:
 
 - poor device coverage
 - unstable network conditions
 - weak browser capture
 - high latency
 - missing injection defenses
-- weak observability
-- poorly tuned thresholds
+- weak monitoring
+- badly tuned thresholds
 
 ---
 
-## Deployment choices
+## First deployment decision: where should liveness run?
 
-## On-device vs server-side
+### On-device
 
-| Choice | Strengths | Limitations |
-|--------|-----------|-------------|
-| On-device | lower round-trip latency, better privacy posture in some designs, can work better in unstable network conditions | device performance variation, app integration complexity, harder model management |
-| Server-side | centralized control, easier model updates, unified logging and policy | more bandwidth use, transport security burden, latency depends on network |
-| Hybrid | balanced approach, common in practice | more moving parts, careful interface design needed |
+**Strengths**
 
-A hybrid design is often the most practical for eKYC.
+- lower round-trip latency
+- can work better when the network is unstable
+- can support stronger privacy posture in some designs
+
+**Challenges**
+
+- device performance varies a lot
+- model management is harder
+- app integration can be more complex
+
+### Server-side
+
+**Strengths**
+
+- centralized control
+- easier model updates
+- unified logging and policy enforcement
+
+**Challenges**
+
+- more bandwidth use
+- stronger transport security requirements
+- latency depends more on network quality
+
+### Hybrid
+
+**Strengths**
+
+- balanced design
+- common in real eKYC systems
+- allows some capture control on device with centralized policy on the backend
+
+**Challenges**
+
+- more moving parts
+- careful interface design is needed
+
+For many production systems, a hybrid design is the most practical choice.
 
 ---
 
-## Mobile vs web
+## Mobile vs web deployment
 
 ### Mobile app deployment
-Usually gives stronger control over:
-- camera capture quality
+Usually gives better control over:
+
+- camera capture behavior
 - device context
 - anti-tampering controls
-- UX guidance
+- guided user experience
 
 ### Web deployment
 Often wins on reach and rollout speed, but requires stronger attention to:
+
 - browser variability
-- virtual camera / injection risk
-- media API behavior
-- cross-device consistency
+- virtual camera and injection risk
+- camera API behavior
+- cross-device inconsistency
+
+Neither is automatically better. The right choice depends on risk level, user base, and integration constraints.
 
 ---
 
 ## Runtime considerations
 
 ### Latency
-Users notice delay quickly. Keep the full flow responsive.
+Users notice delay quickly, especially in onboarding flows.
 
-Latency comes from:
+Latency can come from:
+
 - capture time
 - upload time
 - preprocessing
 - model inference
-- policy/risk services
+- policy or fraud services
 - retries
 
+A system with good model accuracy but poor end-to-end responsiveness can still fail from a product perspective.
+
 ### Bandwidth
-Video-based or multi-frame flows can fail badly on weak networks. Compression, frame selection, and adaptive capture policy matter.
+Video-based or multi-frame capture can perform badly on weak networks. Frame selection, adaptive capture, and media compression matter.
 
 ### Device performance
 Low-end devices may struggle with:
-- real-time challenge rendering
-- high-resolution processing
-- stable autofocus
+
+- autofocus
+- stable exposure
+- challenge rendering
 - memory pressure
+- high-resolution processing
+
+This is why testing only on flagship phones is dangerous.
 
 ---
 
-## Input quality and capture UX
+## Capture quality and UX
 
 Good deployment depends heavily on capture design.
 
-Recommended controls:
-- guide face size and framing
+Recommended controls include:
+
+- guide the user on face position and size
 - warn about low light and backlight
 - detect blur early
-- handle glasses glare where possible
-- prevent multi-face confusion
+- prevent multi-face capture
 - keep instructions short and visible
+- distinguish quality problems from spoof suspicion
 
-A model is easier to trust when the capture process is also controlled well.
+A strong model is easier to trust when the capture experience is also well controlled.
 
 ---
 
-## Threshold and policy deployment
+## Thresholds and policy
 
-Do not push a liveness model into production without a deployment policy.
+Do not deploy a liveness model without a production policy around it.
 
-You need to define:
+You should define:
+
 - pass threshold
 - uncertain band
 - retry rules
@@ -102,56 +148,62 @@ You need to define:
 - model version ownership
 - rollback conditions
 
-The model output and the policy output should be treated separately.
+The model output and the policy output should be treated as different things.
+
+A score is not a business decision until policy turns it into one.
 
 ---
 
 ## Monitoring and observability
 
-Production systems should monitor at least:
+A production team should monitor at least:
 
-- pass / retry / fail rates
+- pass, retry, and fail rates
 - device-wise performance
-- browser/app-version performance
+- browser or app-version performance
 - latency percentiles
 - traffic spikes
-- environment-specific failure patterns
-- manual review escalation rate
+- environment-specific failures
+- manual review rate
 - drift in score distribution
 
-A sudden change in score distribution can indicate:
+A sudden score shift can indicate:
+
 - a model issue
-- capture UX regression
+- a capture UX regression
 - a new attack pattern
 - device-specific breakage
+- a bad release
 
 ---
 
-## Model updates
+## Model updates and rollout safety
 
-Model updates should be treated like a controlled release, not an isolated file replacement.
+Model updates should be treated like controlled releases, not simple file replacements.
 
 Recommended practice:
-- keep model versioning explicit
-- track training/evaluation baseline per version
-- run shadow or canary rollout when possible
-- compare old vs new score distributions
-- keep rollback ready
+
+- keep versioning explicit
+- track evaluation results per version
+- use canary or shadow rollout where possible
+- compare old and new score distributions
+- keep a rollback path ready
 
 ---
 
-## Security controls around deployment
+## Security around deployment
 
-A face liveness system should not trust raw capture blindly.
+A face liveness system should not blindly trust any media it receives.
 
 Deployment should consider:
+
 - anti-injection protections
-- request signing or secure session binding where relevant
 - replay resistance
-- transport encryption
+- secure transport
+- secure session binding where relevant
 - device integrity signals
-- server-side validation of expected media properties
-- secure logging with minimal sensitive retention
+- validation of expected media properties
+- safe logging with minimal sensitive retention
 
 For deeper detail, see [Appendix A5 — Security and Privacy](appendix/A5-security-and-privacy.md).
 
@@ -160,36 +212,44 @@ For deeper detail, see [Appendix A5 — Security and Privacy](appendix/A5-securi
 ## A practical rollout plan
 
 ### Phase 1 — controlled pilot
-- limited device / region set
-- higher manual review support
+
+- limited device or region set
 - strong instrumentation
+- more manual review support
 
 ### Phase 2 — threshold tuning
-- compare fraud outcomes and genuine-user friction
+
+- compare fraud outcomes and user friction
 - refine retry policy
-- monitor device/browser splits
+- review device and browser splits
 
 ### Phase 3 — wider rollout
+
 - expand traffic gradually
 - monitor regressions daily
-- keep rollback and feature flag controls ready
+- keep rollback and feature flags ready
 
 ### Phase 4 — continuous improvement
+
 - red-team regularly
 - re-test on new devices
-- review attack coverage periodically
+- monitor new spoof patterns
+- review performance by segment
 
 ---
 
 ## Practical takeaway
 
-Good deployment is not just about choosing a model. It is about making the entire runtime system dependable under real-world conditions.
+Good deployment is not just about selecting a model. It is about making the whole runtime system dependable under real conditions.
 
-That means the team must think about:
+That means thinking about:
+
 - capture quality
 - device diversity
 - network variability
-- policy design
-- observability
+- threshold policy
+- monitoring
 - secure integration
-- safe rollout strategy
+- safe rollout
+
+A face liveness feature only becomes production-ready when all of those parts work together.

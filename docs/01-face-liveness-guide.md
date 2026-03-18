@@ -2,45 +2,56 @@
 
 ## What face liveness means
 
-Face liveness verifies that the face presented to the camera belongs to a **real person who is physically present** during capture.
+Face liveness verifies that the face shown to the camera belongs to a **real person who is physically present during capture**.
 
-This is important because a face recognition system can correctly match a face to an ID document and still be fooled by a spoof. For example, an attacker might show a printed photo, replay a recorded video, inject a digital stream, or use AI-generated content.
+This matters because a face recognition system can correctly match a face to an ID document and still be fooled by a spoof. A system may see the right face, but it may not be seeing a real live person.
 
-So in remote eKYC:
+In remote eKYC, face liveness helps answer:
 
-- **face matching** confirms identity similarity
-- **face liveness** confirms physical presence and authenticity of the capture
-
-Both are often necessary.
+- Is this person real?
+- Is the person present right now?
+- Is the camera feed genuine, or is it being spoofed?
 
 ---
 
 ## Why it matters in eKYC
 
-Remote onboarding and remote authentication remove the safety of in-person supervision. That creates fraud opportunities.
+Remote onboarding removes in-person supervision. That makes fraud easier.
 
 Without liveness, a system may accept:
 
-- a photo of the target person displayed on another phone
-- a replayed video of the target person blinking or smiling
-- a mask or partial disguise designed to pass capture checks
-- an injected camera stream from a compromised device or browser
-- AI-generated or manipulated content that looks realistic enough to fool weak systems
+- a photo of the target person shown on another device
+- a replayed video of the target person blinking or moving
+- a mask or other presentation attack
+- an injected or virtual camera stream
+- manipulated or AI-generated face content
 
-Face liveness reduces this risk. It is now a core control in digital onboarding, video KYC, account recovery, and step-up verification.
+That is why face liveness is now a core control in:
+
+- account opening
+- video KYC
+- account recovery
+- step-up verification
+- high-risk transaction approval
 
 ---
 
-## Face liveness vs face match
+## Face match vs face liveness
+
+These are related, but they are not the same.
 
 | Question | Face match | Face liveness |
 |----------|------------|---------------|
-| Main purpose | Compare identity similarity | Detect whether the sample is live and genuine |
-| Main output | similarity / match score | liveness score or live/spoof decision |
-| Typical failure without the other | may accept a spoof of the right person | may confirm live presence but not identity |
-| In eKYC | usually used with document/face comparison | usually used before or alongside final face decision |
+| What does it ask? | Does this face look like the expected person? | Is this a real live person present during capture? |
+| Typical output | match score or similarity score | live/spoof result or liveness score |
+| Main weakness without the other | may accept a spoof of the right person | may confirm a live person who is not the right identity |
 
-A common mistake is to treat face match as enough. It is not.
+A simple way to remember it:
+
+- **Face match** checks identity similarity
+- **Face liveness** checks physical presence and authenticity
+
+In eKYC, both are usually needed.
 
 ---
 
@@ -48,76 +59,75 @@ A common mistake is to treat face match as enough. It is not.
 
 ### Passive liveness
 
-**What it is**
-Passive liveness tries to detect spoofing from one image or a short capture sequence without asking the user to do a challenge.
+**What it is**  
+Passive liveness tries to detect spoofing from one image or a short sequence without asking the user to do a challenge.
 
-**How it works**
-It looks for cues such as texture, lighting behavior, moire patterns, screen artifacts, face depth hints, motion consistency, or learned spoof signatures.
+**Why teams use it**  
+It is fast, low-friction, and easier for many users.
 
-**Why teams like it**
-- fast user flow
-- lower friction
-- easier for users with accessibility constraints
+**What it looks for**  
+Depending on the system, it may use texture, lighting response, motion consistency, depth hints, screen artifacts, or learned spoof patterns.
 
-**Limitations**
-- can be harder to defend against strong replay or injection attacks
-- quality and device variation can affect reliability
+**Limits**  
+It can struggle more against stronger replay or injection attacks if the capture and security environment are weak.
 
 ### Active liveness
 
-**What it is**
-Active liveness asks the user to perform a challenge, such as turn the head, blink, smile, or follow an on-screen prompt.
+**What it is**  
+Active liveness asks the user to do something, such as blink, smile, turn the head, or follow an on-screen cue.
 
-**Why it helps**
+**Why teams use it**  
 It makes simple presentation attacks harder because the attacker must respond correctly in real time.
 
-**Limitations**
-- higher user friction
-- can increase drop-off or retry rate
-- challenge design matters a lot
+**Limits**  
+It adds friction. If the challenge is poorly designed, it can hurt conversion and accessibility.
 
 ### Hybrid liveness
 
-**What it is**
+**What it is**  
 Hybrid liveness combines passive and active signals.
 
-**Why it is common**
-It gives a better balance between security and user experience. Many real systems use passive checks first and invoke active challenge only when needed.
+**Why it is common**  
+It gives a better balance between security and usability. Many production systems use passive checks first and only ask for an active challenge when confidence is low or risk is high.
 
 ---
 
 ## Common attack groups
 
-A simple way to understand attacks is to divide them into four groups.
+A simple way to understand attacks is to group them into four buckets.
 
 ### 1. Physical presentation attacks
 Examples:
+
 - printed photo
-- cut-out eye photo
-- photo on glossy paper
-- replay on tablet or phone
+- cut-out photo
+- glossy photo
+- replay on a tablet or phone
 - 2D or 3D mask
 
-### 2. Digital and injection attacks
+### 2. Digital or injection attacks
 Examples:
+
 - virtual camera feed
 - emulator-based spoofing
-- camera API tampering
-- direct image or video injection into the pipeline
+- tampering with camera APIs
+- directly injecting an image or video into the pipeline
 
 ### 3. AI-assisted attacks
 Examples:
+
 - deepfake video
 - face swap
-- generative image spoof
-- motion-driven avatar style attacks
+- generated face media
+- motion-driven synthetic avatars
 
-### 4. Process and operational attacks
+### 4. Operational attacks
 Examples:
+
 - coached user behavior
-- device compromise
+- compromised device or browser
 - fraud rings using stolen media
-- bypass via weak fallback flows
+- weak fallback paths used as a bypass
 
 For the full breakdown, see [Appendix A2 — Attack Taxonomy](appendix/A2-attack-taxonomy.md).
 
@@ -125,74 +135,78 @@ For the full breakdown, see [Appendix A2 — Attack Taxonomy](appendix/A2-attack
 
 ## Input quality still matters
 
-A strong model cannot fully save poor capture quality.
+Even a strong model will struggle if capture quality is poor.
 
-Common problems:
+Common quality problems include:
+
 - low light or strong backlight
-- blur due to hand movement
-- face too small in frame
-- face partially outside frame
-- occlusion from glasses glare, mask, hair, cap, hand, or phone edge
+- blur from hand movement
+- face too small in the frame
+- face partly outside the frame
+- occlusion from hair, glare, mask, hand, or device edge
 - aggressive image compression
 - old front camera or unstable browser capture
 
-A good production system should check quality before or during liveness, not after a hard failure.
+A good production system should check capture quality early and guide the user before making a hard liveness decision.
 
 ---
 
-## Simple pipeline view
+## A simple pipeline view
 
-A practical face liveness pipeline usually looks like this:
+A practical face liveness flow often looks like this:
 
 1. Capture image or short video
 2. Detect the face
 3. Run quality checks
-4. Extract liveness signals or features
-5. Produce a liveness score
+4. Extract liveness signals
+5. Produce a score or decision
 6. Apply threshold and policy
 7. Pass, retry, escalate, or fail
 8. Combine with face match and other risk signals if needed
 
-In stronger systems, the final decision may also use:
+In many real systems, the final decision may also consider:
+
+- document verification result
 - device risk
-- document verification results
-- fraud history
-- geo / IP signals
-- account risk policies
+- account risk
+- IP or geo signals
+- retry history
+- fraud rules
 
 ---
 
 ## Scores, thresholds, and decisions
 
-A liveness score is not useful by itself unless it is connected to decision policy.
+A liveness score is only useful when it is connected to a decision policy.
 
 ### Example policy
-- **high score** → pass
-- **medium score** → retry or active challenge
-- **low score** → fail or manual review
 
-Thresholds always involve trade-offs:
+- **High score** → pass
+- **Middle band** → retry, stronger challenge, or manual review
+- **Low score** → fail or escalate
+
+Threshold choice always involves a trade-off:
 
 - a stricter threshold reduces spoof acceptance risk
-- a stricter threshold can also increase false rejects for genuine users
+- a stricter threshold can also reject more genuine users
 
-This is why threshold tuning must be done on realistic data, not only on ideal lab samples.
+This is why thresholds should be tuned using realistic traffic and attack conditions, not only ideal lab data.
 
 ---
 
-## What to measure
+## What teams should measure
 
 The most useful practical measures are:
 
 - spoof acceptance risk
-- genuine user rejection risk
+- genuine-user rejection risk
 - retry rate
 - completion rate
 - latency
 - device coverage
-- environmental robustness
+- robustness across lighting, pose, and network conditions
 
-The detailed metric discussion is in [Appendix A3 — Metrics and Evaluation](appendix/A3-metrics-and-evaluation.md).
+The deeper metric discussion is in [Appendix A3 — Metrics and Evaluation](appendix/A3-metrics-and-evaluation.md).
 
 ---
 
@@ -201,18 +215,32 @@ The detailed metric discussion is in [Appendix A3 — Metrics and Evaluation](ap
 Common mistakes include:
 
 - using face match without liveness in remote onboarding
-- evaluating only on easy datasets
+- testing only on easy datasets
 - ignoring injection attacks
-- assuming one good benchmark number proves production readiness
-- testing only on flagship phones
-- failing to separate retry logic from hard reject logic
-- not monitoring drift after launch
+- trusting one benchmark number too much
+- tuning only for high-end devices
+- treating retry logic as an afterthought
+- failing to monitor score drift after launch
+
+---
+
+## Practical example
+
+Imagine a user uploads a selfie that looks very similar to the ID photo. A face match model may return a strong similarity score.
+
+But if that selfie is actually a replayed video shown on another phone, the identity match alone is not enough.
+
+Face liveness adds the missing question:
+
+> Is this media coming from a real live person in front of the camera right now?
+
+That is the gap it is meant to close.
 
 ---
 
 ## Practical takeaway
 
-For most eKYC systems, a good face liveness approach is not just a model. It is a full control layer that includes:
+For most eKYC systems, face liveness is not just a model. It is a full control layer that includes:
 
 - capture design
 - input quality checks
@@ -220,6 +248,6 @@ For most eKYC systems, a good face liveness approach is not just a model. It is 
 - threshold policy
 - retry and fallback logic
 - security hardening
-- monitoring and periodic re-evaluation
+- monitoring and re-evaluation
 
 Face liveness works best when it is treated as part of a broader trust pipeline, not as a single score in isolation.
