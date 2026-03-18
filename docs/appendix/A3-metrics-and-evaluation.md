@@ -84,9 +84,9 @@ After launch, keep tracking:
 
 ## Related detailed pages in this repo
 
-- `docs/08-quality-testing/performance-metrics.md`
-- `docs/08-quality-testing/testing-methodology.md`
-- `docs/08-quality-testing/red-team.md`
-- `docs/08-quality-testing/edge-cases.md`
-- `docs/08-quality-testing/demographic-performance.md`
-- `docs/08-quality-testing/datasets.md`
+- [Performance metrics](../08-quality-testing/performance-metrics.md)
+- [Testing methodology](../08-quality-testing/testing-methodology.md)
+- [Red team and penetration testing](../08-quality-testing/red-team.md)
+- [Edge cases](../08-quality-testing/edge-cases.md)
+- [Demographic performance](../08-quality-testing/demographic-performance.md)
+- [Datasets](../08-quality-testing/datasets.md)

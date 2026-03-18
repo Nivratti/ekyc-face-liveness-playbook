@@ -60,11 +60,11 @@ That is why remote eKYC usually needs both.
 
 | Role | Start with | Then go to |
 |------|------------|------------|
-| Product or business | `01-face-liveness-guide.md` | `02-ekyc-integration.md`, `04-best-practices.md` |
-| ML engineer | `01-face-liveness-guide.md` | `03-deployment-guide.md`, `appendix/A3-metrics-and-evaluation.md` |
-| Backend or platform engineer | `02-ekyc-integration.md` | `03-deployment-guide.md`, `appendix/A5-security-and-privacy.md` |
-| Risk or fraud team | `01-face-liveness-guide.md` | `appendix/A2-attack-taxonomy.md`, `appendix/A5-security-and-privacy.md` |
-| Compliance or procurement | `01-face-liveness-guide.md` | `appendix/A4-standards-and-compliance.md`, `appendix/A6-vendor-evaluation-checklist.md` |
+| Product or business | [01-face-liveness-guide.md](01-face-liveness-guide.md) | [02-ekyc-integration.md](02-ekyc-integration.md), [04-best-practices.md](04-best-practices.md) |
+| ML engineer | [01-face-liveness-guide.md](01-face-liveness-guide.md) | [03-deployment-guide.md](03-deployment-guide.md), [appendix/A3-metrics-and-evaluation.md](appendix/A3-metrics-and-evaluation.md) |
+| Backend or platform engineer | [02-ekyc-integration.md](02-ekyc-integration.md) | [03-deployment-guide.md](03-deployment-guide.md), [appendix/A5-security-and-privacy.md](appendix/A5-security-and-privacy.md) |
+| Risk or fraud team | [01-face-liveness-guide.md](01-face-liveness-guide.md) | [appendix/A2-attack-taxonomy.md](appendix/A2-attack-taxonomy.md), [appendix/A5-security-and-privacy.md](appendix/A5-security-and-privacy.md) |
+| Compliance or procurement | [01-face-liveness-guide.md](01-face-liveness-guide.md) | [appendix/A4-standards-and-compliance.md](appendix/A4-standards-and-compliance.md), [appendix/A6-vendor-evaluation-checklist.md](appendix/A6-vendor-evaluation-checklist.md) |
 
 ---
 

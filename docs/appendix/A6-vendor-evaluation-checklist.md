@@ -68,8 +68,8 @@ Use this checklist when comparing face liveness vendors or even when comparing i
 
 ## Related detailed pages in this repo
 
-- `docs/10-business-strategy/vendor-evaluation.md`
-- `docs/10-business-strategy/build-vs-buy.md`
-- `docs/10-business-strategy/cost-roi.md`
-- `docs/10-business-strategy/implementation-roadmap.md`
-- `docs/appendices/rfp-template.md`
+- [Vendor evaluation framework](../10-business-strategy/vendor-evaluation.md)
+- [Build vs buy](../10-business-strategy/build-vs-buy.md)
+- [Cost analysis and ROI](../10-business-strategy/cost-roi.md)
+- [Implementation roadmap](../10-business-strategy/implementation-roadmap.md)
+- [RFP template](../appendices/rfp-template.md)

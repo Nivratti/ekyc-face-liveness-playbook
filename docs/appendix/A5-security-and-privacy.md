@@ -66,10 +66,10 @@ Likewise, a privacy statement without real retention and access control discipli
 
 ## Related detailed pages in this repo
 
-- `docs/09-security-privacy/security-hardening.md`
-- `docs/09-security-privacy/anti-fraud.md`
-- `docs/09-security-privacy/privacy.md`
-- `docs/09-security-privacy/incident-response.md`
-- `docs/09-security-privacy/legal-framework.md`
-- `docs/06-deployment-operations/error-handling.md`
-- `docs/06-deployment-operations/monitoring.md`
+- [Security hardening](../09-security-privacy/security-hardening.md)
+- [Anti-fraud intelligence](../09-security-privacy/anti-fraud.md)
+- [Privacy and data protection](../09-security-privacy/privacy.md)
+- [Incident response](../09-security-privacy/incident-response.md)
+- [Legal framework](../09-security-privacy/legal-framework.md)
+- [Error handling](../06-deployment-operations/error-handling.md)
+- [Monitoring](../06-deployment-operations/monitoring.md)

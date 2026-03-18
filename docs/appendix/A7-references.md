@@ -9,44 +9,44 @@ This page acts as a reference map for the repository.
 ## Deep reference by topic
 
 ### Foundations
-- `docs/01-introduction/what-is-face-liveness.md`
-- `docs/01-introduction/why-it-matters.md`
-- `docs/01-introduction/ekyc-pipeline.md`
-- `docs/01-introduction/glossary.md`
+- [What is face liveness](../01-introduction/what-is-face-liveness.md)
+- [Why it matters](../01-introduction/why-it-matters.md)
+- [The eKYC pipeline](../01-introduction/ekyc-pipeline.md)
+- [Glossary](../01-introduction/glossary.md)
 
 ### Liveness methods
-- `docs/02-fundamentals/active-liveness.md`
-- `docs/02-fundamentals/passive-liveness.md`
-- `docs/02-fundamentals/hybrid-liveness.md`
-- `docs/02-fundamentals/hardware-assisted.md`
-- `docs/02-fundamentals/comparison-matrix.md`
+- [Active liveness](../02-fundamentals/active-liveness.md)
+- [Passive liveness](../02-fundamentals/passive-liveness.md)
+- [Hybrid liveness](../02-fundamentals/hybrid-liveness.md)
+- [Hardware-assisted liveness](../02-fundamentals/hardware-assisted.md)
+- [Comparison matrix](../02-fundamentals/comparison-matrix.md)
 
 ### Attack landscape
-- `docs/03-attack-landscape/`
+- [Attack taxonomy overview](../03-attack-landscape/taxonomy-overview.md)
 
 ### Technical architecture
-- `docs/04-technical-architecture/`
+- [System overview](../04-technical-architecture/system-overview.md)
 
 ### Standards and compliance
-- `docs/05-standards-compliance/`
+- [ISO 30107](../05-standards-compliance/iso-30107.md)
 
 ### Deployment and operations
-- `docs/06-deployment-operations/`
+- [Input quality](../06-deployment-operations/input-quality.md)
 
 ### Banking use cases
-- `docs/07-banking-use-cases/`
+- [Account opening](../07-banking-use-cases/account-opening.md)
 
 ### Quality and testing
-- `docs/08-quality-testing/`
+- [Performance metrics](../08-quality-testing/performance-metrics.md)
 
 ### Security and privacy
-- `docs/09-security-privacy/`
+- [Security hardening](../09-security-privacy/security-hardening.md)
 
 ### Business strategy
-- `docs/10-business-strategy/`
+- [Build vs buy](../10-business-strategy/build-vs-buy.md)
 
 ### Legacy appendices
-- `docs/appendices/`
+- [Go-live checklist](../appendices/go-live-checklist.md)
 
 ---
 

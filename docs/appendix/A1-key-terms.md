@@ -29,5 +29,5 @@ This glossary explains the most important face liveness terms in plain English.
 
 Definitions here are simplified for readability. For deeper standards-aligned terminology, see:
 
-- `docs/05-standards-compliance/iso-30107.md`
-- `docs/05-standards-compliance/nist.md`
+- [ISO 30107 notes](../05-standards-compliance/iso-30107.md)
+- [NIST notes](../05-standards-compliance/nist.md)

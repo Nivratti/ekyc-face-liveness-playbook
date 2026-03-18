@@ -38,24 +38,24 @@ That keeps the learning path simple without losing important depth.
 ### If you are new to face liveness
 Start here:
 
-1. `docs/00-overview.md`
-2. `docs/01-face-liveness-guide.md`
+1. [docs/00-overview.md](docs/00-overview.md)
+2. [docs/01-face-liveness-guide.md](docs/01-face-liveness-guide.md)
 
 ### If you design eKYC flows
 Then read:
 
-3. `docs/02-ekyc-integration.md`
+3. [docs/02-ekyc-integration.md](docs/02-ekyc-integration.md)
 
 ### If you build or deploy systems
 Then read:
 
-4. `docs/03-deployment-guide.md`
-5. `docs/04-best-practices.md`
+4. [docs/03-deployment-guide.md](docs/03-deployment-guide.md)
+5. [docs/04-best-practices.md](docs/04-best-practices.md)
 
 ### If you need deeper detail
 Use:
 
-- `docs/appendix/`
+- [docs/appendix/A1-key-terms.md](docs/appendix/A1-key-terms.md) as the appendix starting page
 - the topic pages under `docs/01-*` to `docs/10-*`
 
 ## Repository structure
@@ -84,23 +84,23 @@ face-liveness-docs/
 
 | File | Purpose |
 |------|---------|
-| `docs/00-overview.md` | Quick orientation, audience map, and reading order |
-| `docs/01-face-liveness-guide.md` | Main simple guide to core concepts |
-| `docs/02-ekyc-integration.md` | Shows where liveness sits inside the full eKYC flow |
-| `docs/03-deployment-guide.md` | Engineering and runtime deployment choices |
-| `docs/04-best-practices.md` | Practical checklist of what to do and what to avoid |
+| [docs/00-overview.md](docs/00-overview.md) | Quick orientation, audience map, and reading order |
+| [docs/01-face-liveness-guide.md](docs/01-face-liveness-guide.md) | Main simple guide to core concepts |
+| [docs/02-ekyc-integration.md](docs/02-ekyc-integration.md) | Shows where liveness sits inside the full eKYC flow |
+| [docs/03-deployment-guide.md](docs/03-deployment-guide.md) | Engineering and runtime deployment choices |
+| [docs/04-best-practices.md](docs/04-best-practices.md) | Practical checklist of what to do and what to avoid |
 
 ## Appendix map
 
 | File | Purpose |
 |------|---------|
-| `A1-key-terms.md` | Short glossary in plain English |
-| `A2-attack-taxonomy.md` | Expanded attack grouping and examples |
-| `A3-metrics-and-evaluation.md` | Metrics, thresholds, and evaluation design |
-| `A4-standards-and-compliance.md` | Standards and compliance orientation |
-| `A5-security-and-privacy.md` | Security controls and privacy concerns |
-| `A6-vendor-evaluation-checklist.md` | Procurement and vendor assessment checklist |
-| `A7-references.md` | Reference map to deeper pages and reading material |
+| [docs/appendix/A1-key-terms.md](docs/appendix/A1-key-terms.md) | Short glossary in plain English |
+| [docs/appendix/A2-attack-taxonomy.md](docs/appendix/A2-attack-taxonomy.md) | Expanded attack grouping and examples |
+| [docs/appendix/A3-metrics-and-evaluation.md](docs/appendix/A3-metrics-and-evaluation.md) | Metrics, thresholds, and evaluation design |
+| [docs/appendix/A4-standards-and-compliance.md](docs/appendix/A4-standards-and-compliance.md) | Standards and compliance orientation |
+| [docs/appendix/A5-security-and-privacy.md](docs/appendix/A5-security-and-privacy.md) | Security controls and privacy concerns |
+| [docs/appendix/A6-vendor-evaluation-checklist.md](docs/appendix/A6-vendor-evaluation-checklist.md) | Procurement and vendor assessment checklist |
+| [docs/appendix/A7-references.md](docs/appendix/A7-references.md) | Reference map to deeper pages and reading material |
 
 ## What changed from the earlier structure
 

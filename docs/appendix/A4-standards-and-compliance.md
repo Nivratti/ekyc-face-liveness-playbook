@@ -62,10 +62,10 @@ Do **not** use them as the only proof of production readiness.
 
 ## Related detailed pages in this repo
 
-- `docs/05-standards-compliance/iso-30107.md`
-- `docs/05-standards-compliance/ibeta.md`
-- `docs/05-standards-compliance/nist.md`
-- `docs/05-standards-compliance/fido.md`
-- `docs/05-standards-compliance/regional-regulations.md`
-- `docs/05-standards-compliance/bias-fairness.md`
-- `docs/09-security-privacy/legal-framework.md`
+- [ISO 30107](../05-standards-compliance/iso-30107.md)
+- [iBeta](../05-standards-compliance/ibeta.md)
+- [NIST](../05-standards-compliance/nist.md)
+- [FIDO](../05-standards-compliance/fido.md)
+- [Regional regulations](../05-standards-compliance/regional-regulations.md)
+- [Bias and fairness](../05-standards-compliance/bias-fairness.md)
+- [Legal framework](../09-security-privacy/legal-framework.md)

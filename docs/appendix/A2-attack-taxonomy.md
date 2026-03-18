@@ -107,10 +107,10 @@ A useful production grouping is:
 
 Use these original deep-dive pages for more detail:
 
-- `docs/03-attack-landscape/taxonomy-overview.md`
-- `docs/03-attack-landscape/physical-attacks.md`
-- `docs/03-attack-landscape/digital-attacks.md`
-- `docs/03-attack-landscape/ai-generative-attacks.md`
-- `docs/03-attack-landscape/deepfakes.md`
-- `docs/03-attack-landscape/social-engineering.md`
-- `docs/03-attack-landscape/adversarial-ml.md`
+- [Attack taxonomy overview](../03-attack-landscape/taxonomy-overview.md)
+- [Physical attacks](../03-attack-landscape/physical-attacks.md)
+- [Digital and injection attacks](../03-attack-landscape/digital-attacks.md)
+- [AI and generative attacks](../03-attack-landscape/ai-generative-attacks.md)
+- [Deepfakes](../03-attack-landscape/deepfakes.md)
+- [Social engineering and process attacks](../03-attack-landscape/social-engineering.md)
+- [Adversarial ML attacks](../03-attack-landscape/adversarial-ml.md)
