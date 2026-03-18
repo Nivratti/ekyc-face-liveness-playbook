@@ -27,6 +27,7 @@ theme:
     - navigation.expand
     - navigation.path
     - navigation.top
+    - navigation.footer
     - toc.follow
     - search.suggest
     - search.highlight
@@ -71,6 +72,10 @@ markdown_extensions:
 plugins:
   - search
   - tags
+
+extra_javascript:
+  - https://unpkg.com/mermaid@10/dist/mermaid.min.js
+  - javascripts/mermaid.js
 
 extra:
   social:

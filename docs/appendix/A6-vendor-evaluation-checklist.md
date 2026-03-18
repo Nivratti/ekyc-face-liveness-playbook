@@ -73,3 +73,14 @@ Use this checklist when comparing face liveness vendors or even when comparing i
 - [Cost analysis and ROI](../10-business-strategy/cost-roi.md)
 - [Implementation roadmap](../10-business-strategy/implementation-roadmap.md)
 - [RFP template](../appendices/rfp-template.md)
+---
+
+## Main-guide links
+
+- [Back to 01. Face Liveness Guide](../01-face-liveness-guide.md)
+- [Back to 02. eKYC Integration](../02-ekyc-integration.md)
+- [Back to 03. Deployment Guide](../03-deployment-guide.md)
+
+## Read next
+
+Go to [Appendix References](A7-references.md).

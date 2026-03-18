@@ -1,5 +1,11 @@
 # 00. Overview
 
+## Who should read this page
+
+This page is for anyone who wants the **fastest orientation** before going deeper.
+
+---
+
 ## What this documentation is
 
 This repository explains **face liveness for eKYC** in simple language while still covering the points that matter in real systems.
@@ -56,7 +62,7 @@ That is why remote eKYC usually needs both.
 
 ---
 
-## Who should read what
+## Reading path by role
 
 | Role | Start with | Then go to |
 |------|------------|------------|
@@ -70,56 +76,56 @@ That is why remote eKYC usually needs both.
 
 ## The five main pages
 
-### 1. Face Liveness Guide
-A simple explanation of what face liveness is, why it matters, how it works, and where teams usually make mistakes.
-
-### 2. eKYC Integration
-Shows where liveness fits in the full onboarding and verification flow.
-
-### 3. Deployment Guide
-Covers real engineering choices such as mobile vs web, on-device vs server-side, rollout, monitoring, and runtime constraints.
-
-### 4. Best Practices
-A practical do-and-don't page you can use as a project checklist.
-
-### 5. Appendix
-Deep material for taxonomy, metrics, standards, privacy, security, and vendor evaluation.
+| Page | Why it exists |
+|------|---------------|
+| [01. Face Liveness Guide](01-face-liveness-guide.md) | Explains the core concepts in simple English |
+| [02. eKYC Integration](02-ekyc-integration.md) | Shows where liveness fits in the full onboarding flow |
+| [03. Deployment Guide](03-deployment-guide.md) | Covers real engineering and runtime choices |
+| [04. Best Practices](04-best-practices.md) | Gives a practical do-and-don't checklist |
+| [Appendix](appendix/A1-key-terms.md) | Holds deep technical, metrics, security, and vendor material |
 
 ---
 
-## Simple reading path
+## Visual reading map
 
-1. Start with [01. Face Liveness Guide](01-face-liveness-guide.md)
-2. Then see where it fits in [02. eKYC Integration](02-ekyc-integration.md)
-3. Then review [03. Deployment Guide](03-deployment-guide.md)
-4. Then use [04. Best Practices](04-best-practices.md)
-5. Open appendix pages only when you need more detail
-
----
-
-## What is intentionally kept out of the beginner path
-
-To keep the main guide easy to follow, these heavy topics are moved out of the first reading path:
-
-- full attack taxonomy
-- long metric discussions
-- standards detail and certification context
-- large vendor checklists
-- detailed regulatory notes
-- extended reference lists
-
-That material is still important. It is just not shown first.
+```mermaid
+flowchart TD
+    A[Start] --> B[00 Overview]
+    B --> C[01 Face Liveness Guide]
+    C --> D[02 eKYC Integration]
+    D --> E[03 Deployment Guide]
+    E --> F[04 Best Practices]
+    C --> G[Appendix A1-A7]
+    D --> G
+    E --> G
+    F --> G
+```
 
 ---
 
-## Practical takeaway
+## A simple mental model
 
-If you read only the five main pages, you should still come away with a solid understanding of:
+Think about face liveness as one layer in a larger trust pipeline:
 
-- what face liveness does
-- why it matters in eKYC
-- where it sits in the pipeline
-- how it should be deployed
-- what teams should test and monitor
+```mermaid
+flowchart LR
+    A[Capture] --> B[Quality checks]
+    B --> C[Liveness]
+    C --> D[Face match]
+    D --> E[Risk policy]
+    E --> F[Decision]
+```
 
-The appendix is there when you need to go deeper, not to slow down the first pass.
+Face liveness is important, but it is not the whole system.
+
+---
+
+## Related docs
+
+- [01. Face Liveness Guide](01-face-liveness-guide.md)
+- [02. eKYC Integration](02-ekyc-integration.md)
+- [Appendix A1 — Key Terms](appendix/A1-key-terms.md)
+
+## Read next
+
+Go to [01. Face Liveness Guide](01-face-liveness-guide.md).

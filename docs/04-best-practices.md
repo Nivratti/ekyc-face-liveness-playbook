@@ -1,8 +1,26 @@
 # 04. Best Practices
 
+## Who should read this page
+
+This page is most useful for teams preparing to select, deploy, govern, or review a face liveness capability in a real eKYC flow.
+
+---
+
 ## How to use this page
 
 Use this page as a practical checklist for planning, evaluating, deploying, and maintaining a face liveness system for eKYC.
+
+---
+
+## Lifecycle view
+
+```mermaid
+flowchart LR
+    A[Choose use case and threat model] --> B[Design capture and decision policy]
+    B --> C[Test on realistic data]
+    C --> D[Deploy gradually]
+    D --> E[Monitor and improve]
+```
 
 ---
 
@@ -105,20 +123,13 @@ A secure system that blocks too many genuine users creates real business and ope
 
 ## Common mistakes to avoid
 
-### Mistake 1 — trusting a single benchmark number
-One summary metric hides too much.
-
-### Mistake 2 — ignoring injection attacks
-Strong photo defense is not enough if the system accepts injected media.
-
-### Mistake 3 — testing only on high-end devices
-Production traffic rarely looks that clean.
-
-### Mistake 4 — allowing too many retries
-Unlimited retries can help attackers learn the system.
-
-### Mistake 5 — weak incident response planning
-Teams need a plan for sudden attack waves, regressions, or device-specific failures.
+| Mistake | Why it hurts |
+|--------|---------------|
+| trusting a single benchmark number | hides segment weakness and operational gaps |
+| ignoring injection attacks | strong photo defense is not enough |
+| testing only on high-end devices | production traffic is much messier |
+| allowing too many retries | attackers can probe and learn the system |
+| weak incident response planning | teams react too slowly to regressions or attack waves |
 
 ---
 
@@ -167,3 +178,16 @@ The best face liveness systems are not only accurate. They are also:
 - manageable after launch
 
 That is why successful teams treat face liveness as a product and platform capability, not just a model output.
+
+---
+
+## Related docs
+
+- [01. Face Liveness Guide](01-face-liveness-guide.md)
+- [03. Deployment Guide](03-deployment-guide.md)
+- [Appendix A6 — Vendor Evaluation Checklist](appendix/A6-vendor-evaluation-checklist.md)
+- [Appendix A7 — References](appendix/A7-references.md)
+
+## Read next
+
+Use [Appendix A1 — Key Terms](appendix/A1-key-terms.md) if you want the deep-reference entry point.

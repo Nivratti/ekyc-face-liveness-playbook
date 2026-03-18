@@ -1,5 +1,11 @@
 # 03. Deployment Guide
 
+## Who should read this page
+
+This page is most useful for ML engineers, mobile and web engineers, backend teams, platform teams, and solution architects taking face liveness into production.
+
+---
+
 ## What this page covers
 
 This page focuses on the practical work of taking face liveness from a model or SDK into a real production environment.
@@ -17,6 +23,12 @@ A system that looks good in a demo can still fail in production because of:
 ---
 
 ## First deployment decision: where should liveness run?
+
+| Option | Main strengths | Main challenges | Good fit |
+|--------|----------------|-----------------|----------|
+| On-device | lower round-trip latency, can help in unstable networks, can support stronger privacy posture in some designs | device variability, model management complexity, app integration effort | mobile-heavy flows |
+| Server-side | centralized control, easier updates, unified policy and logging | more bandwidth use, network-sensitive latency, stronger transport requirements | centralized operations |
+| Hybrid | balanced control split, common in eKYC, flexible policy design | more moving parts, interface design complexity | many real production systems |
 
 ### On-device
 
@@ -63,7 +75,30 @@ For many production systems, a hybrid design is the most practical choice.
 
 ---
 
+## Deployment architecture view
+
+```mermaid
+flowchart LR
+    A[Device capture] --> B{Where does liveness run?}
+    B --> C[On-device inference]
+    B --> D[Server-side inference]
+    B --> E[Hybrid split]
+    C --> F[Policy decision]
+    D --> F
+    E --> F
+    F --> G[Monitoring and audit]
+```
+
+---
+
 ## Mobile vs web deployment
+
+| Area | Mobile app | Web |
+|------|------------|-----|
+| Camera control | usually stronger | more browser-dependent |
+| Anti-tampering options | usually better | weaker and more variable |
+| Reach and rollout | app install/update dependent | easier reach and rollout |
+| Capture consistency | often better | more variable across devices and browsers |
 
 ### Mobile app deployment
 Usually gives better control over:
@@ -211,30 +246,12 @@ For deeper detail, see [Appendix A5 — Security and Privacy](appendix/A5-securi
 
 ## A practical rollout plan
 
-### Phase 1 — controlled pilot
-
-- limited device or region set
-- strong instrumentation
-- more manual review support
-
-### Phase 2 — threshold tuning
-
-- compare fraud outcomes and user friction
-- refine retry policy
-- review device and browser splits
-
-### Phase 3 — wider rollout
-
-- expand traffic gradually
-- monitor regressions daily
-- keep rollback and feature flags ready
-
-### Phase 4 — continuous improvement
-
-- red-team regularly
-- re-test on new devices
-- monitor new spoof patterns
-- review performance by segment
+| Phase | Goal | What to focus on |
+|------|------|------------------|
+| Phase 1 | controlled pilot | limited traffic, strong instrumentation, more review support |
+| Phase 2 | threshold tuning | fraud outcomes, retry policy, device and browser splits |
+| Phase 3 | wider rollout | gradual traffic expansion, daily regression checks, feature flags |
+| Phase 4 | continuous improvement | red-team, new devices, new spoof patterns, segment review |
 
 ---
 
@@ -253,3 +270,15 @@ That means thinking about:
 - safe rollout
 
 A face liveness feature only becomes production-ready when all of those parts work together.
+
+---
+
+## Related docs
+
+- [04. Best Practices](04-best-practices.md)
+- [Appendix A3 — Metrics and Evaluation](appendix/A3-metrics-and-evaluation.md)
+- [Appendix A5 — Security and Privacy](appendix/A5-security-and-privacy.md)
+
+## Read next
+
+Go to [04. Best Practices](04-best-practices.md).

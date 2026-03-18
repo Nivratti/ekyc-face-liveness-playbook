@@ -73,3 +73,14 @@ Likewise, a privacy statement without real retention and access control discipli
 - [Legal framework](../09-security-privacy/legal-framework.md)
 - [Error handling](../06-deployment-operations/error-handling.md)
 - [Monitoring](../06-deployment-operations/monitoring.md)
+---
+
+## Main-guide links
+
+- [Back to 01. Face Liveness Guide](../01-face-liveness-guide.md)
+- [Back to 02. eKYC Integration](../02-ekyc-integration.md)
+- [Back to 03. Deployment Guide](../03-deployment-guide.md)
+
+## Read next
+
+Go to [Appendix Vendor Evaluation Checklist](A6-vendor-evaluation-checklist.md).

@@ -1,5 +1,11 @@
 # 02. eKYC Integration
 
+## Who should read this page
+
+This page is most useful for product teams, solution architects, backend engineers, fraud teams, and anyone designing the end-to-end onboarding or verification flow.
+
+---
+
 ## What this page covers
 
 This page explains where face liveness fits inside the **full remote eKYC flow**.
@@ -30,6 +36,24 @@ Some regulated or high-risk flows may add extra steps, but this structure is a g
 
 ---
 
+## Visual flow
+
+```mermaid
+flowchart LR
+    A[User starts onboarding] --> B[Permissions and session checks]
+    B --> C[ID capture]
+    C --> D[Document verification]
+    D --> E[Selfie or short video capture]
+    E --> F[Face quality checks]
+    F --> G[Face liveness]
+    G --> H[Face match]
+    H --> I[Risk checks]
+    I --> J[Final decision]
+    J --> K[Audit trail]
+```
+
+---
+
 ## Where liveness should sit
 
 In most flows, face liveness should happen **before you fully trust the selfie for identity comparison**.
@@ -37,6 +61,12 @@ In most flows, face liveness should happen **before you fully trust the selfie f
 Why? Because a clean face match score does not prove the media is real.
 
 ### Common placement patterns
+
+| Pattern | Flow | Best use | Watchout |
+|--------|------|----------|----------|
+| A | quality check → liveness → face match | clear and explainable default flow | slightly more sequential latency |
+| B | liveness and face match in parallel | optimized low-latency flows | policy must keep the two signals separate |
+| C | passive first, active only when needed | better balance of UX and security | requires stronger policy design |
 
 #### Pattern A — quality check → liveness → face match
 This is often the clearest production flow.
@@ -115,6 +145,22 @@ Possible actions:
 
 ---
 
+## Decision logic at a glance
+
+```mermaid
+flowchart TD
+    A[Capture checks] -->|bad quality| B[Retry with guidance]
+    A -->|usable capture| C[Liveness]
+    C -->|fail| D[Reject or escalate]
+    C -->|uncertain| E[Retry or active challenge]
+    C -->|pass| F[Face match]
+    F -->|weak or no match| G[Review or reject]
+    F -->|strong match| H[Risk policy]
+    H --> I[Approve, review, or reject]
+```
+
+---
+
 ## Why retry logic matters
 
 Retry is not only a UX feature. It is part of security design.
@@ -131,78 +177,56 @@ Retry is not only a UX feature. It is part of security design.
 
 - vague messages such as “verification failed”
 - unlimited retries
-- no difference between blur and spoof suspicion
-- repeated use of the exact same weak path
+- same weak capture instructions repeated every time
+- no distinction between quality failure and suspected spoofing
 
 ---
 
-## Manual review and fallback
+## Why final policy must be broader than the model output
 
-Some systems need fallback for users who cannot pass the normal flow because of:
+A liveness result should not be the only signal that decides whether an onboarding case is trusted.
 
-- poor network conditions
-- weak camera hardware
-- accessibility needs
-- repeated uncertainty
-- regulated cases that require human review
+The final policy layer may also consider:
 
-Fallback is necessary, but it must be designed carefully. A weak fallback path can become the easiest fraud bypass.
+- document verification confidence
+- face match confidence
+- known fraud patterns
+- device integrity or device reputation
+- user journey behavior
+- velocity and retry history
+- account risk level
 
----
-
-## Audit trail and explainability
-
-A production eKYC system should record enough information to answer:
-
-- what capture was attempted
-- which quality checks passed or failed
-- what liveness result was produced
-- what face match result was produced
-- what final decision was made
-- which model version and policy version were active
-
-This is useful for fraud review, incident response, model monitoring, customer support, and regulatory traceability.
+This helps the system stay more robust than a single-score design.
 
 ---
 
-## Integration patterns
+## Practical example
 
-### Mobile SDK flow
-Common when the team wants stronger control over capture UX, device signals, and runtime behavior.
+A user provides a clean selfie. Liveness passes. But the face match against the ID portrait is weak.
 
-### Web SDK flow
-Useful for faster rollout and broad reach, but browser variability and injection hardening matter more.
+That case should not pass only because liveness is good.
 
-### Backend API flow
-Useful for centralized decisioning, but raw media transport, latency, privacy, and secure session binding become more important.
+Now consider the reverse: face match is very strong, but liveness is weak or uncertain. That case also should not pass automatically.
 
-### Hybrid flow
-Capture and some checks happen on device, while deeper scoring and policy run on the server.
-
-This is often the most practical design in real systems.
+Both checks matter because they answer different questions.
 
 ---
 
-## A recommended default approach
+## Integration mistakes teams often make
 
-For many eKYC systems, a good default structure is:
-
-1. quality gating
-2. passive liveness
-3. active challenge only when needed
-4. face match
-5. risk fusion
-6. final policy decision
-
-This usually gives a good balance of security, conversion, and operational control.
+- running face match first and trusting it too early
+- merging liveness and identity results into one unclear score
+- allowing too many retries without increased scrutiny
+- failing to log why a case was approved, retried, or rejected
+- designing fallback paths that become fraud shortcuts
 
 ---
 
 ## Practical takeaway
 
-The most important design mistake is treating face liveness like a detached model score.
+Face liveness creates the most value when it is treated as part of a **decision system**.
 
-It should be integrated into:
+That means integrating it with:
 
 - capture quality
 - retry policy
@@ -212,3 +236,15 @@ It should be integrated into:
 - audit and review workflows
 
 When it is placed correctly in the flow, face liveness becomes much more valuable and easier to operate.
+
+---
+
+## Related docs
+
+- [03. Deployment Guide](03-deployment-guide.md)
+- [04. Best Practices](04-best-practices.md)
+- [Appendix A5 — Security and Privacy](appendix/A5-security-and-privacy.md)
+
+## Read next
+
+Go to [03. Deployment Guide](03-deployment-guide.md).

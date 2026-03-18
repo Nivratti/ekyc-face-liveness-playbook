@@ -31,3 +31,14 @@ Definitions here are simplified for readability. For deeper standards-aligned te
 
 - [ISO 30107 notes](../05-standards-compliance/iso-30107.md)
 - [NIST notes](../05-standards-compliance/nist.md)
+---
+
+## Main-guide links
+
+- [Back to 01. Face Liveness Guide](../01-face-liveness-guide.md)
+- [Back to 02. eKYC Integration](../02-ekyc-integration.md)
+- [Back to 03. Deployment Guide](../03-deployment-guide.md)
+
+## Read next
+
+Go to [Appendix Attack Taxonomy](A2-attack-taxonomy.md).

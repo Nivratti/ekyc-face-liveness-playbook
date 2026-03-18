@@ -1,5 +1,11 @@
 # 01. Face Liveness Guide
 
+## Who should read this page
+
+This page is the best first full read for product teams, engineers, fraud teams, and compliance readers who want the core idea without too much technical overload.
+
+---
+
 ## What face liveness means
 
 Face liveness verifies that the face shown to the camera belongs to a **real person who is physically present during capture**.
@@ -57,6 +63,12 @@ In eKYC, both are usually needed.
 
 ## Main types of face liveness
 
+| Type | What it does | Main strength | Main limitation | Good fit |
+|------|--------------|---------------|-----------------|----------|
+| Passive | Detects spoofing without asking the user to do a challenge | low friction | may need stronger surrounding controls | smoother onboarding |
+| Active | Asks the user to do something such as blink or turn | raises difficulty for simple attacks | adds friction | higher-risk flows |
+| Hybrid | Combines passive and active signals | balances security and usability | more design complexity | many production eKYC flows |
+
 ### Passive liveness
 
 **What it is**  
@@ -92,42 +104,27 @@ It gives a better balance between security and usability. Many production system
 
 ---
 
+## Simple comparison view
+
+```mermaid
+flowchart LR
+    A[Passive] --> D[Low friction]
+    B[Active] --> E[Higher user effort]
+    C[Hybrid] --> F[Balanced path]
+```
+
+---
+
 ## Common attack groups
 
 A simple way to understand attacks is to group them into four buckets.
 
-### 1. Physical presentation attacks
-Examples:
-
-- printed photo
-- cut-out photo
-- glossy photo
-- replay on a tablet or phone
-- 2D or 3D mask
-
-### 2. Digital or injection attacks
-Examples:
-
-- virtual camera feed
-- emulator-based spoofing
-- tampering with camera APIs
-- directly injecting an image or video into the pipeline
-
-### 3. AI-assisted attacks
-Examples:
-
-- deepfake video
-- face swap
-- generated face media
-- motion-driven synthetic avatars
-
-### 4. Operational attacks
-Examples:
-
-- coached user behavior
-- compromised device or browser
-- fraud rings using stolen media
-- weak fallback paths used as a bypass
+| Attack group | Simple examples | Main concern |
+|--------------|-----------------|--------------|
+| Physical presentation attacks | print, cut-out, screen replay, mask | camera sees fake physical media |
+| Digital or injection attacks | virtual camera, emulator, API hook, direct stream injection | media bypasses normal capture path |
+| AI-assisted attacks | deepfake, face swap, generated face media | spoof media becomes more realistic |
+| Operational attacks | coached behavior, weak fallback abuse, compromised device | process weakness defeats a good model |
 
 For the full breakdown, see [Appendix A2 — Attack Taxonomy](appendix/A2-attack-taxonomy.md).
 
@@ -155,14 +152,15 @@ A good production system should check capture quality early and guide the user b
 
 A practical face liveness flow often looks like this:
 
-1. Capture image or short video
-2. Detect the face
-3. Run quality checks
-4. Extract liveness signals
-5. Produce a score or decision
-6. Apply threshold and policy
-7. Pass, retry, escalate, or fail
-8. Combine with face match and other risk signals if needed
+```mermaid
+flowchart LR
+    A[Capture image or short video] --> B[Detect face]
+    B --> C[Run quality checks]
+    C --> D[Extract liveness signals]
+    D --> E[Produce score or decision]
+    E --> F[Apply threshold and policy]
+    F --> G[Pass, retry, escalate, or fail]
+```
 
 In many real systems, the final decision may also consider:
 
@@ -251,3 +249,16 @@ For most eKYC systems, face liveness is not just a model. It is a full control l
 - monitoring and re-evaluation
 
 Face liveness works best when it is treated as part of a broader trust pipeline, not as a single score in isolation.
+
+---
+
+## Related docs
+
+- [02. eKYC Integration](02-ekyc-integration.md)
+- [03. Deployment Guide](03-deployment-guide.md)
+- [Appendix A2 — Attack Taxonomy](appendix/A2-attack-taxonomy.md)
+- [Appendix A3 — Metrics and Evaluation](appendix/A3-metrics-and-evaluation.md)
+
+## Read next
+
+Go to [02. eKYC Integration](02-ekyc-integration.md).

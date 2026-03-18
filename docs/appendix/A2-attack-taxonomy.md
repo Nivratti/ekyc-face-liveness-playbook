@@ -114,3 +114,14 @@ Use these original deep-dive pages for more detail:
 - [Deepfakes](../03-attack-landscape/deepfakes.md)
 - [Social engineering and process attacks](../03-attack-landscape/social-engineering.md)
 - [Adversarial ML attacks](../03-attack-landscape/adversarial-ml.md)
+---
+
+## Main-guide links
+
+- [Back to 01. Face Liveness Guide](../01-face-liveness-guide.md)
+- [Back to 02. eKYC Integration](../02-ekyc-integration.md)
+- [Back to 03. Deployment Guide](../03-deployment-guide.md)
+
+## Read next
+
+Go to [Appendix Metrics and Evaluation](A3-metrics-and-evaluation.md).

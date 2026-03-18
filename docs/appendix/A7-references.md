@@ -59,3 +59,14 @@ Use the top-level `references/` folder for:
 - internal decision logs
 - vendor comparison notes
 - glossary expansion notes
+---
+
+## Main-guide links
+
+- [Back to 01. Face Liveness Guide](../01-face-liveness-guide.md)
+- [Back to 02. eKYC Integration](../02-ekyc-integration.md)
+- [Back to 03. Deployment Guide](../03-deployment-guide.md)
+
+## Read next
+
+Return to [00. Overview](../00-overview.md) or continue browsing the deep reference pages from the left navigation.

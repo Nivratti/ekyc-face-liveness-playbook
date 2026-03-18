@@ -90,3 +90,14 @@ After launch, keep tracking:
 - [Edge cases](../08-quality-testing/edge-cases.md)
 - [Demographic performance](../08-quality-testing/demographic-performance.md)
 - [Datasets](../08-quality-testing/datasets.md)
+---
+
+## Main-guide links
+
+- [Back to 01. Face Liveness Guide](../01-face-liveness-guide.md)
+- [Back to 02. eKYC Integration](../02-ekyc-integration.md)
+- [Back to 03. Deployment Guide](../03-deployment-guide.md)
+
+## Read next
+
+Go to [Appendix Standards and Compliance](A4-standards-and-compliance.md).

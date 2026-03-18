@@ -69,3 +69,14 @@ Do **not** use them as the only proof of production readiness.
 - [Regional regulations](../05-standards-compliance/regional-regulations.md)
 - [Bias and fairness](../05-standards-compliance/bias-fairness.md)
 - [Legal framework](../09-security-privacy/legal-framework.md)
+---
+
+## Main-guide links
+
+- [Back to 01. Face Liveness Guide](../01-face-liveness-guide.md)
+- [Back to 02. eKYC Integration](../02-ekyc-integration.md)
+- [Back to 03. Deployment Guide](../03-deployment-guide.md)
+
+## Read next
+
+Go to [Appendix Security and Privacy](A5-security-and-privacy.md).

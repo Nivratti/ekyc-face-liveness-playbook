@@ -38,6 +38,22 @@ Go to:
 
 ---
 
+## Quick map
+
+```mermaid
+flowchart LR
+    A[00 Overview] --> B[01 Face Liveness Guide]
+    B --> C[02 eKYC Integration]
+    C --> D[03 Deployment Guide]
+    D --> E[04 Best Practices]
+    B --> F[Appendix]
+    C --> F
+    D --> F
+    E --> F
+```
+
+---
+
 ## What this documentation covers
 
 - what face liveness is
