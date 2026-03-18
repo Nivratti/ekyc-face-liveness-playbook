@@ -98,6 +98,18 @@ nav:
     - "09. Common Failures": 09-common-failures.md
     - "10. Product Guide": 10-product-guide.md
     - "11. Advanced Topics": 11-advanced-topics.md
+    - "12. Fusion and Meta-Model": 12-fusion-and-meta-model.md
+    - "13. Dataset Strategy": 13-dataset-strategy.md
+    - "14. Score Calibration and Thresholding": 14-score-calibration-and-thresholding.md
+    - "15. Error Analysis": 15-error-analysis.md
+    - "16. Monitoring and Operations": 16-monitoring-and-operations.md
+    - "17. Security Hardening": 17-security-hardening.md
+    - "18. Device and Platform Matrix": 18-device-and-platform-matrix.md
+    - "19. Model Governance": 19-model-governance.md
+    - "20. FAQ": 20-faq.md
+    - "21. Troubleshooting": 21-troubleshooting.md
+    - "22. Case Studies": 22-case-studies.md
+    - "23. System Architecture": 23-system-architecture.md
 
   - Appendix:
     - "A1. Key Terms": appendix/A1-key-terms.md
@@ -107,6 +119,9 @@ nav:
     - "A5. Security and Privacy": appendix/A5-security-and-privacy.md
     - "A6. Vendor Evaluation Checklist": appendix/A6-vendor-evaluation-checklist.md
     - "A7. References": appendix/A7-references.md
+    - "A8. Attack Coverage Matrix": appendix/A8-attack-coverage-matrix.md
+    - "A9. Data Collection and Labeling": appendix/A9-data-collection-and-labeling.md
+    - "A10. Experiment Design": appendix/A10-experiment-design.md
 
   - Deep Reference by Topic:
     - Foundations:

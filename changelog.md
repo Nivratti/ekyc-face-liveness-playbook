@@ -2,6 +2,26 @@
 
 ## Latest update
 
+- added `docs/12-fusion-and-meta-model.md`
+- added `docs/13-dataset-strategy.md`
+- added `docs/14-score-calibration-and-thresholding.md`
+- added `docs/15-error-analysis.md`
+- added `docs/16-monitoring-and-operations.md`
+- added `docs/17-security-hardening.md`
+- added `docs/18-device-and-platform-matrix.md`
+- added `docs/19-model-governance.md`
+- added `docs/20-faq.md`
+- added `docs/21-troubleshooting.md`
+- added `docs/22-case-studies.md`
+- added `docs/23-system-architecture.md`
+- added `docs/appendix/A8-attack-coverage-matrix.md`
+- added `docs/appendix/A9-data-collection-and-labeling.md`
+- added `docs/appendix/A10-experiment-design.md`
+- extended MkDocs navigation for engineering, governance, troubleshooting, and architecture pages
+- updated `README.md`, `docs/index.md`, `docs/00-overview.md`, and `docs/11-advanced-topics.md` to link the new pages
+
+## Earlier latest update
+
 - added `docs/05-real-world-examples.md`
 - added `docs/06-api-and-response-examples.md`
 - added `docs/07-decision-logic.md`

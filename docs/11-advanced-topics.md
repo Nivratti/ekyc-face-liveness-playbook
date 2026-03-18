@@ -181,4 +181,4 @@ That is why advanced design should build on strong foundations, not replace them
 
 ## Read next
 
-Go back to [Appendix A1 — Key Terms](appendix/A1-key-terms.md) for deep reference, or continue into the topic folders in the left navigation.
+Go to [12. Fusion and Meta-Model](12-fusion-and-meta-model.md), or jump to [Appendix A1 — Key Terms](appendix/A1-key-terms.md) for deep reference.

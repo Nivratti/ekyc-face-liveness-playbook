@@ -46,6 +46,18 @@ Use this when you need metrics detail, standards context, security controls, ven
 10. [docs/09-common-failures.md](docs/09-common-failures.md)
 11. [docs/10-product-guide.md](docs/10-product-guide.md)
 12. [docs/11-advanced-topics.md](docs/11-advanced-topics.md)
+13. [docs/12-fusion-and-meta-model.md](docs/12-fusion-and-meta-model.md)
+14. [docs/13-dataset-strategy.md](docs/13-dataset-strategy.md)
+15. [docs/14-score-calibration-and-thresholding.md](docs/14-score-calibration-and-thresholding.md)
+16. [docs/15-error-analysis.md](docs/15-error-analysis.md)
+17. [docs/16-monitoring-and-operations.md](docs/16-monitoring-and-operations.md)
+18. [docs/17-security-hardening.md](docs/17-security-hardening.md)
+19. [docs/18-device-and-platform-matrix.md](docs/18-device-and-platform-matrix.md)
+20. [docs/19-model-governance.md](docs/19-model-governance.md)
+21. [docs/20-faq.md](docs/20-faq.md)
+22. [docs/21-troubleshooting.md](docs/21-troubleshooting.md)
+23. [docs/22-case-studies.md](docs/22-case-studies.md)
+24. [docs/23-system-architecture.md](docs/23-system-architecture.md)
 
 ## Appendix map
 
@@ -56,6 +68,9 @@ Use this when you need metrics detail, standards context, security controls, ven
 - [docs/appendix/A5-security-and-privacy.md](docs/appendix/A5-security-and-privacy.md)
 - [docs/appendix/A6-vendor-evaluation-checklist.md](docs/appendix/A6-vendor-evaluation-checklist.md)
 - [docs/appendix/A7-references.md](docs/appendix/A7-references.md)
+- [docs/appendix/A8-attack-coverage-matrix.md](docs/appendix/A8-attack-coverage-matrix.md)
+- [docs/appendix/A9-data-collection-and-labeling.md](docs/appendix/A9-data-collection-and-labeling.md)
+- [docs/appendix/A10-experiment-design.md](docs/appendix/A10-experiment-design.md)
 
 ## Site navigation tips
 
@@ -84,6 +99,18 @@ face-liveness-docs/
 │  ├─ 09-common-failures.md
 │  ├─ 10-product-guide.md
 │  ├─ 11-advanced-topics.md
+│  ├─ 12-fusion-and-meta-model.md
+│  ├─ 13-dataset-strategy.md
+│  ├─ 14-score-calibration-and-thresholding.md
+│  ├─ 15-error-analysis.md
+│  ├─ 16-monitoring-and-operations.md
+│  ├─ 17-security-hardening.md
+│  ├─ 18-device-and-platform-matrix.md
+│  ├─ 19-model-governance.md
+│  ├─ 20-faq.md
+│  ├─ 21-troubleshooting.md
+│  ├─ 22-case-studies.md
+│  ├─ 23-system-architecture.md
 │  ├─ appendix/
 │  ├─ images/
 │  └─ ... detailed topic folders ...

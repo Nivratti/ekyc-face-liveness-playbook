@@ -89,6 +89,18 @@ That is why remote eKYC usually needs both.
 | [09. Common Failures](09-common-failures.md) | Explains where production issues usually come from |
 | [10. Product Guide](10-product-guide.md) | Translates liveness into product trade-offs |
 | [11. Advanced Topics](11-advanced-topics.md) | Introduces fusion, calibration, and maturity topics |
+| [12. Fusion and Meta-Model](12-fusion-and-meta-model.md) | Explains how to combine multiple signals into one decision layer |
+| [13. Dataset Strategy](13-dataset-strategy.md) | Defines the data needed for base models, fusion, and reliable testing |
+| [14. Score Calibration and Thresholding](14-score-calibration-and-thresholding.md) | Shows how scores become stable policy decisions |
+| [15. Error Analysis](15-error-analysis.md) | Turns failures into root causes and next actions |
+| [16. Monitoring and Operations](16-monitoring-and-operations.md) | Covers dashboards, alerts, and post-launch control |
+| [17. Security Hardening](17-security-hardening.md) | Adds the non-model controls that protect the full system |
+| [18. Device and Platform Matrix](18-device-and-platform-matrix.md) | Maps app, web, browser, and device-class differences |
+| [19. Model Governance](19-model-governance.md) | Explains release discipline, rollback, and auditability |
+| [20. FAQ](20-faq.md) | Gives fast answers to common questions |
+| [21. Troubleshooting](21-troubleshooting.md) | Helps teams debug issues quickly in production |
+| [22. Case Studies](22-case-studies.md) | Shows how policy changes by journey type |
+| [23. System Architecture](23-system-architecture.md) | Ties capture, inference, policy, and monitoring into one system view |
 | [Appendix](appendix/A1-key-terms.md) | Holds deep technical, metrics, security, and vendor material |
 
 ---
@@ -102,10 +114,16 @@ flowchart TD
     C --> D[02 eKYC Integration]
     D --> E[03 Deployment Guide]
     E --> F[04 Best Practices]
-    C --> G[Appendix A1-A7]
+    F --> H[05 to 11 Practical Playbook]
+    H --> I[12 to 19 Engineering and Operations]
+    I --> J[20 to 23 FAQ, Troubleshooting, Cases, Architecture]
+    C --> G[Appendix A1-A10]
     D --> G
     E --> G
     F --> G
+    H --> G
+    I --> G
+    J --> G
 ```
 
 ---
@@ -132,6 +150,7 @@ Face liveness is important, but it is not the whole system.
 - [01. Face Liveness Guide](01-face-liveness-guide.md)
 - [02. eKYC Integration](02-ekyc-integration.md)
 - [05. Real-World Examples](05-real-world-examples.md)
+- [12. Fusion and Meta-Model](12-fusion-and-meta-model.md)
 - [Appendix A1 — Key Terms](appendix/A1-key-terms.md)
 
 ## Read next
